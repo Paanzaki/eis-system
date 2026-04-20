@@ -9,13 +9,13 @@
         <a href="{{ route('dashboard') }}" class="{{ request()->routeIs('dashboard') ? 'bg-[#FEB05D] text-[#2C2C2C]' : 'text-gray-400 hover:text-[#FEB05D]' }} flex items-center px-4 py-3 text-sm font-bold rounded-xl transition-all">
             Dashboard
         </a>
-        <a href="{{ route('perolehan') }}" class="{{ request()->routeIs('perolehan') ? 'bg-[#FEB05D] text-[#2C2C2C]' : 'text-gray-400 hover:text-[#FEB05D]' }} flex items-center px-4 py-3 text-sm font-bold rounded-xl transition-all text-gray-400">
+        <a href="{{ route('perolehan') }}" class="{{ request()->routeIs('perolehan') ? 'bg-[#FEB05D] text-[#2C2C2C]' : 'text-gray-400 hover:text-[#FEB05D]' }} flex items-center px-4 py-3 text-sm font-bold rounded-xl transition-all ">
             Perolehan
         </a>
-        <a href="{{ route('aset') }}" class="{{ request()->routeIs('aset') ? 'bg-[#FEB05D] text-[#2C2C2C]' : 'text-gray-400 hover:text-[#FEB05D]' }} flex items-center px-4 py-3 text-sm font-bold rounded-xl transition-all text-gray-400">
+        <a href="{{ route('aset') }}" class="{{ request()->routeIs('aset') ? 'bg-[#FEB05D] text-[#2C2C2C]' : 'text-gray-400 hover:text-[#FEB05D]' }} flex items-center px-4 py-3 text-sm font-bold rounded-xl transition-all ">
             Pengurusan Aset
         </a>
-        <a href="{{ route('chatbot') }}" class="{{ request()->routeIs('chatbot') ? 'bg-[#FEB05D] text-[#2C2C2C]' : 'text-gray-400 hover:text-[#FEB05D]' }} flex items-center px-4 py-3 text-sm font-bold rounded-xl transition-all text-gray-400">
+        <a href="{{ route('chatbot') }}" class="{{ request()->routeIs('chatbot') ? 'bg-[#FEB05D] text-[#2C2C2C]' : 'text-gray-400 hover:text-[#FEB05D]' }} flex items-center px-4 py-3 text-sm font-bold rounded-xl transition-all ">
             AI Assistant
         </a>
     </nav>

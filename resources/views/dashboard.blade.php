@@ -5,8 +5,8 @@
         </h2>
     </x-slot>
 
-    <div class="py-8 min-h-screen bg-[#F8F9FA]">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 space-y-6">
+    <div class="py-1 min-h-screen bg-[#F8F9FA]">
+        <div class="max-w-[98%] mx-auto sm:px-4 lg:px-6 space-y-4">
 
             {{-- KPI Cards --}}
             <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
@@ -59,7 +59,7 @@
                     <canvas id="procurementChart" height="180"></canvas>
                 </div>
 
-                <div class="bg-white rounded-2xl p-6 shadow-sm border border-gray-200 border-l-4 ">
+                <div class="bg-white rounded-2xl p-6 shadow-sm border border-gray-200 border-l-4 border-l-">
                     <div class="flex items-center justify-between mb-6">
                         <h4 class="flex items-center gap-2 text-[11px] font-bold uppercase tracking-widest text-[#2C2C2C]">
                             <span style="display:inline-block; width:3px; height:14px; background:#FEB05D; border-radius:2px;"></span>
@@ -79,7 +79,7 @@
             </div>
 
             {{-- Activity Log --}}
-            <div class="bg-white rounded-2xl shadow-sm border border-gray-200 border-l-4  overflow-hidden">
+            <div class="bg-white rounded-2xl shadow-sm border border-gray-200 border-l-4 border-l- overflow-hidden">
                 <div class="flex items-center justify-between px-5 py-3 bg-gray-50 border-b border-gray-100">
                     <h4 class="text-[11px] font-bold tracking-widest uppercase text-[#2C2C2C]">System Activity Log</h4>
                     <span class="flex items-center gap-1.5 text-[11px] text-green-600 font-bold uppercase">

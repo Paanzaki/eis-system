@@ -1,75 +1,139 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>EIS System</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log Masuk — EIS</title>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
-<body class="antialiased bg-[#F8F9FA] text-[#2C2C2C] font-sans overflow-hidden">
-    <div class="min-h-screen flex flex-col md:flex-row">
-        
-        <div class="w-full md:w-1/2 bg-[#2C2C2C] flex flex-col items-center justify-center p-12 relative">
-            <div class="absolute top-0 left-0 w-full h-full overflow-hidden opacity-10">
-                <div class="absolute -top-24 -left-24 w-96 h-96 bg-[#FEB05D] rounded-full blur-3xl"></div>
-            </div>
 
-            <div class="relative z-10 text-center md:text-left">
-                <h1 class="text-8xl md:text-9xl font-black tracking-tighter text-[#FEB05D] leading-none">EIS.</h1>
-                <p class="mt-4 text-xs font-bold uppercase tracking-[0.4em] text-gray-400">Enterprise Intelligence System</p>
-                <div class="mt-12 h-1 w-20 bg-[#FEB05D] hidden md:block"></div>
-            </div>
+<body class="h-screen w-screen flex overflow-hidden">
 
-            <div class="absolute bottom-8 text-[9px] text-gray-500 font-bold uppercase tracking-widest">
-                Developed for Kodewave Sdn Bhd
-            </div>
+    <!-- LEFT PANEL — 50% -->
+    <div class="hidden md:flex w-1/2 flex-shrink-0 bg-[#2C2C2C] flex-col justify-between p-14">
+
+        <!-- Logo -->
+        <div>
+            <h1 class="text-7xl font-black text-white leading-none" style="letter-spacing:-0.04em;">
+                EIS
+            </h1>
+            <div class="w-12 h-1 bg-[#FEB05D] rounded-full mt-5 mb-5"></div>
+            <p class="text-[10px] font-bold uppercase tracking-widest" style="color:rgba(255,255,255,0.3);">
+                Enterprise Intelligence System
+            </p>
         </div>
 
-        <div class="w-full md:w-1/2 flex items-center justify-center p-6 md:p-12 relative">
-            <div class="w-full max-w-lg z-10">
-                <div class="bg-white/80 backdrop-blur-xl p-10 md:p-14 rounded-xl shadow-2xl border border-gray-200 transition-all">
-                    
-                    <div class="mb-10 text-center md:text-left">
-                        <h2 class="text-3xl font-black text-[#2C2C2C] uppercase tracking-tight">Log Masuk</h2>
-                        <p class="text-[10px] font-bold text-[#FEB05D] uppercase tracking-[0.2em] mt-2">Enterprise Access Portal</p>
-                    </div>
-
-                    <form method="POST" action="{{ route('login') }}" class="space-y-6">
-                        @csrf
-                        <div>
-                            <label class="block text-[10px] font-bold text-gray-500 uppercase tracking-widest mb-2">Alamat Emel</label>
-                            <input type="email" name="email" class="w-full px-5 py-4 bg-white/50 border-gray-200 focus:border-[#FEB05D] focus:ring-0 rounded-lg text-sm font-bold text-[#2C2C2C]" required autofocus>
-                        </div>
-
-                        <div>
-                            <div class="flex justify-between items-center mb-2">
-                                <label class="block text-[10px] font-bold text-gray-500 uppercase tracking-widest">Kata Laluan</label>
-                                @if (Route::has('password.request'))
-                                    <a href="{{ route('password.request') }}" class="text-[9px] font-bold text-[#FEB05D] uppercase tracking-widest hover:underline">Lupa Kata Laluan?</a>
-                                @endif
-                            </div>
-                            <input type="password" name="password" class="w-full px-5 py-4 bg-white/50 border-gray-200 focus:border-[#FEB05D] focus:ring-0 rounded-lg text-sm font-bold text-[#2C2C2C]" required>
-                        </div>
-
-                        <div class="pt-2">
-                            <button type="submit" class="w-full py-5 bg-[#2C2C2C] text-[#FEB05D] rounded-lg font-bold uppercase tracking-widest text-xs hover:bg-[#3d3d3d] transition-all border-none cursor-pointer">
-                                Masuk Sistem
-                            </button>
-                        </div>
-
-                        <div class="pt-6 text-center border-t border-gray-100">
-                            <p class="text-[10px] font-bold text-gray-400 uppercase tracking-widest">
-                                Belum ada akaun? 
-                                <a href="{{ route('register') }}" class="ml-1 text-[#FEB05D] hover:text-[#2C2C2C] transition-colors hover:underline">
-                                    Daftar Sekarang
-                                </a>
-                            </p>
-                        </div>
-                    </form>
-                </div>
-            </div>
+        <!-- Bottom tagline -->
+        <div>
+            <p class="text-2xl font-black text-white leading-snug" style="letter-spacing:-0.01em;">
+                Sistem pengurusan aset <span class="text-[#FEB05D]">pintar</span> untuk organisasi anda.
+            </p>
+            <p class="text-[10px] font-bold uppercase tracking-widest mt-5" style="color:rgba(255,255,255,0.2);">
+                v2.0 &nbsp;·&nbsp; Secure Access
+            </p>
         </div>
-
     </div>
+
+    <!-- RIGHT PANEL — 50% -->
+    <div class="w-full md:w-1/2 flex items-center justify-center px-10 py-12 overflow-y-auto bg-[#f4f4f5]">
+        <div class="w-full max-w-sm">
+
+            <!-- Badge -->
+            <div class="inline-flex items-center gap-2 bg-[#FEB05D]/10 border border-[#FEB05D]/25 rounded-full px-3 py-1 mb-8">
+                <span class="w-1.5 h-1.5 rounded-full bg-[#FEB05D] inline-block"></span>
+                <span class="text-[10px] font-bold uppercase tracking-widest text-[#FEB05D]">Secure Portal</span>
+            </div>
+
+            <!-- Heading -->
+            <p class="text-[10px] font-bold uppercase tracking-widest text-gray-400 mb-1">Selamat kembali</p>
+            <h2 class="text-3xl font-black text-[#2C2C2C] mb-8" style="letter-spacing:-0.02em;">Log Masuk</h2>
+
+            <!-- Session Status -->
+            @if (session('status'))
+                <div class="mb-4 text-sm font-medium text-green-600">{{ session('status') }}</div>
+            @endif
+
+            <!-- Form -->
+            <form method="POST" action="{{ route('login') }}" class="space-y-5">
+                @csrf
+
+                <!-- Email -->
+                <div>
+                    <label class="block text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-1.5">
+                        Alamat Emel
+                    </label>
+                    <input
+                        type="email"
+                        name="email"
+                        value="{{ old('email') }}"
+                        required
+                        autofocus
+                        autocomplete="username"
+                        placeholder="nama@organisasi.gov.my"
+                        class="w-full bg-white border-[1.5px] border-gray-200 rounded-xl py-3 px-4 text-sm font-semibold text-[#2C2C2C] placeholder-gray-300 focus:border-[#FEB05D] focus:ring-0 outline-none transition"
+                    >
+                    @error('email')
+                        <p class="mt-1.5 text-xs text-red-500">{{ $message }}</p>
+                    @enderror
+                </div>
+
+                <!-- Password -->
+                <div>
+                    <div class="flex items-center justify-between mb-1.5">
+                        <label class="text-[10px] font-bold text-gray-400 uppercase tracking-widest">
+                            Kata Laluan
+                        </label>
+                        @if (Route::has('password.request'))
+                            <a href="{{ route('password.request') }}"
+                               class="text-[10px] font-bold text-[#FEB05D] uppercase tracking-widest hover:underline">
+                                Lupa?
+                            </a>
+                        @endif
+                    </div>
+                    <input
+                        type="password"
+                        name="password"
+                        required
+                        autocomplete="current-password"
+                        placeholder="••••••••"
+                        class="w-full bg-white border-[0.5px] border-gray-200 rounded-xl py-3 px-4 text-sm font-semibold text-[#2C2C2C] placeholder-gray-300 focus:border-[#FEB05D] focus:ring-0 outline-none transition"
+                    >
+                    @error('password')
+                        <p class="mt-1.5 text-xs text-red-500">{{ $message }}</p>
+                    @enderror
+                </div>
+
+                <!-- Remember -->
+                <div class="flex items-center gap-2">
+                    <input
+                        type="checkbox"
+                        name="remember"
+                        id="remember_me"
+                        class="w-4 h-4 rounded accent-[#FEB05D] border-gray-300 cursor-pointer"
+                    >
+                    <label for="remember_me" class="text-[10px] font-bold uppercase tracking-widest text-gray-400 cursor-pointer select-none">
+                        Ingat Saya
+                    </label>
+                </div>
+
+                <!-- Submit -->
+                <button
+                    type="submit"
+                    class="w-full py-3.5 bg-[#FEB05D] text-[#2C2C2C] rounded-xl font-black uppercase tracking-widest text-xs hover:bg-amber-400 transition">
+                    Masuk Sistem &rarr;
+                </button>
+
+                <!-- Register -->
+                <p class="text-center text-[10px] font-bold uppercase tracking-widest text-gray-400 pt-1">
+                    Belum ada akaun?
+                    <a href="{{ route('register') }}" class="text-[#FEB05D] hover:underline">
+                        Daftar Sekarang
+                    </a>
+                </p>
+
+            </form>
+        </div>
+    </div>
+
 </body>
 </html>

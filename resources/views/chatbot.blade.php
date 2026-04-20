@@ -5,8 +5,8 @@
         </h2>
     </x-slot>
 
-    <div class="py-12 bg-[#F8F9FA] min-h-screen">
-        <div class="max-w-4xl mx-auto sm:px-6 lg:px-8">
+    <div class="py-11 bg-[#F8F9FA] min-h-screen">
+        <div class="max-w-[98%] mx-auto sm:px-4 lg:px-6 space-y-4">
             <div class="bg-white shadow-xl rounded-2xl flex flex-col h-[650px] border border-gray-200 border-l-4  overflow-hidden">
                 
                 <div class="p-4 border-b border-gray-100 bg-[#2C2C2C] flex items-center justify-between shadow-sm">
