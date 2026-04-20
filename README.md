@@ -17,7 +17,7 @@ Ikuti langkah-langkah di bawah untuk menjalankan sistem di persekitaran lokal an
 ### 1. Clone & Dependencies
 ```bash
 # Clone repository
-git clone [https://github.com/username/eis-system.git](https://github.com/username/eis-system.git)
+git clone [https://github.com/Paanzaki/eis-system](https://github.com/Paanzaki/eis-system)
 
 # Masuk ke folder projek
 cd eis-system
