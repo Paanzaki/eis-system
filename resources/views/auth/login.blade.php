@@ -27,7 +27,7 @@
             @csrf
 
             <div class="space-y-2">
-                <label class="block text-[10px] font-bold text-gray-500 uppercase tracking-[0.2em] ml-1">ID Pengguna / Emel</label>
+                <label class="block text-[10px] font-bold text-gray-500 uppercase tracking-[0.2em] ml-1">Alamat Emel</label>
                 <input 
                     type="email" 
                     name="email" 
@@ -61,7 +61,7 @@
             <div class="flex items-center px-1">
                 <label for="remember_me" class="inline-flex items-center cursor-pointer">
                     <input id="remember_me" type="checkbox" name="remember" class="w-4 h-4 rounded-sm border-gray-300 text-[#2C2C2C] focus:ring-[#FEB05D]">
-                    <span class="ms-3 text-[10px] font-bold text-gray-500 uppercase tracking-widest">Ingat Saya</span>
+                    <span class="ms-3 text-[10px] font-bold text-gray-400 uppercase tracking-widest">Ingat Saya</span>
                 </label>
             </div>
 
@@ -70,6 +70,27 @@
                     type="submit" 
                     class="w-full py-4 bg-[#2C2C2C] text-[#FEB05D] rounded-lg font-bold uppercase tracking-[0.4em] text-xs hover:bg-[#1a1a1a] transition-all shadow-lg active:scale-[0.99]">
                     Log Masuk
+                </button>
+            </div>
+
+            <div class="relative my-8">
+                <div class="absolute inset-0 flex items-center">
+                    <div class="w-full border-t border-gray-100"></div>
+                </div>
+                <div class="relative flex justify-center text-[9px] uppercase font-bold tracking-[0.3em]">
+                    <span class="bg-white px-4 text-gray-400">Atau Guna</span>
+                </div>
+            </div>
+
+            <div class="pt-1">
+                <button 
+                    type="button" 
+                    onclick="window.location.href='#'"
+                    class="w-full py-5 bg-white border-2 border-[#2C2C2C] text-[#2C2C2C] rounded-lg font-bold uppercase tracking-[0.2em] text-[11px] hover:bg-gray-50 transition-all flex items-center justify-center gap-4 active:scale-[0.99]">
+                    
+                    <img src="{{ asset('images/mydid.png') }}" alt="MyDigital ID" class="w-16 h-6 object-contain">
+                    
+                    <span class="mt-0.5">Log Masuk MyDigital ID</span>
                 </button>
             </div>
 
@@ -82,7 +103,7 @@
         </form>
 
         <p class="text-center text-[9px] font-bold text-gray-300 uppercase tracking-[0.5em] mt-12">
-           Portal Log Masuk &copy; 2026 Kodewave Sdn Bhd
+            Internal Portal &copy; 2026 Kodewave Sdn Bhd
         </p>
     </div>
 
