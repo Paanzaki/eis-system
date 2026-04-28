@@ -1,72 +1,94 @@
 @extends('layouts.dashboard')
 
 @section('content')
-<div class="mb-10 flex flex-col lg:flex-row lg:items-end justify-between gap-6">
-    <div class="space-y-1">
-        <h3 class="text-3xl font-black text-[#1E3A8A] tracking-tighter uppercase italic">Asset <span class="text-blue-500">Disposal.</span></h3>
-        <p class="text-[10px] font-bold text-gray-400 uppercase tracking-[0.3em]">Pengurusan Pelupusan Aset & Hapus Kira Kehilangan (KEW.PA-19/31)</p>
-    </div>
-    <div class="flex gap-2 text-[9px] font-black uppercase">
-        <div class="px-4 py-2 bg-orange-50 text-orange-600 rounded-xl border border-orange-100 flex items-center gap-2">
-            <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" stroke-width="2.5"/></svg>
-            Pending Board Approval
+<style>
+    body { background-color: #F8FAFC; }
+    .content-fluid { width: 100%; padding: 0 1rem; }
+    .rounded-sharp { border-radius: 1rem; }
+</style>
+
+<div class="content-fluid space-y-10">
+    <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-6 border-b border-gray-100 pb-8">
+        <div class="space-y-1">
+            <div class="flex items-center gap-2 mb-3">
+                <div class="h-1.5 w-10 bg-red-600 rounded-full"></div>
+                <div class="h-1.5 w-5 bg-yellow-400 rounded-full"></div>
+            </div>
+            <h3 class="text-4xl font-black text-[#1E3A8A] tracking-tighter uppercase italic leading-none">
+                Pelupusan <span class="text-blue-600">Aset<span class="text-yellow-400">.</span></span>
+            </h3>
+            <p class="text-[10px] font-black text-slate-400 uppercase tracking-[0.3em] mt-3 italic">Proses Keluar Aset & Pelupusan (KEW.PA-19)</p>
+        </div>
+        
+        <div class="flex gap-3">
+            <button class="bg-[#1E3A8A] hover:bg-red-700 text-white px-8 py-3.5 rounded-xl text-[10px] font-black uppercase tracking-widest shadow-xl shadow-blue-900/20 transition-all italic">
+                + Syor Pelupusan
+            </button>
         </div>
     </div>
-</div>
 
-<div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
-    <div class="bg-white p-8 rounded-[2.5rem] border border-gray-100 shadow-sm group">
-        <p class="text-[10px] font-black text-gray-400 uppercase tracking-widest mb-2 italic">Menunggu Pelupusan</p>
-        <h4 class="text-3xl font-black text-[#1E3A8A]">RM 241.5k</h4>
-        <p class="text-[9px] font-bold text-orange-500 mt-2 uppercase">14 Item Flagged</p>
-    </div>
-    <div class="bg-white p-8 rounded-[2.5rem] border border-gray-100 shadow-sm">
-        <p class="text-[10px] font-black text-gray-400 uppercase tracking-widest mb-2 italic">Kaedah Terlaris</p>
-        <h4 class="text-3xl font-black text-[#1E3A8A]">E-WASTE</h4>
-        <p class="text-[9px] font-bold text-gray-300 mt-2 uppercase italic">Pematuhan Alam Sekitar</p>
-    </div>
-    <div class="bg-[#1E3A8A] p-8 rounded-[2.5rem] text-white flex flex-col justify-center shadow-xl shadow-blue-100">
-        <p class="text-[9px] font-bold opacity-60 uppercase tracking-widest mb-1 italic">Tindakan Hapus Kira</p>
-        <h4 class="text-3xl font-black italic tracking-tighter">03 <span class="text-xs font-normal">KES AKTIF</span></h4>
-        <div class="mt-4 h-1.5 bg-white/10 rounded-full overflow-hidden"><div class="h-full bg-orange-400 w-1/2"></div></div>
-    </div>
-</div>
-
-<div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
-    <div class="lg:col-span-2 bg-white p-12 rounded-[3.5rem] border border-gray-100 shadow-sm">
-        <h4 class="text-[11px] font-black text-gray-400 uppercase tracking-[0.2em] mb-10">Borang Permohonan Pelupusan</h4>
-        <form class="space-y-8">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div class="space-y-2">
-                    <label class="text-[10px] font-black text-gray-400 uppercase tracking-widest ml-2">ID Aset (Barcode)</label>
-                    <input type="text" placeholder="PNS/ICT/2026/..." class="w-full bg-gray-50 border-none rounded-2xl p-5 text-xs font-bold outline-none focus:ring-2 focus:ring-blue-100 transition-all">
-                </div>
-                <div class="space-y-2">
-                    <label class="text-[10px] font-black text-gray-400 uppercase tracking-widest ml-2">Kaedah Pelupusan</label>
-                    <select class="w-full bg-gray-50 border-none rounded-2xl p-5 text-xs font-bold appearance-none outline-none">
-                        <option>Jualan Sisa (E-Waste)</option>
-                        <option>Tukar Barang (Trade-In)</option>
-                        <option>Musnah (Bury/Burn)</option>
-                    </select>
-                </div>
-            </div>
-            <div class="space-y-2">
-                <label class="text-[10px] font-black text-gray-400 uppercase tracking-widest ml-2">Justifikasi (Sebab)</label>
-                <textarea rows="4" class="w-full bg-gray-50 border-none rounded-2xl p-5 text-xs font-bold outline-none" placeholder="Cth: Aset rosak dan kos pembaikan melebihi 50% nilai semasa..."></textarea>
-            </div>
-            <button class="w-full py-6 bg-[#1E3A8A] text-white rounded-2xl text-[11px] font-black uppercase tracking-[0.3em] shadow-xl shadow-blue-100 hover:scale-[1.01] transition-transform">Hantar ke Urus Setia</button>
-        </form>
-    </div>
-
-    <div class="space-y-6">
-        <div class="bg-red-50 p-10 rounded-[3rem] border border-red-100">
-            <div class="flex items-center gap-3 mb-6 text-red-600">
-                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" stroke-width="2.5"/></svg>
-                <h4 class="text-[11px] font-black uppercase tracking-widest">Hapus Kira (Kehilangan)</h4>
-            </div>
-            <p class="text-[10px] font-bold text-red-800 leading-relaxed uppercase tracking-tighter italic italic">Laporan Polis wajib dilampirkan bagi setiap kes hapus kira aset hilang sebelum siasatan dijalankan.</p>
-            <button class="mt-8 w-full py-4 bg-white border border-red-200 text-red-600 rounded-xl text-[9px] font-black uppercase tracking-widest shadow-sm">Daftar Kehilangan</button>
+    <div class="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm flex flex-col lg:flex-row gap-4">
+        <div class="flex-1 relative group">
+            <input type="text" placeholder="Cari No. Siri KEW.PA-19 atau Nama Aset..." 
+                class="w-full bg-gray-50 border border-gray-200 py-3.5 px-6 rounded-xl text-xs font-bold outline-none focus:border-[#1E3A8A] focus:bg-white transition-all shadow-inner">
+            <svg class="w-4 h-4 absolute right-5 top-1/2 -translate-y-1/2 text-gray-400 group-hover:text-[#1E3A8A] transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" stroke-width="3"/></svg>
         </div>
+        <select class="bg-gray-50 border border-gray-200 py-3.5 px-6 rounded-xl text-[10px] font-black uppercase outline-none cursor-pointer hover:bg-white transition-all">
+            <option>Status: Semua</option>
+            <option>Menunggu Kelulusan</option>
+            <option>Selesai Pelupusan</option>
+        </select>
+        <button class="bg-[#1E3A8A] text-white px-10 py-3.5 rounded-xl text-[10px] font-black uppercase tracking-widest hover:bg-red-700 transition-all">
+            Tapis Data
+        </button>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="bg-white p-8 rounded-sharp border border-gray-100 shadow-sm">
+            <p class="text-[9px] font-black text-slate-400 uppercase tracking-widest mb-2 italic">Menunggu Kelulusan</p>
+            <h4 class="text-3xl font-black text-[#1E3A8A] tracking-tighter">24 <span class="text-[10px] font-bold text-slate-300 uppercase">Unit</span></h4>
+        </div>
+        <div class="bg-white p-8 rounded-sharp border border-gray-100 shadow-sm">
+            <p class="text-[9px] font-black text-slate-400 uppercase tracking-widest mb-2 italic">Nilai Anggaran</p>
+            <h4 class="text-3xl font-black text-[#1E3A8A] tracking-tighter">RM 42,500</h4>
+        </div>
+        <div class="bg-white p-8 rounded-sharp border border-gray-100 shadow-sm">
+            <p class="text-[9px] font-black text-slate-400 uppercase tracking-widest mb-2 italic">Kaedah Pelupusan</p>
+            <h4 class="text-2xl font-black text-blue-600 tracking-tighter uppercase italic">Sebut Harga</h4>
+        </div>
+    </div>
+
+    <div class="bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden">
+        <table class="w-full text-left">
+            <thead>
+                <tr class="bg-gray-50/50 border-b border-gray-100">
+                    <th class="px-8 py-5 text-[10px] font-black text-slate-400 uppercase tracking-widest italic">No. Siri & Nama</th>
+                    <th class="px-8 py-5 text-[10px] font-black text-slate-400 uppercase tracking-widest">Sebab Utama</th>
+                    <th class="px-8 py-5 text-[10px] font-black text-slate-400 uppercase tracking-widest text-center">Tempoh</th>
+                    <th class="px-8 py-5 text-[10px] font-black text-slate-400 uppercase tracking-widest text-right">Tindakan</th>
+                </tr>
+            </thead>
+            <tbody class="divide-y divide-gray-50">
+                @foreach([
+                    ['id' => 'PNS/ICT/012', 'name' => 'SERVER RACK - BLOK C', 'reason' => 'Usang / Tidak Ekonomik', 'years' => '8 Thn'],
+                    ['id' => 'PNS/KND/004', 'name' => 'VAN HIACE (BPA 2231)', 'reason' => 'Kerosakan Enjin', 'years' => '11 Thn']
+                ] as $row)
+                <tr class="hover:bg-slate-50/50 transition-colors">
+                    <td class="px-8 py-6">
+                        <span class="text-[9px] font-black text-slate-300 uppercase italic">{{ $row['id'] }}</span>
+                        <p class="text-xs font-black text-[#1E3A8A] uppercase">{{ $row['name'] }}</p>
+                    </td>
+                    <td class="px-8 py-6 text-xs font-bold text-slate-500 italic">{{ $row['reason'] }}</td>
+                    <td class="px-8 py-6 text-center text-[10px] font-black text-slate-700">{{ $row['years'] }}</td>
+                    <td class="px-8 py-6">
+                        <div class="flex justify-end gap-2">
+                            <button class="p-2.5 bg-white border border-gray-100 rounded-lg text-slate-400 hover:text-blue-600 shadow-sm"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg></button>
+                        </div>
+                    </td>
+                </tr>
+                @endforeach
+            </tbody>
+        </table>
     </div>
 </div>
 @endsection

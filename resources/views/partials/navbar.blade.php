@@ -1,20 +1,26 @@
-<header class="h-20 bg-white border-b border-gray-100 flex items-center justify-between px-8 relative z-20">
-    <div class="flex items-center gap-6">
-        <button @click="sidebarOpen = !sidebarOpen" class="p-2 text-gray-400 hover:text-[#1E3A8A] transition-colors duration-300">
-            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path d="M4 6h16M4 12h16M4 18h7" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+<nav class="bg-white border-b border-gray-100 px-6 py-4 flex items-center justify-between z-30 sticky top-0">
+    <div class="flex items-center">
+        <button @click="mobileMenu = true; sidebarOpen = true" class="lg:hidden p-2 mr-3 text-slate-600 hover:bg-slate-50 rounded-xl transition-all">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
             </svg>
         </button>
-        <h2 class="text-[10px] font-black text-gray-400 uppercase tracking-[0.4em] italic">
-            EIS <span class="text-[#1E3A8A]">Selangor</span> — PNS Portal
+
+        <button @click="sidebarOpen = !sidebarOpen" class="hidden lg:flex p-2 mr-6 text-slate-400 hover:text-[#1E3A8A] hover:bg-blue-50 rounded-xl transition-all">
+            <svg class="w-5 h-5 transition-transform duration-500" :class="!sidebarOpen ? 'rotate-180' : ''" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M11 19l-7-7 7-7m8 14l-7-7 7-7" />
+            </svg>
+        </button>
+        
+        <h2 class="hidden md:block text-[10px] font-black text-slate-400 uppercase tracking-[0.3em] italic">
+            Dashboard <span class="text-blue-600">/</span> {{ Request::segment(1) ?? 'Overview' }}
         </h2>
     </div>
 
-    <div class="hidden md:flex items-center gap-4">
-        <div class="flex flex-col items-end">
-            <span class="text-[9px] font-black text-[#1E3A8A] uppercase">Server Status</span>
-            <span class="text-[8px] font-bold text-green-500 uppercase tracking-tighter italic">Optimized</span>
+    <div class="flex items-center gap-4">
+        <div class="text-right hidden sm:block">
+            <p class="text-[9px] font-black text-[#1E3A8A] uppercase italic leading-none">{{ \Carbon\Carbon::now()->format('d F Y') }}</p>
+            <p class="text-[8px] font-bold text-slate-300 uppercase mt-1 tracking-tighter italic">Sabak Bernam, Selangor</p>
         </div>
-        <div class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
     </div>
-</header>
+</nav>

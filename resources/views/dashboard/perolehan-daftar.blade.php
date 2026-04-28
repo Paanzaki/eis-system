@@ -1,120 +1,113 @@
 @extends('layouts.dashboard')
 
 @section('content')
-<div class="mb-10 flex flex-col lg:flex-row lg:items-end justify-between gap-6">
-    <div class="space-y-1">
-        <h3 class="text-3xl font-black text-[#1E3A8A] tracking-tighter uppercase italic">User <span class="text-blue-500">Registration.</span></h3>
-        <p class="text-[10px] font-bold text-gray-400 uppercase tracking-[0.3em]">Pendaftaran Pengguna & Integrasi MyDigitalID (SSO)</p>
-    </div>
-    <div class="flex gap-2 text-[9px] font-black uppercase">
-        <div class="px-4 py-2 bg-blue-50 text-blue-600 rounded-xl border border-blue-100 flex items-center gap-2">
-            <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" stroke-width="2"/></svg>
-            SSO Gateway Active
-        </div>
-    </div>
-</div>
+<style>
+    body { background-color: #F8FAFC; }
+    .profile-container { width: 100%; padding: 0 1rem; }
+    .input-heavy { 
+        background: #F9FAFB; 
+        border: 2px solid #F1F5F9; 
+        border-radius: 1rem; 
+        padding: 1.25rem 1.5rem; 
+        font-size: 13px; 
+        font-weight: 800; 
+        width: 100%; 
+        outline: none; 
+        transition: all 0.3s ease; 
+    }
+    .input-heavy:focus { 
+        background: white; 
+        border-color: #1E3A8A; 
+        box-shadow: 0 10px 20px -5px rgba(30, 58, 138, 0.1); 
+    }
+    .label-heavy {
+        font-size: 11px;
+        font-weight: 900;
+        text-transform: uppercase;
+        letter-spacing: 0.15em;
+        color: #64748B;
+        margin-left: 0.5rem;
+        margin-bottom: 0.75rem;
+        display: block;
+    }
+</style>
 
-<div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
-    <div class="bg-white p-8 rounded-[2.5rem] border border-gray-100 shadow-sm flex items-center gap-6 group hover:border-blue-200 transition-all">
-        <div class="w-14 h-14 bg-blue-50 rounded-2xl flex items-center justify-center text-blue-600 shadow-inner group-hover:scale-110 transition-transform">
-            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" stroke-width="2"/></svg>
-        </div>
-        <div>
-            <p class="text-[10px] font-black text-gray-400 uppercase tracking-widest">Kuota Pengguna</p>
-            <h4 class="text-2xl font-black text-[#1E3A8A]">84 / 150</h4>
-        </div>
-    </div>
-
-    <div class="bg-white p-8 rounded-[2.5rem] border border-gray-100 shadow-sm flex items-center gap-6">
-        <div class="w-14 h-14 bg-green-50 rounded-2xl flex items-center justify-center text-green-600 shadow-inner">
-            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" stroke-width="2"/></svg>
-        </div>
-        <div>
-            <p class="text-[10px] font-black text-gray-400 uppercase tracking-widest">MyDigitalID Sync</p>
-            <h4 class="text-2xl font-black text-[#1E3A8A]">100% <span class="text-[9px] text-green-500 italic uppercase">Secure</span></h4>
-        </div>
-    </div>
-
-    <div class="bg-blue-600 p-8 rounded-[2.5rem] shadow-xl shadow-blue-100 text-white flex flex-col justify-center">
-        <p class="text-[9px] font-bold opacity-60 uppercase tracking-[0.2em] mb-1 italic">Last Registered</p>
-        <p class="text-xs font-black uppercase">Farhan Zaki — IT Dept</p>
-    </div>
-</div>
-
-<div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
-    <div class="lg:col-span-2 bg-white p-12 rounded-[3.5rem] border border-gray-100 shadow-sm relative overflow-hidden">
-        <div class="absolute top-0 right-0 p-8 opacity-5">
-            <svg class="w-32 h-32" fill="currentColor" viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
+<div class="profile-container space-y-12">
+    
+    <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-6 border-b-2 border-gray-100 pb-10">
+        <div class="space-y-2">
+            <div class="flex items-center gap-2 mb-4">
+                <div class="h-2 w-16 bg-red-600 rounded-full"></div>
+                <div class="h-2 w-8 bg-yellow-400 rounded-full"></div>
+            </div>
+            <h3 class="text-5xl font-black text-[#1E3A8A] tracking-tighter uppercase italic leading-none">
+                Pendaftaran <span class="text-blue-600">Aset Baru<span class="text-yellow-400">.</span></span>
+            </h3>
+            <p class="text-[12px] font-black text-slate-400 uppercase tracking-[0.4em] mt-4 italic">Kemasukan Data Perolehan & Penomboran Siri (KEW.PA-2/3)</p>
         </div>
         
-        <form class="space-y-8" @submit.prevent="alert('Demo: Request sent to Admin for approval.')">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div class="space-y-2">
-                    <label class="text-[10px] font-black text-gray-400 uppercase ml-2 tracking-widest">Nama Penuh (Ikut MyKad)</label>
-                    <input type="text" placeholder="Cth: MUHAMMAD FARHAN..." class="w-full bg-gray-50 border-none rounded-2xl p-5 text-xs font-bold outline-none focus:ring-2 focus:ring-blue-100 transition-all">
-                </div>
-                <div class="space-y-2">
-                    <label class="text-[10px] font-black text-gray-400 uppercase ml-2 tracking-widest">ID MyDigitalID</label>
-                    <div class="relative">
-                        <input type="text" placeholder="MY-99210-XXXX" class="w-full bg-gray-50 border-none rounded-2xl p-5 text-xs font-bold outline-none pr-12">
-                        <svg class="w-4 h-4 text-green-500 absolute right-5 top-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" stroke-width="2"/></svg>
-                    </div>
-                </div>
-                <div class="space-y-2">
-                    <label class="text-[10px] font-black text-gray-400 uppercase ml-2 tracking-widest">Jabatan / Bahagian</label>
-                    <select class="w-full bg-gray-50 border-none rounded-2xl p-5 text-xs font-bold appearance-none outline-none">
-                        <option>Bahagian Teknologi Maklumat (BTM)</option>
-                        <option>Unit Kewangan & Strategi</option>
-                        <option>Pejabat Perbendaharaan Negeri</option>
-                    </select>
-                </div>
-                <div class="space-y-2">
-                    <label class="text-[10px] font-black text-gray-400 uppercase ml-2 tracking-widest">Peranan Sistem (RBAC)</label>
-                    <select class="w-full bg-gray-50 border-none rounded-2xl p-5 text-xs font-bold appearance-none outline-none">
-                        <option>Eksekutif (View & Report)</option>
-                        <option>Pentadbir (CRUD Access)</option>
-                        <option>Pegawai Naziran</option>
-                    </select>
-                </div>
+        <div class="flex items-center gap-4 bg-white p-5 rounded-2xl shadow-sm border border-gray-100">
+            <span class="text-[10px] font-black text-slate-600 uppercase tracking-widest italic">ID Transaksi: REG-2026-{{ rand(1000,9999) }}</span>
+        </div>
+    </div>
+
+    <div class="bg-white p-12 rounded-[3rem] shadow-xl shadow-slate-200/50 border border-gray-50 relative overflow-hidden group">
+        <div class="flex items-center gap-4 mb-12 border-l-4 border-yellow-400 pl-6">
+            <h4 class="text-[14px] font-black text-[#1E3A8A] uppercase tracking-widest italic">Maklumat Terperinci Aset</h4>
+        </div>
+
+        <form action="#" class="grid grid-cols-12 gap-10">
+            <div class="col-span-12 lg:col-span-6 space-y-2">
+                <label class="label-heavy">Kategori Aset Alih</label>
+                <select class="input-heavy cursor-pointer">
+                    <option>Harta Modal (Nilai > RM2,000)</option>
+                    <option>Aset Alih Rendah (Nilai < RM2,000)</option>
+                </select>
             </div>
 
-            <div class="p-6 bg-blue-50/50 rounded-[2rem] border border-blue-50 space-y-3">
-                <div class="flex items-center gap-3">
-                    <input type="checkbox" class="rounded text-[#1E3A8A] focus:ring-[#1E3A8A]">
-                    <p class="text-[9px] font-bold text-gray-500 uppercase leading-relaxed">Saya mengaku maklumat di atas adalah benar dan mematuhi polisi kerahsiaan data PNS Selangor.</p>
-                </div>
+            <div class="col-span-12 lg:col-span-6 space-y-2">
+                <label class="label-heavy">Perihalan / Nama Aset</label>
+                <input type="text" placeholder="Contoh: MacBook Pro M3 14-inch" class="input-heavy">
             </div>
 
-            <button class="w-full py-6 bg-[#1E3A8A] text-white rounded-2xl text-[11px] font-black uppercase tracking-[0.3em] shadow-xl shadow-blue-100 hover:scale-[1.01] transition-transform">Daftar Pengguna Baru</button>
+            <div class="col-span-12 lg:col-span-4 space-y-2">
+                <label class="label-heavy">No. Pesanan Kerajaan (LO)</label>
+                <input type="text" placeholder="PNS/LO/2026/XXXX" class="input-heavy">
+            </div>
+
+            <div class="col-span-12 lg:col-span-4 space-y-2">
+                <label class="label-heavy">Tarikh Terima</label>
+                <input type="date" class="input-heavy">
+            </div>
+
+            <div class="col-span-12 lg:col-span-4 space-y-2">
+                <label class="label-heavy">Kos Perolehan (RM)</label>
+                <input type="number" step="0.01" placeholder="0.00" class="input-heavy text-blue-600">
+            </div>
+
+            <div class="col-span-12 space-y-2">
+                <label class="label-heavy">Lokasi Penempatan (Jabatan / Unit)</label>
+                <textarea rows="3" class="input-heavy" placeholder="Nyatakan lokasi fizikal aset dengan tepat..."></textarea>
+            </div>
+
+            <div class="col-span-12 flex justify-end gap-4 pt-10 border-t border-gray-50">
+                <button type="button" class="px-12 py-5 rounded-2xl text-[11px] font-black uppercase tracking-[0.2em] text-slate-400 hover:bg-gray-50 transition-all">
+                    Draft Simpan
+                </button>
+                <button type="submit" class="bg-[#1E3A8A] hover:bg-red-700 text-white px-14 py-5 rounded-2xl text-[11px] font-black uppercase tracking-[0.2em] shadow-2xl shadow-blue-900/20 transition-all transform hover:scale-105 active:scale-95 italic">
+                    Daftar & Jana No. Siri
+                </button>
+            </div>
         </form>
     </div>
 
-    <div class="space-y-6">
-        <div class="bg-white p-10 rounded-[3rem] border border-gray-100 shadow-sm">
-            <h4 class="text-[11px] font-black text-gray-400 uppercase tracking-widest mb-8 italic">Senarai Menunggu</h4>
-            <div class="space-y-6">
-                @foreach([
-                    ['Ahmad Albab', 'BTM', '2m ago'],
-                    ['Siti Nurhaliza', 'Kewangan', '1h ago'],
-                    ['Zaquan Adha', 'Naziran', '3h ago']
-                ] as $user)
-                <div class="flex items-center gap-4">
-                    <div class="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center text-[10px] font-black text-gray-400">{{ substr($user[0], 0, 1) }}</div>
-                    <div class="flex-1">
-                        <p class="text-[10px] font-black text-gray-800 uppercase leading-tight">{{ $user[0] }}</p>
-                        <p class="text-[8px] font-bold text-blue-500 uppercase">{{ $user[1] }}</p>
-                    </div>
-                    <span class="text-[8px] font-black text-gray-300 uppercase italic">{{ $user[2] }}</span>
-                </div>
-                @endforeach
-            </div>
-            <button class="w-full mt-10 py-4 bg-gray-50 text-gray-400 text-[9px] font-black uppercase tracking-widest rounded-xl hover:bg-gray-100 transition-all">Lihat Semua Permohonan</button>
+    <div class="bg-blue-50/50 p-8 rounded-[2rem] border border-blue-100 flex items-center gap-6">
+        <div class="w-12 h-12 bg-white rounded-xl shadow-sm flex items-center justify-center text-blue-600 flex-shrink-0">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" stroke-width="2.5"/></svg>
         </div>
-
-        <div class="bg-[#1E3A8A] p-8 rounded-[2.5rem] text-white">
-            <h4 class="text-[10px] font-bold opacity-60 uppercase tracking-widest mb-4 italic">Security Note</h4>
-            <p class="text-[10px] font-bold leading-relaxed uppercase tracking-tighter italic">Pendaftaran ini memerlukan pengesahan Biometrik melalui aplikasi MyDigitalID pada peranti mudah alih pegawai.</p>
-        </div>
+        <p class="text-[11px] font-bold text-slate-500 leading-relaxed italic">
+            Sistem akan menjana No. Siri Pendaftaran secara automatik berdasarkan kod klasifikasi (PNS/ICT/2026/...) sebaik sahaja pendaftaran disahkan.
+        </p>
     </div>
 </div>
 @endsection

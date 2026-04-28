@@ -11,8 +11,8 @@
             font-family: 'Plus Jakarta Sans', sans-serif; 
             background: #090e1a;
             background-image: 
-                radial-gradient(at 0% 0%, rgba(30, 58, 138, 0.4) 0px, transparent 50%),
-                radial-gradient(at 100% 100%, rgba(59, 130, 246, 0.15) 0px, transparent 50%);
+                radial-gradient(at 0% 0%, rgba(225, 29, 72, 0.12) 0px, transparent 50%),
+                radial-gradient(at 100% 100%, rgba(250, 204, 21, 0.08) 0px, transparent 50%);
         }
         .glass-card {
             background: rgba(255, 255, 255, 0.02);
@@ -20,13 +20,16 @@
             border: 1px solid rgba(255, 255, 255, 0.08);
             box-shadow: 0 40px 100px -20px rgba(0, 0, 0, 0.7);
         }
+        /* Sharp Border Radius mengikut feedback */
+        .rounded-sharp { border-radius: 1rem; }
+        
         .input-dark {
             background: rgba(0, 0, 0, 0.2);
             border: 1px solid rgba(255, 255, 255, 0.05);
             transition: all 0.3s ease;
         }
         .input-dark:focus {
-            border-color: rgba(59, 130, 246, 0.4);
+            border-color: #FACC15; /* Hint Kuning Selangor */
             background: rgba(0, 0, 0, 0.4);
             outline: none;
         }
@@ -43,85 +46,77 @@
     <div class="w-full max-w-[1200px] grid lg:grid-cols-2 gap-16 items-center relative z-10">
         
         <div class="hidden lg:block space-y-10">
-            <div class="space-y-4">
-                <div class="w-12 h-1 w-24 bg-blue-500 rounded-full"></div>
-                <h1 class="text-8xl font-extrabold text-white tracking-tighter leading-none italic uppercase">
-                    PNS<br><span class="text-blue-500">EIS.</span>
-                </h1>
-            </div>
-            
             <div class="space-y-6">
-                <p class="text-slate-400 text-xl font-medium tracking-tight leading-relaxed max-w-sm">
-                    Sistem Maklumat Eksekutif Bersepadu Perbendaharaan Negeri Selangor.
-                </p>
-                <div class="flex items-center gap-6">
-                    <div class="flex -space-x-3">
-                        @for($i=0; $i<4; $i++)
-                        <div class="w-10 h-10 rounded-full border-2 border-[#090e1a] bg-slate-800 flex items-center justify-center text-[8px] font-black text-slate-400 uppercase tracking-tighter italic">USER</div>
-                        @endfor
+                <div class="flex items-center gap-5 mb-10">
+                    <img src="{{ asset('images/jata-selangor.png') }}" alt="Jata Selangor" class="h-24 drop-shadow-2xl">
+                    <div class="h-16 w-[1px] bg-white/10"></div>
+                    <div class="text-white">
+                        <p class="text-[10px] font-black uppercase tracking-[0.5em] text-red-500">Portal Rasmi</p>
+                        <p class="text-sm font-bold uppercase tracking-widest leading-tight">Perbendaharaan Negeri<br>Selangor</p>
                     </div>
-                    <p class="text-[10px] font-black text-blue-400 uppercase tracking-[0.3em]">Active Session Control</p>
                 </div>
+
+                <h1 class="text-8xl font-extrabold text-white tracking-tighter leading-none italic uppercase">
+                    PNS<span class="text-yellow-400">EIS.</span>
+                </h1>
+                <p class="text-slate-400 text-xl font-medium tracking-tight leading-relaxed max-w-sm">
+                    Sistem Maklumat Eksekutif Bersepadu.
+                </p>
             </div>
         </div>
 
-        <div class="glass-card rounded-[4rem] p-12 lg:p-16 w-full max-w-lg mx-auto relative overflow-hidden">
-            <div class="absolute -top-24 -right-24 w-48 h-48 bg-blue-500/10 rounded-full blur-3xl"></div>
-
-            <div class="mb-12">
-                <div class="flex justify-between items-start">
-                    <div>
-                        <h2 class="text-3xl font-extrabold text-white tracking-tighter italic uppercase">Identity</h2>
-                        <p class="text-blue-500 text-[10px] font-black uppercase tracking-[0.4em] mt-1">Verification Required</p>
-                    </div>
-                    <div class="w-12 h-12 bg-white/5 rounded-2xl border border-white/10 flex items-center justify-center">
-                        <svg class="w-6 h-6 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M12 11c0 3.517-1.009 6.799-2.753 9.571m-3.44-3.614A9.99 9.99 0 0010 11.22V7a3 3 0 10-6 0v4.22c0 1.258-.291 2.448-.813 3.504m16.035-3.504A9.99 9.99 0 0120 11.22V7a3 3 0 10-6 0v4.22c0 1.258.291 2.448.813 3.504M15 11c0 3.517 1.009 6.799 2.753 9.571" stroke-width="2"/></svg>
-                    </div>
+        <div class="glass-card rounded-sharp p-10 lg:p-14 w-full max-w-lg mx-auto relative overflow-hidden">
+            
+            <div class="mb-10">
+                <h2 class="text-2xl font-extrabold text-white tracking-tighter italic uppercase">login</h2>
+                <div class="flex mt-3 gap-1">
+                    <div class="h-1 w-12 bg-red-600"></div>
+                    <div class="h-1 w-8 bg-yellow-400"></div>
                 </div>
             </div>
 
-            <form method="POST" action="{{ route('login') }}" class="space-y-8">
+            <form method="POST" action="{{ route('login') }}" class="space-y-6">
                 @csrf
                 
-                <div class="space-y-3">
-                    <label class="text-[9px] font-black text-slate-500 uppercase tracking-[0.3em] ml-2">Official Directory Email</label>
+                <div class="space-y-2">
+                    <label class="text-[9px] font-black text-slate-500 uppercase tracking-[0.3em] ml-2">Email</label>
                     <input type="email" name="email" value="{{ old('email') }}" required autofocus 
-                        class="w-full input-dark py-5 px-8 rounded-3xl text-sm font-bold text-white placeholder:text-slate-700" 
-                        placeholder="farhan@selangor.gov.my">
+                        class="w-full input-dark py-4 px-6 rounded-lg text-sm font-bold text-white placeholder:text-slate-700" 
+                        placeholder="farhan@intern.my">
                 </div>
 
-                <div class="space-y-3">
-                    <div class="flex justify-between items-center px-2">
-                        <label class="text-[9px] font-black text-slate-500 uppercase tracking-[0.3em]">System Credentials</label>
-                        <a href="#" class="text-[8px] font-black text-blue-400 uppercase tracking-widest hover:text-white transition-all">Forgot Access?</a>
-                    </div>
+                <div class="space-y-2">
+                    <label class="text-[9px] font-black text-slate-500 uppercase tracking-[0.3em] ml-2">Password</label>
                     <input type="password" name="password" required 
-                        class="w-full input-dark py-5 px-8 rounded-3xl text-sm font-bold text-white placeholder:text-slate-700" 
+                        class="w-full input-dark py-4 px-6 rounded-lg text-sm font-bold text-white placeholder:text-slate-700" 
                         placeholder="••••••••••••">
                 </div>
 
                 <div class="pt-6 space-y-4">
                     <button type="submit" 
-                        class="w-full bg-blue-600 hover:bg-blue-500 text-white py-6 rounded-3xl text-xs font-black uppercase tracking-[0.4em] shadow-2xl shadow-blue-900/40 transition-all hover:-translate-y-1 active:translate-y-0">
-                        Authenticate
+                        class="w-full bg-[#1E3A8A] hover:bg-red-700 text-white py-5 rounded-lg text-xs font-black uppercase tracking-[0.4em] shadow-xl transition-all duration-300">
+                        log masuk
                     </button>
 
-                    <div class="relative flex justify-center items-center py-4 text-slate-700">
+                    <div class="relative flex justify-center items-center py-4">
                         <div class="w-full h-[1px] bg-white/5"></div>
-                        <span class="absolute bg-[#0b111e] px-4 text-[7px] font-black uppercase tracking-[0.5em]">External SSO</span>
+                        <span class="absolute bg-[#0b111e] px-4 text-[7px] font-black uppercase tracking-[0.5em] text-slate-600">SSO Gateway</span>
                     </div>
 
-                    <button type="button" onclick="alert('MyDigitalID Bridge Active')"
-                        class="w-full flex items-center justify-center gap-4 py-5 bg-white/5 hover:bg-white/10 border border-white/5 rounded-3xl text-[9px] font-black uppercase text-slate-300 tracking-widest transition-all">
-                        <svg class="w-5 h-5 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" stroke-width="2.5"/></svg>
+                    <button type="button" 
+                        class="w-full flex items-center justify-center gap-4 py-4 bg-white/5 hover:border-yellow-400/50 border border-white/5 rounded-lg text-[9px] font-black uppercase text-slate-300 tracking-widest transition-all group">
+                        <img src="{{ asset('images/mydid-logo.png') }}" alt="MyDigitalID" class="h-5 grayscale group-hover:grayscale-0 transition-all">
                         Log Masuk MyDigitalID
                     </button>
                 </div>
             </form>
             
-            <div class="mt-12 pt-8 border-t border-white/5 flex justify-between items-center text-[8px] font-black text-slate-600 uppercase tracking-widest italic">
+            <div class="mt-12 pt-8 border-t border-white/5 flex justify-between items-center text-[7px] font-black text-slate-600 uppercase tracking-widest italic">
                 <span>PNS Selangor Gateway</span>
-                <span>v1.5-final</span>
+                <span class="flex items-center gap-2">
+                    <span class="w-1.5 h-1.5 bg-green-500 rounded-full animate-pulse"></span>
+                    Operational
+                </span>
             </div>
         </div>
     </div>

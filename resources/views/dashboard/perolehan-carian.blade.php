@@ -2,89 +2,110 @@
 
 @section('content')
 <style>
-    body { background-color: #FAFAFA; }
+    body { background-color: #F8FAFC; }
+    .rounded-sharp { border-radius: 0.75rem; }
+    /* Table style profesional & rapat */
+    .table-list { width: 100%; border-collapse: separate; border-spacing: 0; }
+    .table-list th { padding: 1.25rem 1.5rem; background: #F1F5F9; color: #475569; font-size: 10px; font-weight: 900; text-transform: uppercase; letter-spacing: 0.1em; }
+    .table-list td { padding: 1.25rem 1.5rem; border-bottom: 1px solid #F1F5F9; background: white; transition: all 0.2s; }
+    .table-list tr:hover td { background: #F8FAFC; }
+    
+    /* Status Card Style (Flat) */
+    .status-badge { padding: 0.4rem 0.8rem; border-radius: 0.5rem; font-size: 9px; font-weight: 900; text-transform: uppercase; border: 1px solid currentColor; }
 </style>
 
-<div class="mb-10 flex flex-col lg:flex-row lg:items-end justify-between gap-6">
-    <div class="space-y-1">
-        <h3 class="text-4xl font-black text-[#1E3A8A] tracking-tighter uppercase italic">Search<span class="text-blue-500">.</span>Records</h3>
-        <p class="text-[10px] font-bold text-gray-400 uppercase tracking-[0.3em]">Carian & Penapisan Maklumat Perolehan PNS</p>
-    </div>
-</div>
-
-<div class="bg-white p-10 rounded-[3rem] border border-gray-100 shadow-sm mb-10 relative overflow-hidden">
-    <div class="absolute top-0 right-0 w-32 h-32 bg-blue-50/50 rounded-bl-[5rem] -z-0"></div>
+<div class="space-y-8">
     
-    <div class="relative z-10 grid grid-cols-1 md:grid-cols-4 gap-6 items-end">
-        <div class="md:col-span-2 space-y-2">
-            <label class="text-[9px] font-black uppercase text-gray-400 tracking-widest ml-2">Kata Kunci / No. Kontrak</label>
-            <div class="relative">
-                <input type="text" placeholder="Cth: PNS/TND/2026/001 atau Kodewave..." 
-                    class="w-full bg-gray-50 border-none rounded-2xl px-6 py-4 text-xs font-bold outline-none focus:ring-2 focus:ring-blue-100 transition-all">
-                <svg class="w-4 h-4 text-gray-300 absolute right-5 top-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" stroke-width="3"/></svg>
+    <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-6 border-b border-gray-100 pb-8">
+        <div class="space-y-1">
+            <div class="flex items-center gap-2 mb-2">
+                <div class="h-1.5 w-10 bg-red-600 rounded-full"></div>
+                <div class="h-1.5 w-5 bg-yellow-400 rounded-full"></div>
             </div>
+            <h3 class="text-3xl font-black text-[#1E3A8A] tracking-tighter uppercase italic leading-none">
+                Carian <span class="text-blue-600">Rekod.</span>
+            </h3>
+            <p class="text-[10px] font-black text-slate-400 uppercase tracking-[0.3em] mt-3 italic">Pangkalan Data Berpusat PNS Selangor</p>
         </div>
-
-        <div class="space-y-2">
-            <label class="text-[9px] font-black uppercase text-gray-400 tracking-widest ml-2">Kategori Perolehan</label>
-            <select class="w-full bg-gray-50 border-none rounded-2xl p-4 text-xs font-bold outline-none appearance-none">
-                <option>Semua Jenis</option>
-                <option>Tender Terbuka</option>
-                <option>Sebut Harga</option>
-                <option>Kontrak Terus</option>
-            </select>
-        </div>
-
-        <button class="w-full py-4 bg-[#1E3A8A] text-white rounded-2xl text-[10px] font-black uppercase tracking-widest shadow-xl shadow-blue-100 hover:scale-[1.02] transition-transform">
-            Tapis Rekod
-        </button>
     </div>
-</div>
 
-<div class="bg-white rounded-[3rem] border border-gray-100 shadow-sm overflow-hidden">
-    <div class="overflow-x-auto">
-        <table class="w-full text-left">
-            <thead class="bg-gray-50/50">
+    <div class="bg-white p-6 rounded-sharp border border-gray-100 shadow-sm">
+        <div class="flex flex-col lg:flex-row gap-4">
+            <div class="flex-1 relative">
+                <input type="text" placeholder="Masukkan No. Siri, Tajuk, atau ID..." 
+                    class="w-full bg-gray-50 border border-gray-200 py-3 px-5 rounded-lg text-xs font-bold outline-none focus:border-[#1E3A8A] focus:bg-white transition-all shadow-inner">
+            </div>
+            <select class="bg-gray-50 border border-gray-200 py-3 px-5 rounded-lg text-[10px] font-black uppercase outline-none cursor-pointer">
+                <option>Semua Kategori</option>
+                <option>Harta Modal</option>
+                <option>Aset Rendah</option>
+            </select>
+            <button class="bg-[#1E3A8A] text-white px-8 py-3 rounded-lg text-[10px] font-black uppercase tracking-widest hover:bg-red-700 transition-all shadow-lg shadow-blue-900/10">
+                Cari Data
+            </button>
+        </div>
+    </div>
+
+    <div class="bg-white rounded-sharp border border-gray-100 shadow-sm overflow-hidden">
+        <table class="table-list">
+            <thead>
                 <tr>
-                    <th class="px-10 py-6 text-[10px] font-black text-gray-400 uppercase tracking-widest">ID Kontrak</th>
-                    <th class="px-10 py-6 text-[10px] font-black text-gray-400 uppercase tracking-widest">Vendor / Syarikat</th>
-                    <th class="px-10 py-6 text-[10px] font-black text-gray-400 uppercase tracking-widest">Tarikh Mula</th>
-                    <th class="px-10 py-6 text-[10px] font-black text-gray-400 uppercase tracking-widest text-right">Nilai (RM)</th>
+                    <th class="text-left w-1/4">No. Rujukan / ID</th>
+                    <th class="text-left">Perihalan Rekod</th>
+                    <th class="text-center">Kategori</th>
+                    <th class="text-center">Status</th>
+                    <th class="text-right">Tindakan</th>
                 </tr>
             </thead>
-            <tbody class="divide-y divide-gray-50">
-                @foreach([
-                    ['id' => 'PNS/TND/26/001', 'vendor' => 'KODEWAVE SDN BHD', 'date' => '05 JAN 2026', 'val' => '450,000.00'],
-                    ['id' => 'PNS/SH/26/012', 'vendor' => 'SELANGOR TECH CORP', 'date' => '12 FEB 2026', 'val' => '85,420.00'],
-                    ['id' => 'PNS/TND/26/045', 'vendor' => 'DATA SYNERGY LTD', 'date' => '01 MAC 2026', 'val' => '1,200,000.00'],
-                    ['id' => 'PNS/KT/26/009', 'vendor' => 'MAJU LOGISTICS', 'date' => '22 APR 2026', 'val' => '15,000.00'],
-                ] as $row)
-                <tr class="hover:bg-blue-50/30 transition-all cursor-pointer group">
-                    <td class="px-10 py-8 text-xs font-black text-[#1E3A8A] group-hover:underline">{{ $row['id'] }}</td>
-                    <td class="px-10 py-8">
-                        <p class="text-xs font-black text-gray-700 uppercase">{{ $row['vendor'] }}</p>
-                        <p class="text-[9px] font-bold text-gray-300 uppercase italic">Verified Partner</p>
+            <tbody>
+                @php
+                    $results = [
+                        ['id' => 'PNS/ICT/2026/001', 'title' => 'MacBook Pro M3 Max - Unit BTM', 'cat' => 'Harta Modal', 'status' => 'Aktif', 'color' => 'text-green-600 bg-green-50'],
+                        ['id' => 'TDR/SEL/2026/012', 'title' => 'Tender Bekalan Perabot Sepang', 'cat' => 'Sebut Harga', 'status' => 'Proses', 'color' => 'text-blue-600 bg-blue-50'],
+                        ['id' => 'PNS/KND/2026/089', 'title' => 'Proton X70 (BQC 1234) - Kewangan', 'cat' => 'Aset Alih', 'status' => 'Servis', 'color' => 'text-yellow-600 bg-yellow-50'],
+                        ['id' => 'PNS/PJBT/2026/115', 'title' => 'Kerusi Ergonomik Steelcase', 'cat' => 'Aset Rendah', 'status' => 'Aktif', 'color' => 'text-green-600 bg-green-50'],
+                    ];
+                @endphp
+
+                @foreach($results as $res)
+                <tr class="group">
+                    <td>
+                        <span class="text-[10px] font-black text-[#1E3A8A] block tracking-tighter">{{ $res['id'] }}</span>
+                        <span class="text-[8px] font-bold text-slate-300 uppercase italic">Daftar: 24/04/2026</span>
                     </td>
-                    <td class="px-10 py-8 text-[10px] font-black text-gray-400 uppercase">{{ $row['date'] }}</td>
-                    <td class="px-10 py-8 text-right">
-                        <span class="text-xs font-black text-blue-600 italic">RM {{ $row['val'] }}</span>
+                    <td>
+                        <span class="text-[11px] font-bold text-slate-700 uppercase">{{ $res['title'] }}</span>
+                    </td>
+                    <td class="text-center">
+                        <span class="text-[9px] font-black text-slate-400 uppercase italic tracking-tighter">{{ $res['cat'] }}</span>
+                    </td>
+                    <td class="text-center">
+                        <span class="status-badge {{ $res['color'] }}">
+                            {{ $res['status'] }}
+                        </span>
+                    </td>
+                    <td class="text-right">
+                        <div class="flex items-center justify-end gap-2">
+                            <button class="p-2 bg-white border border-gray-100 text-slate-400 hover:bg-[#1E3A8A] hover:text-white rounded-lg transition-all shadow-sm">
+                                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
+                            </button>
+                            <button class="p-2 bg-white border border-gray-100 text-slate-400 hover:bg-yellow-400 hover:text-white rounded-lg transition-all shadow-sm">
+                                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"/></svg>
+                            </button>
+                        </div>
                     </td>
                 </tr>
                 @endforeach
             </tbody>
         </table>
     </div>
-    
-    <div class="p-8 bg-gray-50/50 border-t border-gray-50 flex justify-between items-center">
-        <p class="text-[9px] font-black text-gray-400 uppercase">Menunjukkan 4 daripada 142 rekod</p>
-        <div class="flex gap-2">
-            <button class="w-8 h-8 rounded-lg bg-white border border-gray-100 flex items-center justify-center text-gray-400 hover:text-[#1E3A8A] transition-all shadow-sm">
-                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M15 19l-7-7 7-7" stroke-width="3"/></svg>
-            </button>
-            <button class="w-8 h-8 rounded-lg bg-[#1E3A8A] text-white flex items-center justify-center text-[10px] font-black shadow-lg shadow-blue-100">1</button>
-            <button class="w-8 h-8 rounded-lg bg-white border border-gray-100 flex items-center justify-center text-gray-400 hover:text-[#1E3A8A] transition-all shadow-sm">
-                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7" stroke-width="3"/></svg>
-            </button>
+
+    <div class="flex justify-between items-center px-2">
+        <p class="text-[9px] font-black text-slate-400 uppercase tracking-widest italic">Menunjukkan 4 daripada 120 Rekod</p>
+        <div class="flex gap-1">
+            <button class="w-8 h-8 flex items-center justify-center bg-[#1E3A8A] text-white rounded text-[10px] font-black italic">1</button>
+            <button class="w-8 h-8 flex items-center justify-center bg-white border border-gray-100 rounded text-[10px] font-black text-slate-400 hover:bg-gray-50 transition-all">2</button>
+            <button class="w-8 h-8 flex items-center justify-center bg-white border border-gray-100 rounded text-[10px] font-black text-slate-400 hover:bg-gray-50 transition-all">></button>
         </div>
     </div>
 </div>
