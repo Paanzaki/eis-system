@@ -116,7 +116,7 @@
                     <h4 class="text-[11px] font-bold opacity-50 uppercase tracking-[0.3em] mb-4">FAI Insight Engine</h4>
                     <p class="text-2xl font-black italic leading-tight tracking-tighter">"Daerah Petaling merekodkan pematuhan tertinggi bagi Q2."</p>
                 </div>
-                <button class="mt-12 w-full py-4 bg-white text-[#1E3A8A] rounded-2xl text-[10px] font-black uppercase tracking-widest hover:bg-yellow-400 transition-all text-center shadow-lg">Tanya AI</button>
+                <a href="{{ route('chatbot') }}" class="mt-12 w-full py-4 bg-white text-[#1E3A8A] rounded-2xl text-[10px] font-black uppercase tracking-widest hover:bg-yellow-400 transition-all text-center shadow-lg block">Tanya FAI</a>
             </div>
         </div>
     </div>
@@ -178,7 +178,7 @@
                     ['title' => 'Update Software', 'desc' => 'Server PNS Core Update', 'time' => '5h ago'],
                     ['title' => 'Pembaikan Paip', 'desc' => 'Kerosakan Tandas Aras 2', 'time' => '12h ago']
                 ] as $log)
-                <div class="border-b border-gray-50 pb-4">
+                <div class="border-b border-gray-100 pb-4">
                     <h5 class="text-[11px] font-black text-slate-700 uppercase tracking-tighter">{{ $log['title'] }}</h5>
                     <p class="text-[9px] font-bold text-slate-400 mt-1 uppercase">{{ $log['desc'] }}</p>
                     <p class="text-[8px] font-black text-yellow-600 mt-1 italic">{{ $log['time'] }}</p>
