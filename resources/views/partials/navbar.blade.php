@@ -99,7 +99,7 @@
         <!-- PROFILE & DATE GROUP -->
         <a href="{{ route('profile.edit') }}" class="flex items-center gap-3 pl-4 border-l border-gray-100 group">
             <div class="text-right hidden sm:block">
-                <p class="text-[11px] font-bold text-[#1E3A8A] uppercase italic leading-none" style="font-family: Arial !important;">
+                <p class="text-[11px] font-bold text-[#1E3A8A] uppercase  leading-none" style="font-family: Arial !important;">
                     {{ Auth::user()->name }}
                 </p>
                 <p class="text-[9px] font-bold text-slate-300 uppercase mt-1" style="font-family: Arial !important;">
