@@ -20,6 +20,7 @@ Sistem ini menggunakan bahasa rekaan **Selangor State Executive UI (SSE-UI)** ya
     * **Adaptive Persistent Sidebar:** Menggunakan `localStorage` untuk mengekalkan pilihan saiz sidebar pengguna.
     * **Dynamic Breadcrumb Pathways:** Navigasi berperingkat (Dashboard / Modul / Sub-menu).
     * **Real-time Activity Streams:** Paparan log transaksi secara langsung bagi setiap seksyen.
+    * **Hybrid Display Mode:** Sokongan *Adaptive Dark Mode* untuk keselesaan visual eksekutif.
 
 ---
 
@@ -31,6 +32,15 @@ Sistem ini menggunakan bahasa rekaan **Selangor State Executive UI (SSE-UI)** ya
 | **Frontend** | Tailwind CSS & Alpine.js |
 | **Analytics** | Chart.js Visualization Engine |
 | **AI Integration** | FAI Engine (AI Assistant) |
+
+---
+
+## 🔑 Akses Demo (Quick Login)
+Gunakan kredensial berikut untuk menguji fungsi sistem tanpa perlu mendaftar akaun baru:
+
+> [!IMPORTANT]  
+> **Email:** `user@exam.com`  
+> **Password:** `usercuba`
 
 ---
 
@@ -51,3 +61,9 @@ composer install
 
 # Install JS dependencies
 npm install
+
+# Salin fail .env
+cp .env.example .env
+
+# Jana application key
+php artisan key:generate
