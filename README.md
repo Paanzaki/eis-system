@@ -1,12 +1,36 @@
-# EIS - Executive Information System (Kodewave Sdn Bhd)
+# 🏛️ EIS - Executive Information System
+### *State-of-the-Art Management Portal for Kodewave Sdn Bhd*
 
-Sistem Pengurusan Maklumat Eksekutif yang merangkumi modul **Dashboard Statistik**, **Pengurusan Aset**, **Perolehan (CRUD)**, dan **AI Assistant**. Dibangunkan khusus untuk memenuhi keperluan digitalisasi di Kodewave Sdn Bhd.
+Sistem Pengurusan Maklumat Eksekutif (EIS) yang dibangunkan untuk memperkasakan tadbir urus digital. Sistem ini menyatukan pemantauan analitik, pengurusan aset strategik, dan automasi perolehan dalam satu ekosistem yang pintar.
+
+---
+
+## 🎨 Design Identity: SSE-UI
+Sistem ini menggunakan bahasa rekaan **Selangor State Executive UI (SSE-UI)** yang menggabungkan elemen tradisi dan futuristik:
+
+* **Primary Palette:**
+    * `Midnight Navy (#1E3A8A)` — Profesionalisme & Integriti.
+    * `State Crimson (#E11D48)` — Keberanian & Dinamisme.
+    * `Royal Amber (#FACC15)` — Kecemerlangan & Kedaulatan.
+* **Visual Philosophy:**
+    * **High-Contrast Information Density:** Paparan data yang padat untuk eksekutif.
+    * **Shadow-Gradient Hover States:** Efek bayangan Merah-Kuning pada kad statistik.
+    * **Monospaced Forensic Logging:** Estetik terminal untuk ketelusan audit sistem.
+* **Key UX Features:**
+    * **Adaptive Persistent Sidebar:** Menggunakan `localStorage` untuk mengekalkan pilihan saiz sidebar pengguna.
+    * **Dynamic Breadcrumb Pathways:** Navigasi berperingkat (Dashboard / Modul / Sub-menu).
+    * **Real-time Activity Streams:** Paparan log transaksi secara langsung bagi setiap seksyen.
+
+---
 
 ## 🛠️ Tech Stack
-- **Framework:** Laravel 12
-- **Database:** MySQL
-- **Frontend:** Tailwind CSS (Custom Theme: Anthracite & Amber)
-- **Library:** Chart.js (Dashboard Visualization)
+| Layer | Technology |
+| :--- | :--- |
+| **Framework** | Laravel 12 (PHP 8.2+) |
+| **Database** | MySQL |
+| **Frontend** | Tailwind CSS & Alpine.js |
+| **Analytics** | Chart.js Visualization Engine |
+| **AI Integration** | FAI Engine (AI Assistant) |
 
 ---
 
