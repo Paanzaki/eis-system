@@ -43,10 +43,10 @@
                 <div class="h-2 w-16 bg-red-600 rounded-full"></div>
                 <div class="h-2 w-8 bg-yellow-400 rounded-full"></div>
             </div>
-            <h3 class="text-4xl font-black text-[#1E3A8A] tracking-tighter uppercase italic leading-none">
+            <h3 class="text-4xl font-black text-[#1E3A8A] tracking-tighter uppercase  leading-none">
                 Executive <span class="text-blue-600">Overview<span class="text-yellow-400">.</span></span>
             </h3>
-            <p class="text-[12px] font-black text-slate-400 uppercase tracking-[0.4em] mt-3 italic">Pusat Kawalan Data Perbendaharaan Negeri Selangor</p>
+            <p class="text-[12px] font-black text-slate-400 uppercase tracking-[0.4em] mt-3 ">Pusat Kawalan Data Perbendaharaan Negeri Selangor</p>
         </div>
         
         <div class="flex flex-wrap gap-4 items-center">
@@ -80,8 +80,8 @@
             ['label' => 'Teguran Audit', 'val' => '02', 'sub' => 'Perlu Tindakan', 'color' => 'yellow']
         ] as $stat)
         <div class="bg-white p-10 rounded-[2.5rem] card-stat-pns group">
-            <p class="text-[11px] font-black text-slate-400 uppercase tracking-[0.2em] mb-4 italic">{{ $stat['label'] }}</p>
-            <h4 class="text-4xl font-black text-[#1E3A8A] tracking-tighter italic">{{ $stat['val'] }}</h4>
+            <p class="text-[11px] font-black text-slate-400 uppercase tracking-[0.2em] mb-4 ">{{ $stat['label'] }}</p>
+            <h4 class="text-4xl font-black text-[#1E3A8A] tracking-tighter ">{{ $stat['val'] }}</h4>
             <div class="mt-6 flex items-center gap-2">
                 <div class="w-2 h-2 bg-{{ $stat['color'] == 'blue' ? 'blue' : ($stat['color'] == 'red' ? 'red' : 'green') }}-500 rounded-full animate-pulse"></div>
                 <span class="text-[10px] font-black text-slate-400 uppercase tracking-tighter">{{ $stat['sub'] }}</span>
@@ -92,18 +92,18 @@
 
     <div class="grid grid-cols-12 gap-8">
         <div class="col-span-12 lg:col-span-8 bg-white p-10 rounded-[3rem] border border-gray-100 shadow-sm">
-            <h4 class="text-[12px] font-black text-[#1E3A8A] uppercase tracking-widest italic mb-10">Aliran Tunai & Perolehan (2026)</h4>
+            <h4 class="text-[12px] font-black text-[#1E3A8A] uppercase tracking-widest  mb-10">Aliran Tunai & Perolehan (2026)</h4>
             <div class="h-[350px]"><canvas id="bigTrendChart"></canvas></div>
         </div>
         <div class="col-span-12 lg:col-span-4 bg-white p-10 rounded-[3rem] border border-gray-100 shadow-sm flex flex-col items-center justify-center">
-            <h4 class="text-[12px] font-black text-[#1E3A8A] uppercase tracking-widest italic mb-10">Kategori Aset Utama</h4>
+            <h4 class="text-[12px] font-black text-[#1E3A8A] uppercase tracking-widest  mb-10">Kategori Aset Utama</h4>
             <div class="h-[250px] w-full"><canvas id="categoryPieChart"></canvas></div>
         </div>
     </div>
 
     <div class="grid grid-cols-12 gap-8">
         <div class="col-span-12 lg:col-span-9 bg-white p-10 rounded-[3rem] border border-gray-100 shadow-sm">
-            <h4 class="text-[12px] font-black text-[#1E3A8A] uppercase tracking-widest italic mb-10">Pematuhan Pemeriksaan Mengikut Daerah</h4>
+            <h4 class="text-[12px] font-black text-[#1E3A8A] uppercase tracking-widest  mb-10">Pematuhan Pemeriksaan Mengikut Daerah</h4>
             <div class="h-[300px]"><canvas id="districtBarChart"></canvas></div>
         </div>
         <div class="col-span-12 lg:col-span-3">
@@ -114,19 +114,19 @@
                         <svg class="w-7 h-7 text-yellow-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M13 10V3L4 14h7v7l9-11h-7z" stroke-width="2.5"/></svg>
                     </div>
                     <h4 class="text-[11px] font-bold opacity-50 uppercase tracking-[0.3em] mb-4">FAI Insight Engine</h4>
-                    <p class="text-2xl font-black italic leading-tight tracking-tighter">"Daerah Petaling merekodkan pematuhan tertinggi bagi Q2."</p>
+                    <p class="text-2xl font-black  leading-tight tracking-tighter">"Daerah Petaling merekodkan pematuhan tertinggi bagi Q2."</p>
                 </div>
                 <a href="{{ route('chatbot') }}" class="mt-12 w-full py-4 bg-white text-[#1E3A8A] rounded-2xl text-[10px] font-black uppercase tracking-widest hover:bg-yellow-400 transition-all text-center shadow-lg block">Tanya FAI</a>
             </div>
         </div>
     </div>
 
-    <h4 class="text-[12px] font-black text-[#1E3A8A] uppercase tracking-[0.3em] italic mt-12 border-l-4 border-red-600 pl-4">Live Activity Stream</h4>
+    <h4 class="text-[12px] font-black text-[#1E3A8A] uppercase tracking-[0.3em]  mt-12 border-l-4 border-red-600 pl-4">Live Activity Stream</h4>
     
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
         <div class="bg-white p-8 rounded-[2.5rem] border border-gray-100 shadow-sm flex flex-col h-[400px]">
             <div class="flex justify-between items-center mb-6">
-                <span class="text-[10px] font-black text-blue-600 uppercase italic">Perolehan</span>
+                <span class="text-[10px] font-black text-blue-600 uppercase ">Perolehan</span>
                 <div class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
             </div>
             <div class="space-y-6 overflow-y-auto custom-scrollbar flex-1 pr-2">
@@ -139,7 +139,7 @@
                 <div class="border-b border-gray-50 pb-4">
                     <h5 class="text-[11px] font-black text-slate-700 uppercase tracking-tighter">{{ $log['title'] }}</h5>
                     <p class="text-[9px] font-bold text-slate-400 mt-1 uppercase">{{ $log['desc'] }}</p>
-                    <p class="text-[8px] font-black text-blue-400 mt-1 italic">{{ $log['time'] }}</p>
+                    <p class="text-[8px] font-black text-blue-400 mt-1 ">{{ $log['time'] }}</p>
                 </div>
                 @endforeach
             </div>
@@ -147,7 +147,7 @@
 
         <div class="bg-white p-8 rounded-[2.5rem] border border-gray-100 shadow-sm flex flex-col h-[400px]">
             <div class="flex justify-between items-center mb-6">
-                <span class="text-[10px] font-black text-red-600 uppercase italic">Pengurusan Aset</span>
+                <span class="text-[10px] font-black text-red-600 uppercase ">Pengurusan Aset</span>
                 <div class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
             </div>
             <div class="space-y-6 overflow-y-auto custom-scrollbar flex-1 pr-2">
@@ -160,7 +160,7 @@
                 <div class="border-b border-gray-50 pb-4">
                     <h5 class="text-[11px] font-black text-slate-700 uppercase tracking-tighter">{{ $log['title'] }}</h5>
                     <p class="text-[9px] font-bold text-slate-400 mt-1 uppercase">{{ $log['desc'] }}</p>
-                    <p class="text-[8px] font-black text-red-400 mt-1 italic">{{ $log['time'] }}</p>
+                    <p class="text-[8px] font-black text-red-400 mt-1 ">{{ $log['time'] }}</p>
                 </div>
                 @endforeach
             </div>
@@ -168,7 +168,7 @@
 
         <div class="bg-white p-8 rounded-[2.5rem] border border-gray-100 shadow-sm flex flex-col h-[400px]">
             <div class="flex justify-between items-center mb-6">
-                <span class="text-[10px] font-black text-yellow-600 uppercase italic">Maintenance</span>
+                <span class="text-[10px] font-black text-yellow-600 uppercase ">Maintenance</span>
                 <div class="w-2 h-2 bg-yellow-500 rounded-full animate-pulse"></div>
             </div>
             <div class="space-y-6 overflow-y-auto custom-scrollbar flex-1 pr-2">
@@ -181,7 +181,7 @@
                 <div class="border-b border-gray-100 pb-4">
                     <h5 class="text-[11px] font-black text-slate-700 uppercase tracking-tighter">{{ $log['title'] }}</h5>
                     <p class="text-[9px] font-bold text-slate-400 mt-1 uppercase">{{ $log['desc'] }}</p>
-                    <p class="text-[8px] font-black text-yellow-600 mt-1 italic">{{ $log['time'] }}</p>
+                    <p class="text-[8px] font-black text-yellow-600 mt-1 ">{{ $log['time'] }}</p>
                 </div>
                 @endforeach
             </div>
@@ -189,7 +189,7 @@
 
         <div class="bg-white p-8 rounded-[2.5rem] border border-gray-100 shadow-sm flex flex-col h-[400px]">
             <div class="flex justify-between items-center mb-6">
-                <span class="text-[10px] font-black text-green-600 uppercase italic">Naziran & Audit</span>
+                <span class="text-[10px] font-black text-green-600 uppercase ">Naziran & Audit</span>
                 <div class="w-2 h-2 bg-blue-500 rounded-full animate-pulse"></div>
             </div>
             <div class="space-y-6 overflow-y-auto custom-scrollbar flex-1 pr-2">
@@ -202,7 +202,7 @@
                 <div class="border-b border-gray-50 pb-4">
                     <h5 class="text-[11px] font-black text-slate-700 uppercase tracking-tighter">{{ $log['title'] }}</h5>
                     <p class="text-[9px] font-bold text-slate-400 mt-1 uppercase">{{ $log['desc'] }}</p>
-                    <p class="text-[8px] font-black text-green-600 mt-1 italic">{{ $log['time'] }}</p>
+                    <p class="text-[8px] font-black text-green-600 mt-1 ">{{ $log['time'] }}</p>
                 </div>
                 @endforeach
             </div>

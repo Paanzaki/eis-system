@@ -9,27 +9,42 @@
     <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
+        /* FORCE ARIAL GLOBALLY */
+        * { font-family: Arial, Helvetica, sans-serif !important; }
         [x-cloak] { display: none !important; }
-        body { font-family: 'Inter', sans-serif; }
+        
+        /* CUSTOM SCROLLBAR */
         ::-webkit-scrollbar { width: 5px; }
         ::-webkit-scrollbar-thumb { background: #E2E8F0; border-radius: 10px; }
+
+        /* SMOOTH TRANSITION FOR DARK MODE */
+        .dark-mode-transition {
+            transition: background-color 0.5s ease, color 0.5s ease, border-color 0.5s ease;
+        }
     </style>
 </head>
-<body class="bg-[#F8F9FB] font-sans antialiased" 
+<body class="antialiased dark-mode-transition" 
     x-data="{ 
         sidebarOpen: true, 
         mobileMenu: false,
+        darkMode: false,
         init() {
-            // Ambil memori dari browser. Default: true (terbuka)
-            const savedState = localStorage.getItem('pns_sidebar_state');
-            this.sidebarOpen = savedState !== null ? JSON.parse(savedState) : true;
-            
-            // Simpan setiap kali user klik toggle
+            // 1. Logic Sidebar (Kekalkan yang sedia ada)
+            const savedSidebar = localStorage.getItem('pns_sidebar_state');
+            this.sidebarOpen = savedSidebar !== null ? JSON.parse(savedSidebar) : true;
             this.$watch('sidebarOpen', value => {
                 localStorage.setItem('pns_sidebar_state', JSON.stringify(value));
             });
+
+            // 2. Logic Dark Mode (Manual Persistence)
+            const savedDark = localStorage.getItem('pns_dark_mode');
+            this.darkMode = savedDark !== null ? JSON.parse(savedDark) : false;
+            this.$watch('darkMode', value => {
+                localStorage.setItem('pns_dark_mode', JSON.stringify(value));
+            });
         }
-    }">
+    }"
+    :class="darkMode ? 'bg-[#0F172A] text-slate-200' : 'bg-[#F8F9FB] text-slate-900'">
 
     <div class="flex h-screen overflow-hidden">
         @include('partials.sidebar')
@@ -46,5 +61,11 @@
             </div>
         </div>
     </div>
+
+    <script>
+        window.addEventListener('alpine:init', () => {
+            // Kau boleh tambah event listener kat sini kalau nak update chart color secara live
+        });
+    </script>
 </body>
 </html>

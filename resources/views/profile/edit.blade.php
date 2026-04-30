@@ -45,10 +45,10 @@
                 <div class="h-2 w-16 bg-red-600 rounded-full"></div>
                 <div class="h-2 w-8 bg-yellow-400 rounded-full"></div>
             </div>
-            <h3 class="text-5xl font-black text-[#1E3A8A] tracking-tighter uppercase italic leading-none">
+            <h3 class="text-5xl font-black text-[#1E3A8A] tracking-tighter uppercase  leading-none">
                 Profil <span class="text-blue-600">Eksekutif<span class="text-yellow-400">.</span></span>
             </h3>
-            <p class="text-[12px] font-black text-slate-400 uppercase tracking-[0.4em] mt-4 italic">Pengurusan Akaun & Sekuriti Digital MyDigitalID</p>
+            <p class="text-[12px] font-black text-slate-400 uppercase tracking-[0.4em] mt-4 ">Pengurusan Akaun & Sekuriti Digital MyDigitalID</p>
         </div>
         
         <div class="flex items-center gap-4 bg-white p-4 rounded-2xl shadow-sm border border-gray-100">
@@ -77,15 +77,15 @@
                     </div>
                     
                     <h4 class="text-2xl font-black text-slate-800 uppercase tracking-tighter leading-tight">{{ Auth::user()->name }}</h4>
-                    <p class="text-[11px] font-bold text-slate-400 uppercase tracking-[0.2em] mt-3 italic">Software Intern @ PNS Selangor</p>
+                    <p class="text-[11px] font-bold text-slate-400 uppercase tracking-[0.2em] mt-3 ">Software Intern @ kodewave sdn bhd</p>
                     
                     <div class="mt-10 w-full space-y-4">
                         <div class="flex items-center justify-between p-5 bg-green-50 rounded-2xl border border-green-100">
-                            <span class="text-[10px] font-black text-green-700 uppercase italic">MyDigitalID Status</span>
+                            <span class="text-[10px] font-black text-green-700 uppercase ">MyDigitalID Status</span>
                             <span class="px-4 py-1.5 bg-white rounded-lg text-[9px] font-black text-green-600 shadow-sm uppercase">Verified</span>
                         </div>
                         <div class="flex items-center justify-between p-5 bg-blue-50 rounded-2xl border border-blue-100">
-                            <span class="text-[10px] font-black text-blue-700 uppercase italic">System Privilege</span>
+                            <span class="text-[10px] font-black text-blue-700 uppercase ">System Privilege</span>
                             <span class="px-4 py-1.5 bg-white rounded-lg text-[9px] font-black text-blue-600 shadow-sm uppercase">Super Admin</span>
                         </div>
                     </div>
@@ -97,7 +97,7 @@
             
             <div class="bg-white p-12 rounded-[3rem] shadow-sm border border-gray-100">
                 <div class="flex items-center gap-4 mb-12 border-l-4 border-yellow-400 pl-6">
-                    <h4 class="text-[14px] font-black text-[#1E3A8A] uppercase tracking-widest italic">Konfigurasi Maklumat Peribadi</h4>
+                    <h4 class="text-[14px] font-black text-[#1E3A8A] uppercase tracking-widest ">Konfigurasi Maklumat Peribadi</h4>
                 </div>
                 
                 <form class="grid grid-cols-2 gap-10">
@@ -112,15 +112,15 @@
                     <div class="col-span-2 lg:col-span-1 space-y-2">
                         <label class="label-heavy">No. Kad Pengenalan</label>
                         <input type="text" value="XXXXXX-XX-XXXX" class="input-heavy" readonly>
-                        <p class="text-[8px] font-bold text-slate-300 italic uppercase mt-2">* Dikunci oleh MyDigitalID Integration</p>
+                        <p class="text-[8px] font-bold text-slate-300  uppercase mt-2">* Dikunci oleh MyDigitalID Integration</p>
                     </div>
                     <div class="col-span-2 lg:col-span-1 space-y-2">
                         <label class="label-heavy">Jabatan / Agensi</label>
-                        <input type="text" value="Perbendaharaan Negeri Selangor" class="input-heavy" readonly>
+                        <input type="text" value="Pegawai Teknologi Maklumat" class="input-heavy" readonly>
                     </div>
                     
                     <div class="col-span-2 flex justify-end pt-6">
-                        <button type="submit" class="bg-[#1E3A8A] hover:bg-red-700 text-white px-12 py-5 rounded-2xl text-[11px] font-black uppercase tracking-[0.2em] shadow-2xl shadow-blue-900/20 transition-all transform hover:scale-105 active:scale-95 italic">
+                        <button type="submit" class="bg-[#1E3A8A] hover:bg-red-700 text-white px-12 py-5 rounded-2xl text-[11px] font-black uppercase tracking-[0.2em] shadow-2xl shadow-blue-900/20 transition-all transform hover:scale-105 active:scale-95 ">
                             Simpan Kemaskini Profil
                         </button>
                     </div>
@@ -129,13 +129,13 @@
 
             <div class="bg-white p-12 rounded-[3rem] shadow-sm border border-gray-100">
                 <div class="flex items-center gap-4 mb-10 border-l-4 border-red-600 pl-6">
-                    <h4 class="text-[14px] font-black text-[#1E3A8A] uppercase tracking-widest italic">Kawalan Keselamatan & Privasi</h4>
+                    <h4 class="text-[14px] font-black text-[#1E3A8A] uppercase tracking-widest ">Kawalan Keselamatan & Privasi</h4>
                 </div>
                 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div class="flex items-center justify-between p-8 bg-slate-50 rounded-[2rem] border border-slate-100 group hover:bg-white hover:border-blue-200 transition-all">
                         <div class="space-y-1">
-                            <p class="text-[11px] font-black text-slate-700 uppercase tracking-tighter italic">Kata Laluan Sistem</p>
+                            <p class="text-[11px] font-black text-slate-700 uppercase tracking-tighter ">Kata Laluan Sistem</p>
                             <p class="text-[9px] font-bold text-slate-400 uppercase">Kekuatan: Sangat Kuat</p>
                         </div>
                         <button class="px-6 py-3 bg-white border-2 border-gray-100 rounded-xl text-[10px] font-black uppercase text-[#1E3A8A] hover:bg-blue-600 hover:text-white transition-all shadow-sm">Tukar</button>
@@ -143,7 +143,7 @@
 
                     <div class="flex items-center justify-between p-8 bg-red-50 rounded-[2rem] border border-red-100 group">
                         <div class="space-y-1">
-                            <p class="text-[11px] font-black text-red-600 uppercase tracking-tighter italic">Nyahaktif Akaun</p>
+                            <p class="text-[11px] font-black text-red-600 uppercase tracking-tighter ">Nyahaktif Akaun</p>
                             <p class="text-[9px] font-bold text-red-400 uppercase">Akses akan dipadam serta-merta</p>
                         </div>
                         <button class="px-6 py-3 bg-white border-2 border-red-200 rounded-xl text-[10px] font-black uppercase text-red-600 hover:bg-red-600 hover:text-white transition-all shadow-sm">Padam</button>

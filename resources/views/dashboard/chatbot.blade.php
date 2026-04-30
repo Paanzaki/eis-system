@@ -67,7 +67,7 @@
                 <div class="h-1.5 w-10 bg-red-600 rounded-full"></div>
                 <div class="h-1.5 w-5 bg-yellow-400 rounded-full"></div>
             </div>
-            <h3 class="text-4xl font-black text-[#1E3A8A] tracking-tighter uppercase italic leading-none">
+            <h3 class="text-4xl font-black text-[#1E3A8A] tracking-tighter uppercase  leading-none">
                 FAI <span class="text-blue-600">Chatbot<span class="text-yellow-400">.</span></span>
             </h3>
             <p class="text-[10px] font-black text-slate-400 uppercase tracking-[0.4em] mt-3 flex items-center gap-2">
@@ -80,7 +80,7 @@
                 <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
                 <span class="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
             </div>
-            <span class="text-[9px] font-black text-slate-600 uppercase tracking-widest italic">FAI Engine Active</span>
+            <span class="text-[9px] font-black text-slate-600 uppercase tracking-widest ">FAI Engine Active</span>
         </div>
     </div>
 
@@ -106,8 +106,8 @@
                     <span class="text-[11px] font-black text-[#1E3A8A] uppercase">{{ substr(Auth::user()->name, 0, 2) }}</span>
                 </div>
                 <div class="flex flex-col gap-1.5 items-end">
-                    <span class="text-[8px] font-black text-slate-400 uppercase tracking-[0.2em] mr-1 italic">Eksekutif PNS</span>
-                    <div class="bubble user-style italic">
+                    <span class="text-[8px] font-black text-slate-400 uppercase tracking-[0.2em] mr-1 ">Eksekutif PNS</span>
+                    <div class="bubble user-style ">
                         Berapakah jumlah aset ICT yang telah didaftarkan untuk suku kedua tahun 2026 mengikut Jata Selangor?
                     </div>
                 </div>
@@ -122,7 +122,7 @@
                         <span class="w-1.5 h-1.5 bg-blue-600 rounded-full typing-dot"></span>
                         <span class="w-1.5 h-1.5 bg-blue-600 rounded-full typing-dot"></span>
                         <span class="w-1.5 h-1.5 bg-blue-600 rounded-full typing-dot"></span>
-                        <span class="text-[8px] font-black text-slate-400 uppercase tracking-widest ml-2 italic">FAI sedang memproses...</span>
+                        <span class="text-[8px] font-black text-slate-400 uppercase tracking-widest ml-2 ">FAI sedang memproses...</span>
                     </div>
                 </div>
             </div>
@@ -146,7 +146,7 @@
             
             <div class="mt-5 flex flex-wrap gap-2 max-w-5xl mx-auto">
                 @foreach(['Baki Bajet Perolehan', 'Status Aset ICT Sabak', 'Panduan KEW.PA'] as $tag)
-                <button class="px-4 py-2 bg-gray-50 hover:bg-yellow-50 border border-gray-100 rounded-xl text-[9px] font-black uppercase text-slate-400 hover:text-yellow-600 transition-all italic">
+                <button class="px-4 py-2 bg-gray-50 hover:bg-yellow-50 border border-gray-100 rounded-xl text-[9px] font-black uppercase text-slate-400 hover:text-yellow-600 transition-all ">
                     # {{ $tag }}
                 </button>
                 @endforeach
