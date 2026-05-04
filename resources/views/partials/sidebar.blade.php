@@ -9,14 +9,14 @@
 
     <!-- Logo Section -->
     <div :class="darkMode ? 'border-white/5' : 'border-gray-50'"
-        class="h-28 flex flex-col justify-center px-6 overflow-hidden border-b flex-shrink-0">
+        class="h-28 flex flex-col justify-center px-6 overflow-hidden border-b flex-shrink-0 transition-colors duration-500">
         <div class="flex items-center gap-3">
             <div class="flex items-center justify-center flex-shrink-0">
                 <img src="{{ asset('images/jata-selangor.png') }}" alt="Jata" class="h-12">
             </div>
             <div x-show="sidebarOpen" x-transition.opacity class="flex items-center gap-3">
                 <h1 :class="darkMode ? 'text-blue-400' : 'text-[#1E3A8A]'"
-                    class="text-xl font-bold tracking-tighter uppercase italic whitespace-nowrap">
+                    class="text-xl font-bold tracking-tighter uppercase italic whitespace-nowrap" style="font-family: Arial !important;">
                     EIS<span class="text-yellow-400 text-2xl">.</span>PNS
                 </h1>
             </div>
@@ -35,7 +35,7 @@
             :class="[
                 '{{ request()->routeIs('dashboard') }}'
                     ? (darkMode ? 'bg-blue-500/10 text-blue-400 border-l-4 border-yellow-400' : 'bg-blue-50 text-[#1E3A8A] border-l-4 border-yellow-400')
-                    : (darkMode ? 'text-slate-400 hover:bg-white/5 hover:text-slate-200' : 'text-gray-400 hover:bg-gray-50')
+                    : (darkMode ? 'text-slate-400 hover:bg-white/5 hover:text-slate-200' : 'text-gray-400 hover:bg-gray-50 hover:text-[#1E3A8A]')
             ]"
             class="flex items-center gap-4 px-4 py-3.5 rounded-xl transition-all">
             <svg class="w-5 h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
@@ -47,7 +47,7 @@
         {{-- ── Asas & Pentadbiran ── --}}
         <div class="space-y-1">
             <button @click="openMenu === 'asas' ? openMenu = null : openMenu = 'asas'"
-                :class="darkMode ? 'text-slate-400 hover:bg-white/5 hover:text-slate-200' : 'text-gray-400 hover:bg-gray-50'"
+                :class="darkMode ? 'text-slate-400 hover:bg-white/5 hover:text-slate-200' : 'text-gray-400 hover:bg-gray-50 hover:text-[#1E3A8A]'"
                 class="w-full flex items-center justify-between px-4 py-3.5 rounded-xl transition-all">
                 <div class="flex items-center gap-4">
                     <svg class="w-5 h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
@@ -60,7 +60,7 @@
                 </svg>
             </button>
             <div x-show="openMenu === 'asas' && sidebarOpen" x-collapse x-cloak class="pl-12 space-y-1">
-                <a href="#" :class="darkMode ? 'text-slate-500 hover:text-blue-400' : 'text-gray-400 hover:text-blue-600'"
+                <a href="#" :class="darkMode ? 'text-slate-500 hover:text-blue-400' : 'text-gray-500 hover:text-[#1E3A8A]'"
                     class="block py-2 text-[9px] font-bold uppercase transition-colors">Profil & Akses</a>
             </div>
         </div>
@@ -68,7 +68,7 @@
         {{-- ── Perolehan ── --}}
         <div class="space-y-1">
             <button @click="openMenu === 'perolehan' ? openMenu = null : openMenu = 'perolehan'"
-                :class="darkMode ? 'text-slate-400 hover:bg-white/5 hover:text-slate-200' : 'text-gray-400 hover:bg-gray-50'"
+                :class="darkMode ? 'text-slate-400 hover:bg-white/5 hover:text-slate-200' : 'text-gray-400 hover:bg-gray-50 hover:text-[#1E3A8A]'"
                 class="w-full flex items-center justify-between px-4 py-3.5 rounded-xl transition-all">
                 <div class="flex items-center gap-4">
                     <svg class="w-5 h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
@@ -81,17 +81,17 @@
                 </svg>
             </button>
             <div x-show="openMenu === 'perolehan' && sidebarOpen" x-collapse x-cloak class="pl-12 space-y-1">
-                <a href="#" :class="darkMode ? 'text-slate-500 hover:text-blue-400' : 'text-gray-400 hover:text-blue-600'" class="block py-2 text-[9px] font-bold uppercase transition-colors">Perancangan Tahunan (PPT)</a>
-                <a href="#" :class="darkMode ? 'text-slate-500 hover:text-blue-400' : 'text-gray-400 hover:text-blue-600'" class="block py-2 text-[9px] font-bold uppercase transition-colors">Pelaksanaan Perolehan</a>
-                <a href="#" :class="darkMode ? 'text-slate-500 hover:text-blue-400' : 'text-gray-400 hover:text-blue-600'" class="block py-2 text-[9px] font-bold uppercase transition-colors">Tender & Kontrak</a>
-                <a href="{{ route('perolehan.data') }}" :class="darkMode ? 'text-slate-500 hover:text-blue-400' : 'text-gray-400 hover:text-blue-600'" class="block py-2 text-[9px] font-bold uppercase transition-colors">Analitik & ETL</a>
+                <a href="#" :class="darkMode ? 'text-slate-500 hover:text-blue-400' : 'text-gray-500 hover:text-[#1E3A8A]'" class="block py-2 text-[9px] font-bold uppercase transition-colors">Perancangan Tahunan (PPT)</a>
+                <a href="#" :class="darkMode ? 'text-slate-500 hover:text-blue-400' : 'text-gray-500 hover:text-[#1E3A8A]'" class="block py-2 text-[9px] font-bold uppercase transition-colors">Pelaksanaan Perolehan</a>
+                <a href="#" :class="darkMode ? 'text-slate-500 hover:text-blue-400' : 'text-gray-500 hover:text-[#1E3A8A]'" class="block py-2 text-[9px] font-bold uppercase transition-colors">Tender & Kontrak</a>
+                <a href="{{ route('perolehan.data') }}" :class="darkMode ? 'text-slate-500 hover:text-blue-400' : 'text-gray-500 hover:text-[#1E3A8A]'" class="block py-2 text-[9px] font-bold uppercase transition-colors">Analitik & ETL</a>
             </div>
         </div>
 
         {{-- ── Maklumat Aset ── --}}
         <div class="space-y-1">
             <button @click="openMenu === 'aset' ? openMenu = null : openMenu = 'aset'"
-                :class="darkMode ? 'text-slate-400 hover:bg-white/5 hover:text-slate-200' : 'text-gray-400 hover:bg-gray-50'"
+                :class="darkMode ? 'text-slate-400 hover:bg-white/5 hover:text-slate-200' : 'text-gray-400 hover:bg-gray-50 hover:text-[#1E3A8A]'"
                 class="w-full flex items-center justify-between px-4 py-3.5 rounded-xl transition-all">
                 <div class="flex items-center gap-4">
                     <svg class="w-5 h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
@@ -104,17 +104,17 @@
                 </svg>
             </button>
             <div x-show="openMenu === 'aset' && sidebarOpen" x-collapse x-cloak class="pl-12 space-y-1">
-                <a href="{{ route('aset') }}" :class="darkMode ? 'text-slate-500 hover:text-blue-400' : 'text-gray-400 hover:text-blue-600'" class="block py-2 text-[9px] font-bold uppercase transition-colors">Daftar Modal & Rendah</a>
-                <a href="#" :class="darkMode ? 'text-slate-500 hover:text-blue-400' : 'text-gray-400 hover:text-blue-600'" class="block py-2 text-[9px] font-bold uppercase transition-colors">Verifikasi Fizikal</a>
-                <a href="#" :class="darkMode ? 'text-slate-500 hover:text-blue-400' : 'text-gray-400 hover:text-blue-600'" class="block py-2 text-[9px] font-bold uppercase transition-colors">Pindahan & Pelupusan</a>
-                <a href="#" :class="darkMode ? 'text-slate-500 hover:text-blue-400' : 'text-gray-400 hover:text-blue-600'" class="block py-2 text-[9px] font-bold uppercase transition-colors">Kehilangan & Hapus Kira</a>
+                <a href="{{ route('aset') }}" :class="darkMode ? 'text-slate-500 hover:text-blue-400' : 'text-gray-500 hover:text-[#1E3A8A]'" class="block py-2 text-[9px] font-bold uppercase transition-colors">Daftar Modal & Rendah</a>
+                <a href="#" :class="darkMode ? 'text-slate-500 hover:text-blue-400' : 'text-gray-500 hover:text-[#1E3A8A]'" class="block py-2 text-[9px] font-bold uppercase transition-colors">Verifikasi Fizikal</a>
+                <a href="#" :class="darkMode ? 'text-slate-500 hover:text-blue-400' : 'text-gray-500 hover:text-[#1E3A8A]'" class="block py-2 text-[9px] font-bold uppercase transition-colors">Pindahan & Pelupusan</a>
+                <a href="#" :class="darkMode ? 'text-slate-500 hover:text-blue-400' : 'text-gray-500 hover:text-[#1E3A8A]'" class="block py-2 text-[9px] font-bold uppercase transition-colors">Kehilangan & Hapus Kira</a>
             </div>
         </div>
 
         {{-- ── Modul Naziran ── --}}
         <div class="space-y-1">
             <button @click="openMenu === 'naziran' ? openMenu = null : openMenu = 'naziran'"
-                :class="darkMode ? 'text-slate-400 hover:bg-white/5 hover:text-slate-200' : 'text-gray-400 hover:bg-gray-50'"
+                :class="darkMode ? 'text-slate-400 hover:bg-white/5 hover:text-slate-200' : 'text-gray-400 hover:bg-gray-50 hover:text-[#1E3A8A]'"
                 class="w-full flex items-center justify-between px-4 py-3.5 rounded-xl transition-all">
                 <div class="flex items-center gap-4">
                     <svg class="w-5 h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
@@ -127,8 +127,8 @@
                 </svg>
             </button>
             <div x-show="openMenu === 'naziran' && sidebarOpen" x-collapse x-cloak class="pl-12 space-y-1">
-                <a href="{{ route('naziran.perolehan') }}" :class="darkMode ? 'text-slate-500 hover:text-blue-400' : 'text-gray-400 hover:text-blue-600'" class="block py-2 text-[9px] font-bold uppercase transition-colors">Naziran Perolehan</a>
-                <a href="{{ route('naziran.aset') }}" :class="darkMode ? 'text-slate-500 hover:text-blue-400' : 'text-gray-400 hover:text-blue-600'" class="block py-2 text-[9px] font-bold uppercase transition-colors">Naziran Aset</a>
+                <a href="{{ route('naziran.perolehan') }}" :class="darkMode ? 'text-slate-500 hover:text-blue-400' : 'text-gray-500 hover:text-[#1E3A8A]'" class="block py-2 text-[9px] font-bold uppercase transition-colors">Naziran Perolehan</a>
+                <a href="{{ route('naziran.aset') }}" :class="darkMode ? 'text-slate-500 hover:text-blue-400' : 'text-gray-500 hover:text-[#1E3A8A]'" class="block py-2 text-[9px] font-bold uppercase transition-colors">Naziran Aset</a>
             </div>
         </div>
 
@@ -137,7 +137,7 @@
             :class="[
                 '{{ request()->routeIs('chatbot') }}'
                     ? (darkMode ? 'bg-blue-500/10 text-blue-400' : 'bg-blue-50 text-[#1E3A8A]')
-                    : (darkMode ? 'text-slate-400 hover:bg-white/5 hover:text-slate-200' : 'text-gray-400 hover:bg-gray-50')
+                    : (darkMode ? 'text-slate-400 hover:bg-white/5 hover:text-slate-200' : 'text-gray-400 hover:bg-gray-50 hover:text-[#1E3A8A]')
             ]"
             class="flex items-center gap-4 px-4 py-3.5 rounded-xl transition-all">
             <svg class="w-5 h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
@@ -148,7 +148,7 @@
 
         {{-- ── Migrasi Data ── --}}
         <a href="#"
-            :class="darkMode ? 'text-slate-400 hover:bg-white/5 hover:text-slate-200' : 'text-gray-400 hover:bg-gray-50'"
+            :class="darkMode ? 'text-slate-400 hover:bg-white/5 hover:text-slate-200' : 'text-gray-400 hover:bg-gray-50 hover:text-[#1E3A8A]'"
             class="flex items-center gap-4 px-4 py-3.5 rounded-xl transition-all">
             <svg class="w-5 h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
                 <path d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4"/>
@@ -159,13 +159,13 @@
     </nav>
 
     <!-- SYSTEM CONTROL (BOTTOM) -->
-    <div :class="darkMode ? 'border-white/5 bg-white/3' : 'border-gray-50 bg-gray-50/30'"
-        class="px-3 pb-4 space-y-1.5 border-t pt-4">
+    <div :class="darkMode ? 'border-white/5 bg-white/5' : 'border-gray-50 bg-gray-50/30'"
+        class="px-3 pb-4 space-y-1.5 border-t pt-4 transition-colors duration-500">
 
         {{-- ── Penyelenggaraan ── --}}
         <div class="space-y-1">
             <button @click="openMenu === 'maint' ? openMenu = null : openMenu = 'maint'"
-                :class="darkMode ? 'text-slate-400 hover:bg-white/5 hover:text-slate-200 hover:shadow-none' : 'text-gray-400 hover:bg-white hover:shadow-sm'"
+                :class="darkMode ? 'text-slate-400 hover:bg-white/5 hover:text-slate-200 hover:shadow-none' : 'text-gray-400 hover:bg-white hover:text-[#1E3A8A] hover:shadow-sm'"
                 class="w-full flex items-center justify-between px-4 py-3 rounded-xl transition-all">
                 <div class="flex items-center gap-4">
                     <svg class="w-5 h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
@@ -179,16 +179,16 @@
                 </svg>
             </button>
             <div x-show="openMenu === 'maint' && sidebarOpen" x-collapse x-cloak class="pl-12 space-y-1">
-                <a href="#" :class="darkMode ? 'text-slate-500 hover:text-blue-400' : 'text-gray-400 hover:text-blue-600'" class="block py-2 text-[9px] font-bold uppercase transition-colors">Senggara Tetapan Sistem</a>
-                <a href="#" :class="darkMode ? 'text-slate-500 hover:text-blue-400' : 'text-gray-400 hover:text-blue-600'" class="block py-2 text-[9px] font-bold uppercase transition-colors">Senggara Perolehan</a>
-                <a href="{{ route('penyelenggaraan') }}" :class="darkMode ? 'text-slate-500 hover:text-blue-400' : 'text-gray-400 hover:text-blue-600'" class="block py-2 text-[9px] font-bold uppercase transition-colors">Senggara Aset</a>
+                <a href="#" :class="darkMode ? 'text-slate-500 hover:text-blue-400' : 'text-gray-500 hover:text-[#1E3A8A]'" class="block py-2 text-[9px] font-bold uppercase transition-colors">Senggara Tetapan Sistem</a>
+                <a href="#" :class="darkMode ? 'text-slate-500 hover:text-blue-400' : 'text-gray-500 hover:text-[#1E3A8A]'" class="block py-2 text-[9px] font-bold uppercase transition-colors">Senggara Perolehan</a>
+                <a href="{{ route('penyelenggaraan') }}" :class="darkMode ? 'text-slate-500 hover:text-blue-400' : 'text-gray-500 hover:text-[#1E3A8A]'" class="block py-2 text-[9px] font-bold uppercase transition-colors">Senggara Aset</a>
             </div>
         </div>
 
         {{-- ── Tetapan ── --}}
         <div class="space-y-1">
             <button @click="openMenu === 'admin' ? openMenu = null : openMenu = 'admin'"
-                :class="darkMode ? 'text-slate-400 hover:bg-white/5 hover:text-slate-200 hover:shadow-none' : 'text-gray-400 hover:bg-white hover:shadow-sm'"
+                :class="darkMode ? 'text-slate-400 hover:bg-white/5 hover:text-slate-200 hover:shadow-none' : 'text-gray-400 hover:bg-white hover:text-[#1E3A8A] hover:shadow-sm'"
                 class="w-full flex items-center justify-between px-4 py-3 rounded-xl transition-all">
                 <div class="flex items-center gap-4">
                     <svg class="w-5 h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
@@ -201,15 +201,15 @@
                 </svg>
             </button>
             <div x-show="openMenu === 'admin' && sidebarOpen" x-collapse x-cloak class="pl-12 space-y-1">
-                <a href="#" :class="darkMode ? 'text-slate-500 hover:text-blue-400' : 'text-gray-400 hover:text-blue-600'" class="block py-2 text-[9px] font-bold uppercase transition-colors">Pendaftaran Baru</a>
-                <a href="#" :class="darkMode ? 'text-slate-500 hover:text-blue-400' : 'text-gray-400 hover:text-blue-600'" class="block py-2 text-[9px] font-bold uppercase transition-colors">Pelantikan Pegawai</a>
-                <a href="#" :class="darkMode ? 'text-slate-500 hover:text-blue-400' : 'text-gray-400 hover:text-blue-600'" class="block py-2 text-[9px] font-bold uppercase transition-colors">Audit Logs</a>
+                <a href="#" :class="darkMode ? 'text-slate-500 hover:text-blue-400' : 'text-gray-500 hover:text-[#1E3A8A]'" class="block py-2 text-[9px] font-bold uppercase transition-colors">Pendaftaran Baru</a>
+                <a href="#" :class="darkMode ? 'text-slate-500 hover:text-blue-400' : 'text-gray-500 hover:text-[#1E3A8A]'" class="block py-2 text-[9px] font-bold uppercase transition-colors">Pelantikan Pegawai</a>
+                <a href="#" :class="darkMode ? 'text-slate-500 hover:text-blue-400' : 'text-gray-500 hover:text-[#1E3A8A]'" class="block py-2 text-[9px] font-bold uppercase transition-colors">Audit Logs</a>
             </div>
         </div>
 
         {{-- ── Help & Support ── --}}
         <a href="#"
-            :class="darkMode ? 'text-slate-400 hover:bg-white/5 hover:text-slate-200 hover:shadow-none' : 'text-gray-400 hover:bg-white hover:shadow-sm'"
+            :class="darkMode ? 'text-slate-400 hover:bg-white/5 hover:text-slate-200 hover:shadow-none' : 'text-gray-400 hover:bg-white hover:text-[#1E3A8A] hover:shadow-sm'"
             class="flex items-center gap-4 px-4 py-3 rounded-xl transition-all">
             <svg class="w-5 h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
                 <path d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z"/>
@@ -221,8 +221,11 @@
         <form method="POST" action="{{ route('logout') }}" class="w-full pt-2">
             @csrf
             <button type="submit"
-                class="w-full flex items-center justify-center py-3 text-red-400 hover:text-red-500 hover:bg-red-500/10 transition-all rounded-xl group"
-                :class="sidebarOpen ? 'px-5 gap-5' : 'px-0'">
+                class="w-full flex items-center justify-center py-3 transition-all rounded-xl group"
+                :class="[
+                    sidebarOpen ? 'px-5 gap-5' : 'px-0',
+                    darkMode ? 'text-red-400 hover:text-red-300 hover:bg-red-500/10' : 'text-red-500 hover:text-red-600 hover:bg-red-50'
+                ]">
                 <svg class="w-5 h-5 flex-shrink-0 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5">
                     <path d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-6 0v-1m6-10V7a3 3 0 00-6 0v1"/>
                 </svg>
