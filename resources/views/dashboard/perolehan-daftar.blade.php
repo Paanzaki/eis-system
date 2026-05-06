@@ -1,36 +1,6 @@
-@extends('layouts.dashboard')
+﻿@extends('layouts.dashboard')
 
 @section('content')
-<style>
-    body { background-color: #F8FAFC; }
-    .profile-container { width: 100%; padding: 0 1rem; }
-    .input-heavy { 
-        background: #F9FAFB; 
-        border: 2px solid #F1F5F9; 
-        border-radius: 1rem; 
-        padding: 1.25rem 1.5rem; 
-        font-size: 13px; 
-        font-weight: 800; 
-        width: 100%; 
-        outline: none; 
-        transition: all 0.3s ease; 
-    }
-    .input-heavy:focus { 
-        background: white; 
-        border-color: #1E3A8A; 
-        box-shadow: 0 10px 20px -5px rgba(30, 58, 138, 0.1); 
-    }
-    .label-heavy {
-        font-size: 11px;
-        font-weight: 900;
-        text-transform: uppercase;
-        letter-spacing: 0.15em;
-        color: #64748B;
-        margin-left: 0.5rem;
-        margin-bottom: 0.75rem;
-        display: block;
-    }
-</style>
 
 <div class="profile-container space-y-12">
     

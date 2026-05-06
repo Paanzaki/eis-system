@@ -1,4 +1,4 @@
-<nav x-bind:class="darkMode ? 'bg-[#0F172A] border-white/5' : 'bg-white border-gray-100'"
+<nav x-bind:class="darkMode ? 'bg-white/5 backdrop-blur-2xl border-white/5' : 'bg-white border-gray-100'"
     class="border-b px-6 py-4 flex items-center justify-between z-30 sticky top-0 transition-colors duration-300">
 
     <!-- LEFT: SIDEBAR TOGGLE -->
@@ -59,7 +59,7 @@
 
             <!-- Notification Dropdown -->
             <div x-show="open" @click.away="open = false" x-cloak
-                :class="darkMode ? 'bg-[#1E293B] border-white/10 shadow-black/40' : 'bg-white border-gray-100 shadow-2xl'"
+                :class="darkMode ? 'bg-white/5 backdrop-blur-2xl border-white/10 shadow-black/40' : 'bg-white border-gray-100 shadow-2xl'"
                 class="absolute right-0 mt-3 w-80 border rounded-2xl z-50 overflow-hidden shadow-2xl transition-colors duration-200">
 
                 <!-- Header -->
@@ -86,7 +86,7 @@
                                     class="text-[10px] font-bold uppercase">Kelulusan PPT 2026</p>
                                 <p :class="darkMode ? 'text-slate-400' : 'text-slate-500'"
                                     class="text-[9px] mt-1 leading-relaxed">Perancangan Perolehan Tahunan (PPT) bagi Sektor IT telah diluluskan oleh Pegawai Kewangan Negeri.</p>
-                                <p :class="darkMode ? 'text-slate-600' : 'text-slate-300'"
+                                <p :class="darkMode ? 'text-slate-500' : 'text-slate-300'"
                                     class="text-[8px] mt-2 font-bold uppercase">2 Jam Yang Lalu</p>
                             </div>
                         </div>
@@ -107,7 +107,7 @@
                                     class="text-[10px] font-bold uppercase">Pemeriksaan Aset Alih</p>
                                 <p :class="darkMode ? 'text-slate-400' : 'text-slate-500'"
                                     class="text-[9px] mt-1 leading-relaxed">Peringatan: 15 unit aset di Jabatan Audit Selangor belum dikemaskini status verifikasi fizikalnya.</p>
-                                <p :class="darkMode ? 'text-slate-600' : 'text-slate-300'"
+                                <p :class="darkMode ? 'text-slate-500' : 'text-slate-300'"
                                     class="text-[8px] mt-2 font-bold uppercase">5 Jam Yang Lalu</p>
                             </div>
                         </div>
@@ -128,7 +128,7 @@
                                     class="text-[10px] font-bold uppercase">Amaran Keselamatan</p>
                                 <p :class="darkMode ? 'text-slate-400' : 'text-slate-500'"
                                     class="text-[9px] mt-1 leading-relaxed">Percubaan akses tidak sah dikesan pada Modul Naziran Perolehan. Sila semak Audit Log segera.</p>
-                                <p :class="darkMode ? 'text-slate-600' : 'text-slate-300'"
+                                <p :class="darkMode ? 'text-slate-500' : 'text-slate-300'"
                                     class="text-[8px] mt-2 font-bold uppercase">Semalam, 11:45 PM</p>
                             </div>
                         </div>
@@ -153,7 +153,7 @@
                     class="text-[11px] font-bold uppercase leading-none">
                     {{ Auth::user()->name }}
                 </p>
-                <p :class="darkMode ? 'text-slate-600' : 'text-slate-300'"
+                <p :class="darkMode ? 'text-slate-500' : 'text-slate-300'"
                     class="text-[9px] font-bold uppercase mt-1">
                     {{ \Carbon\Carbon::now()->format('d F Y') }}
                 </p>
@@ -165,3 +165,4 @@
 
     </div>
 </nav>
+

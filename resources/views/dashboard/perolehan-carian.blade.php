@@ -1,18 +1,6 @@
-@extends('layouts.dashboard')
+﻿@extends('layouts.dashboard')
 
 @section('content')
-<style>
-    body { background-color: #F8FAFC; }
-    .rounded-sharp { border-radius: 0.75rem; }
-    /* Table style profesional & rapat */
-    .table-list { width: 100%; border-collapse: separate; border-spacing: 0; }
-    .table-list th { padding: 1.25rem 1.5rem; background: #F1F5F9; color: #475569; font-size: 10px; font-weight: 900; text-transform: uppercase; letter-spacing: 0.1em; }
-    .table-list td { padding: 1.25rem 1.5rem; border-bottom: 1px solid #F1F5F9; background: white; transition: all 0.2s; }
-    .table-list tr:hover td { background: #F8FAFC; }
-    
-    /* Status Card Style (Flat) */
-    .status-badge { padding: 0.4rem 0.8rem; border-radius: 0.5rem; font-size: 9px; font-weight: 900; text-transform: uppercase; border: 1px solid currentColor; }
-</style>
 
 <div class="space-y-8">
     

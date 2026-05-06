@@ -1,44 +1,6 @@
-@extends('layouts.dashboard')
+﻿@extends('layouts.dashboard')
 
 @section('content')
-<style>
-    /* Reset background dashboard untuk page ni saja supaya jadi dark mode sepenuhnya */
-    .main-content-wrapper { background-color: #0f172a !important; }
-    
-    .log-sidebar {
-        width: 320px;
-        background: #111827;
-        border-right: 1px solid #1f2937;
-    }
-    
-    .log-content {
-        background: #0b0f19;
-        font-family: 'JetBrains Mono', 'Fira Code', monospace;
-    }
-
-    .file-item {
-        transition: all 0.2s;
-        border-left: 3px solid transparent;
-    }
-
-    .file-item:hover {
-        background: #1f2937;
-    }
-
-    .file-item.active {
-        background: #1e293b;
-        border-left-color: #3b82f6;
-    }
-
-    .custom-scrollbar::-webkit-scrollbar { width: 4px; }
-    .custom-scrollbar::-webkit-scrollbar-track { background: #111827; }
-    .custom-scrollbar::-webkit-scrollbar-thumb { background: #334155; border-radius: 10px; }
-
-    .terminal-text { color: #94a3b8; line-height: 1.6; font-size: 11px; }
-    .log-info { color: #3b82f6; }
-    .log-error { color: #ef4444; }
-    .log-warning { color: #f59e0b; }
-</style>
 
 <div class="flex h-[calc(100vh-180px)] rounded-[2rem] overflow-hidden border border-gray-800 shadow-2xl">
     

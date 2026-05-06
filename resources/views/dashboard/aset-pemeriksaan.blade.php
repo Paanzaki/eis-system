@@ -1,49 +1,28 @@
 @extends('layouts.dashboard')
 
 @section('content')
-<style>
-    body { background-color: #F8FAFC; }
-    .profile-container { width: 100%; padding: 0 1rem; }
-    .input-heavy { 
-        background: #F9FAFB; 
-        border: 2px solid #F1F5F9; 
-        border-radius: 1rem; 
-        padding: 1.25rem 1.5rem; 
-        font-size: 13px; 
-        font-weight: 800; 
-        width: 100%; 
-        outline: none; 
-        transition: all 0.3s ease; 
-    }
-    .input-heavy:focus { 
-        background: white; border-color: #1E3A8A; 
-        box-shadow: 0 10px 20px -5px rgba(30, 58, 138, 0.1); 
-    }
-    .asset-card { transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); border: 1px solid #F1F5F9; }
-    .asset-card:hover { border-color: #1E3A8A; transform: translateY(-4px); }
-</style>
 
-<div class="profile-container space-y-12">
-    
-    <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-6 border-b-2 border-gray-100 pb-10">
-        <div class="space-y-2">
-            <div class="flex items-center gap-2 mb-4">
+<div class="content-fluid space-y-8 pb-12">
+
+    <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-6 border-b border-gray-100 pb-10">
+        <div>
+            <div class="flex items-center gap-2 mb-3">
                 <div class="h-2 w-16 bg-red-600 rounded-full"></div>
                 <div class="h-2 w-8 bg-yellow-400 rounded-full"></div>
             </div>
-            <h3 class="text-5xl font-black text-[#1E3A8A] tracking-tighter uppercase italic leading-none">
-                Verifikasi <span class="text-blue-600">Fizikal<span class="text-yellow-400">.</span></span>
+            <h3 class="text-4xl font-black text-[#1E3A8A] tracking-tighter uppercase leading-none">
+                Verifikasi <span class="text-red-600">Fizikal.</span>
             </h3>
-            <p class="text-[12px] font-black text-slate-400 uppercase tracking-[0.4em] mt-4 italic">Pemeriksaan Berkala & Pengesahan Lokasi Aset</p>
+            <p class="text-[12px] font-black text-slate-400 uppercase tracking-[0.4em] mt-3">FB-EIS-AS-VF &mdash; Pemeriksaan Berkala & Pengesahan Lokasi Aset (KEW.PA)</p>
         </div>
-        
-        <div class="flex gap-4">
-             <div class="bg-white p-5 rounded-2xl shadow-sm border border-gray-100 text-center min-w-[150px]">
-                <p class="text-[8px] font-black text-slate-400 uppercase tracking-widest mb-1">Kemajuan Pemeriksaan</p>
-                <p class="text-xl font-black text-[#1E3A8A]">68%</p>
+        <div class="flex items-center gap-3">
+            <div class="bg-white px-6 py-3 rounded-xl border border-gray-100 shadow-sm text-center">
+                <p class="text-[9px] font-black text-slate-400 uppercase tracking-widest">Kemajuan</p>
+                <p class="text-[18px] font-black text-[#1E3A8A]">68%</p>
             </div>
-            <button class="bg-[#1E3A8A] hover:bg-red-700 text-white px-10 py-5 rounded-2xl text-[11px] font-black uppercase tracking-[0.2em] shadow-xl shadow-blue-900/20 transition-all italic">
-                + Mula Batch Baru
+            <button class="flex items-center gap-2 bg-[#1E3A8A] hover:bg-red-700 text-white px-6 py-3 rounded-xl text-[10px] font-black uppercase tracking-widest shadow-lg transition-all">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M12 4v16m8-8H4" stroke-width="2.5"/></svg>
+                Mula Batch Baru
             </button>
         </div>
     </div>
@@ -65,10 +44,10 @@
         </div>
     </div>
 
-    <div class="bg-white p-10 rounded-[3rem] shadow-xl shadow-slate-200/50 border border-gray-50">
-        <div class="flex items-center justify-between mb-10 border-l-4 border-yellow-400 pl-6">
-            <h4 class="text-[14px] font-black text-[#1E3A8A] uppercase tracking-widest italic">Senarai Aset Perlu Verifikasi</h4>
-            <span class="text-[10px] font-black text-slate-300 uppercase italic">Klik untuk kemas kini status</span>
+    <div class="bg-white p-8 rounded-[2rem] border border-gray-100 shadow-sm">
+        <div class="flex items-center justify-between mb-6 pb-4 border-b border-gray-50">
+            <h4 class="text-[12px] font-black text-[#1E3A8A] uppercase tracking-widest">Senarai Aset Perlu Verifikasi</h4>
+            <span class="text-[10px] font-black text-slate-300 uppercase">Klik status untuk kemas kini</span>
         </div>
 
         <div class="space-y-6">
@@ -84,8 +63,8 @@
                     </div>
                     <div>
                         <span class="text-[10px] font-black text-slate-300 uppercase tracking-widest">{{ $item['id'] }}</span>
-                        <h5 class="text-lg font-black text-[#1E3A8A] uppercase italic leading-tight">{{ $item['name'] }}</h5>
-                        <p class="text-[10px] font-bold text-slate-400 uppercase mt-2">Lokasi Terakhir: <span class="text-blue-600">{{ $item['loc'] }}</span></p>
+                        <h5 class="text-[13px] font-black text-[#1E3A8A] uppercase leading-tight">{{ $item['name'] }}</h5>
+                        <p class="text-[10px] font-bold text-slate-400 uppercase mt-1">Lokasi Terakhir: <span class="text-[#1E3A8A] font-black">{{ $item['loc'] }}</span></p>
                     </div>
                 </div>
 
@@ -98,5 +77,5 @@
             @endforeach
         </div>
     </div>
-</div>
+</div> {{-- content-fluid --}}
 @endsection

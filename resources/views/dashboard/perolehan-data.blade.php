@@ -1,12 +1,6 @@
-@extends('layouts.dashboard')
+﻿@extends('layouts.dashboard')
 
 @section('content')
-<style>
-    body { background-color: #F8FAFC; color: #1E293B; }
-    .rounded-sharp { border-radius: 1.25rem; }
-    .rounded-header { border-radius: 2rem; }
-    .hero-shadow { box-shadow: 0 20px 25px -5px rgba(30, 58, 138, 0.05); }
-</style>
 
 <div class="mb-10 flex flex-col lg:flex-row lg:items-end justify-between gap-6 border-b border-gray-100 pb-8">
     <div class="space-y-1">
@@ -104,7 +98,7 @@
             <div class="mt-12 pt-8 border-t border-white/10 grid grid-cols-2 gap-4">
                 <div>
                     <p class="text-[8px] font-bold opacity-40 uppercase tracking-widest mb-1">Terakhir Disinkron</p>
-                    <p class="text-[10px] font-black uppercase tracking-widest text-white">28 APR 2026 <span class="text-yellow-400 mx-1">•</span> 08:30</p>
+                    <p class="text-[10px] font-black uppercase tracking-widest text-white">28 APR 2026 <span class="text-yellow-400 mx-1">â€¢</span> 08:30</p>
                 </div>
                 <div class="text-right">
                     <p class="text-[8px] font-bold opacity-40 uppercase tracking-widest mb-1">Status Enjin</p>

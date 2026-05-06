@@ -1,93 +1,11 @@
-@extends('layouts.dashboard')
+﻿@extends('layouts.dashboard')
 
 @section('content')
-<style>
-    body { background-color: #F8FAFC; }
-    .content-fluid { width: 100%; max-width: 100%; padding: 0 1.5rem; }
 
-    .card-stat-pns {
-        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-        border: 1px solid #F1F5F9;
-        position: relative;
-        overflow: hidden;
-    }
-    .card-stat-pns:hover {
-        transform: translateY(-8px);
-        background: white;
-        box-shadow: -10px 20px 30px -15px rgba(225, 29, 72, 0.2), 10px 20px 30px -15px rgba(250, 204, 21, 0.2);
-        border-color: rgba(225, 29, 72, 0.1);
-    }
-
-    .btn-export-outline { background: white; transition: all 0.4s ease; border: 1.5px solid #F1F5F9; }
-    .icon-box { transition: all 0.3s ease; }
-    .btn-pdf-new:hover { border-color: #E11D48; background: rgba(225, 29, 72, 0.02); }
-    .btn-pdf-new:hover .icon-box { background: #E11D48; color: white; transform: scale(1.1) rotate(-5deg); }
-    .btn-excel-new:hover { border-color: #10B981; background: rgba(16, 185, 129, 0.02); }
-    .btn-excel-new:hover .icon-box { background: #10B981; color: white; transform: scale(1.1) rotate(-5deg); }
-
-    .mini-export-btn {
-        display: inline-flex; align-items: center; gap: 5px;
-        padding: 5px 10px; border-radius: 10px; font-size: 9px;
-        font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em;
-        border: 1.5px solid #F1F5F9; background: white; cursor: pointer;
-        transition: all 0.25s ease; color: #94A3B8;
-    }
-    .mini-export-btn:hover { border-color: #CBD5E1; color: #1E3A8A; }
-    .mini-export-btn svg { width: 12px; height: 12px; }
-    .mini-pdf:hover { border-color: #E11D48; color: #E11D48; }
-    .mini-excel:hover { border-color: #10B981; color: #10B981; }
-
-    .legend-dot { width: 10px; height: 10px; border-radius: 2px; flex-shrink: 0; display: inline-block; }
-
-    .custom-scrollbar::-webkit-scrollbar { width: 4px; }
-    .custom-scrollbar::-webkit-scrollbar-thumb { background: #E2E8F0; border-radius: 10px; }
-
-    /* Table styles */
-    .eis-table { width: 100%; border-collapse: collapse; font-size: 11px; }
-    .eis-table th {
-        font-size: 9px; text-transform: uppercase; letter-spacing: 0.1em;
-        color: #94A3B8; font-weight: 800; padding: 8px 10px;
-        border-bottom: 1.5px solid #F1F5F9; text-align: left; white-space: nowrap;
-    }
-    .eis-table td {
-        padding: 10px; border-bottom: 1px solid #F8FAFC;
-        color: #1E293B; vertical-align: middle;
-    }
-    .eis-table tr:last-child td { border-bottom: none; }
-    .eis-table tbody tr:hover td { background: #F8FAFC; }
-
-    /* Badge styles */
-    .badge {
-        display: inline-block; padding: 3px 9px; border-radius: 6px;
-        font-size: 9px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em;
-    }
-    .badge-green  { background: #F0FDF4; color: #15803D; }
-    .badge-amber  { background: #FFFBEB; color: #B45309; }
-    .badge-red    { background: #FFF1F2; color: #BE123C; }
-    .badge-blue   { background: #EFF6FF; color: #1D4ED8; }
-    .badge-purple { background: #F5F3FF; color: #6D28D9; }
-    .badge-gray   { background: #F8FAFC; color: #64748B; }
-
-    /* Progress bar */
-    .prog-wrap { height: 5px; background: #F1F5F9; border-radius: 3px; overflow: hidden; min-width: 70px; }
-    .prog-fill  { height: 100%; border-radius: 3px; }
-
-    /* Section divider */
-    .section-divider {
-        font-size: 11px; font-weight: 800; color: #1E3A8A;
-        text-transform: uppercase; letter-spacing: 0.3em;
-        border-left: 4px solid #E11D48; padding-left: 14px;
-        margin-top: 3rem; margin-bottom: 1.5rem;
-    }
-
-    /* Trend sparkline inline */
-    .trend-up   { color: #10B981; font-size: 10px; font-weight: 800; }
-    .trend-down { color: #E11D48; font-size: 10px; font-weight: 800; }
-</style>
 
 <div class="content-fluid space-y-8 pb-12">
 
-    {{-- ── Page Header ── --}}
+    {{-- â”€â”€ Page Header â”€â”€ --}}
     <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-6 border-b border-gray-100 pb-10">
         <div class="space-y-1">
             <div class="flex items-center gap-2 mb-3">
@@ -123,7 +41,7 @@
         </div>
     </div>
 
-    {{-- ── KPI Cards Row 1 ── --}}
+    {{-- â”€â”€ KPI Cards Row 1 â”€â”€ --}}
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
         @foreach([
             ['label' => 'Perolehan Semasa',  'val' => 'RM 8.24M', 'sub' => '+12.5% VS 2025',       'color' => 'blue'],
@@ -142,7 +60,7 @@
         @endforeach
     </div>
 
-    {{-- ── KPI Cards Row 2 ── --}}
+    {{-- â”€â”€ KPI Cards Row 2 â”€â”€ --}}
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
         @foreach([
             ['label' => 'Kontrak Aktif',    'val' => '38',    'sub' => '5 Tamat Bulan Ini',     'color' => 'blue'],
@@ -161,7 +79,7 @@
         @endforeach
     </div>
 
-    {{-- ── Row 1: Line + Donut ── --}}
+    {{-- â”€â”€ Row 1: Line + Donut â”€â”€ --}}
     <div class="grid grid-cols-12 gap-8">
 
         {{-- Line Chart --}}
@@ -255,7 +173,7 @@
         </div>
     </div>
 
-    {{-- ── Row 2: Bar + AI Insight ── --}}
+    {{-- â”€â”€ Row 2: Bar + AI Insight â”€â”€ --}}
     <div class="grid grid-cols-12 gap-8">
 
         {{-- Bar Chart --}}
@@ -263,7 +181,7 @@
             <div class="flex items-start justify-between mb-2">
                 <div>
                     <h4 class="text-[12px] font-black text-[#1E3A8A] uppercase tracking-widest">Pematuhan Pemeriksaan Mengikut Daerah</h4>
-                    <p class="text-[10px] text-slate-400 font-bold uppercase tracking-widest mt-1">Peratusan pematuhan standard (%) — Q2 2026</p>
+                    <p class="text-[10px] text-slate-400 font-bold uppercase tracking-widest mt-1">Peratusan pematuhan standard (%) â€” Q2 2026</p>
                 </div>
                 <div class="flex gap-2">
                     <button onclick="exportChartPDF('districtBarChart','Pematuhan Pemeriksaan Daerah')" class="mini-export-btn mini-pdf">
@@ -296,10 +214,10 @@
 
             <div class="flex items-center gap-6 mb-4">
                 <span class="flex items-center gap-2 text-[10px] font-bold text-slate-500 uppercase tracking-wider">
-                    <span class="legend-dot" style="background:#1E3A8A;"></span> Pematuhan ≥80% (Lulus)
+                    <span class="legend-dot" style="background:#1E3A8A;"></span> Pematuhan â‰¥80% (Lulus)
                 </span>
                 <span class="flex items-center gap-2 text-[10px] font-bold text-slate-500 uppercase tracking-wider">
-                    <span class="legend-dot" style="background:#3B82F6;"></span> 65–79% (Sederhana)
+                    <span class="legend-dot" style="background:#3B82F6;"></span> 65â€“79% (Sederhana)
                 </span>
                 <span class="flex items-center gap-2 text-[10px] font-bold text-slate-500 uppercase tracking-wider">
                     <span class="legend-dot" style="background:#E11D48;"></span> &lt;65% (Kritikal)
@@ -331,7 +249,7 @@
         </div>
     </div>
 
-    {{-- ── Row 3: Allocation Bar + Condition Donut + Inspection Progress ── --}}
+    {{-- â”€â”€ Row 3: Allocation Bar + Condition Donut + Inspection Progress â”€â”€ --}}
     <div class="grid grid-cols-12 gap-8">
 
         {{-- Allocation Horizontal Bar --}}
@@ -391,7 +309,7 @@
         <div class="col-span-12 lg:col-span-4 bg-white p-10 rounded-[3rem] border border-gray-100 shadow-sm">
             <div class="mb-6">
                 <h4 class="text-[12px] font-black text-[#1E3A8A] uppercase tracking-widest">Log Pemeriksaan Fizikal</h4>
-                <p class="text-[10px] text-slate-400 font-bold uppercase tracking-widest mt-1">Mengikut Daerah — Q2 2026</p>
+                <p class="text-[10px] text-slate-400 font-bold uppercase tracking-widest mt-1">Mengikut Daerah â€” Q2 2026</p>
             </div>
             <div class="space-y-5">
                 @foreach([
@@ -416,14 +334,14 @@
         </div>
     </div>
 
-    {{-- ── Perolehan: Senarai Kontrak Aktif ── --}}
-    <div class="section-divider">Perolehan — Senarai Kontrak Aktif</div>
+    {{-- â”€â”€ Perolehan: Senarai Kontrak Aktif â”€â”€ --}}
+    <div class="section-divider">Perolehan â€” Senarai Kontrak Aktif</div>
 
     <div class="bg-white rounded-[2.5rem] border border-gray-100 shadow-sm overflow-hidden">
         <div class="flex items-center justify-between px-10 py-8 border-b border-gray-50">
             <div>
                 <h4 class="text-[12px] font-black text-[#1E3A8A] uppercase tracking-widest">Kontrak Aktif 2026</h4>
-                <p class="text-[10px] text-slate-400 font-bold uppercase tracking-widest mt-1">38 Kontrak — Nilai RM 24.6M</p>
+                <p class="text-[10px] text-slate-400 font-bold uppercase tracking-widest mt-1">38 Kontrak â€” Nilai RM 24.6M</p>
             </div>
             <div class="flex gap-2">
                 <button onclick="exportChartExcel('contracts')" class="mini-export-btn mini-excel">
@@ -482,8 +400,8 @@
         </div>
     </div>
 
-    {{-- ── Aset: Daftar Harta Modal + Syor Pelupusan ── --}}
-    <div class="section-divider">Pengurusan Aset — Daftar Harta Modal & Pelupusan</div>
+    {{-- â”€â”€ Aset: Daftar Harta Modal + Syor Pelupusan â”€â”€ --}}
+    <div class="section-divider">Pengurusan Aset â€” Daftar Harta Modal & Pelupusan</div>
 
     <div class="grid grid-cols-12 gap-8">
 
@@ -580,7 +498,7 @@
         </div>
     </div>
 
-    {{-- ── Audit Trail / Teguran ── --}}
+    {{-- â”€â”€ Audit Trail / Teguran â”€â”€ --}}
     <div class="section-divider">Audit Trail & Teguran</div>
 
     <div class="grid grid-cols-12 gap-8">
@@ -590,7 +508,7 @@
             <div class="flex items-center justify-between px-10 py-8 border-b border-gray-50">
                 <div>
                     <h4 class="text-[12px] font-black text-[#1E3A8A] uppercase tracking-widest">Jejak Audit Terkini</h4>
-                    <p class="text-[10px] text-slate-400 font-bold uppercase tracking-widest mt-1">Log transaksi sistem — Rekod automatik</p>
+                    <p class="text-[10px] text-slate-400 font-bold uppercase tracking-widest mt-1">Log transaksi sistem â€” Rekod automatik</p>
                 </div>
                 <button onclick="exportChartExcel('audit')" class="mini-export-btn mini-excel">
                     <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" stroke-width="2"/></svg> Excel
@@ -613,7 +531,7 @@
                         @foreach([
                             ['ts'=>'30/04/2026 14:32','user'=>'Ahmad Fadzil','role'=>'Pentadbir','modul'=>'Perolehan','action'=>'Kemaskini','rekod'=>'KTR/2026/001','status'=>'green','status_label'=>'Berjaya'],
                             ['ts'=>'30/04/2026 13:15','user'=>'Siti Hajar','role'=>'Pegawai Aset','modul'=>'Aset','action'=>'Daftar Baru','rekod'=>'PNS/ICT/089','status'=>'green','status_label'=>'Berjaya'],
-                            ['ts'=>'30/04/2026 11:40','user'=>'Mohd Razif','role'=>'Eksekutif','modul'=>'Dashboard','action'=>'Log Masuk','rekod'=>'—','status'=>'blue','status_label'=>'Info'],
+                            ['ts'=>'30/04/2026 11:40','user'=>'Mohd Razif','role'=>'Eksekutif','modul'=>'Dashboard','action'=>'Log Masuk','rekod'=>'â€”','status'=>'blue','status_label'=>'Info'],
                             ['ts'=>'30/04/2026 10:22','user'=>'Nurul Ain','role'=>'Pegawai Aset','modul'=>'Aset','action'=>'Kemaskini Lokasi','rekod'=>'PNS/KDR/041','status'=>'green','status_label'=>'Berjaya'],
                             ['ts'=>'30/04/2026 09:05','user'=>'Zulkifli Omar','role'=>'Pentadbir','modul'=>'Perolehan','action'=>'Tambah Kontrak','rekod'=>'KTR/2026/008','status'=>'green','status_label'=>'Berjaya'],
                             ['ts'=>'29/04/2026 17:45','user'=>'Azlan Shah','role'=>'Pengguna','modul'=>'Laporan','action'=>'Jana PDF','rekod'=>'Laporan Q2','status'=>'blue','status_label'=>'Info'],
@@ -638,7 +556,7 @@
         <div class="col-span-12 lg:col-span-4 bg-white rounded-[2.5rem] border border-gray-100 shadow-sm overflow-hidden flex flex-col">
             <div class="px-10 py-8 border-b border-gray-50">
                 <h4 class="text-[12px] font-black text-[#1E3A8A] uppercase tracking-widest">Teguran Audit Aktif</h4>
-                <p class="text-[10px] text-slate-400 font-bold uppercase tracking-widest mt-1">02 Teguran — Perlu Tindakan Segera</p>
+                <p class="text-[10px] text-slate-400 font-bold uppercase tracking-widest mt-1">02 Teguran â€” Perlu Tindakan Segera</p>
             </div>
             <div class="p-8 space-y-6 flex-1">
                 @foreach([
@@ -669,7 +587,7 @@
                         <span class="badge badge-{{ $teg['urgency'] }}">{{ $teg['urgency_label'] }}</span>
                     </div>
                     <h5 class="text-[12px] font-black text-[#1E3A8A] uppercase tracking-tighter mb-1">{{ $teg['tajuk'] }}</h5>
-                    <p class="text-[10px] text-slate-500 font-bold mb-3">{{ $teg['modul'] }} — {{ $teg['ptj'] }}</p>
+                    <p class="text-[10px] text-slate-500 font-bold mb-3">{{ $teg['modul'] }} â€” {{ $teg['ptj'] }}</p>
                     <p class="text-[10px] text-slate-600 leading-relaxed mb-3">{{ $teg['tindakan'] }}</p>
                     <div class="flex items-center gap-2">
                         <div class="w-1.5 h-1.5 bg-red-500 rounded-full animate-pulse"></div>
@@ -681,7 +599,7 @@
         </div>
     </div>
 
-    {{-- ── Live Activity Stream ── --}}
+    {{-- â”€â”€ Live Activity Stream â”€â”€ --}}
     <div class="section-divider">Live Activity Stream</div>
 
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -741,7 +659,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     const fmtRM = v => 'RM ' + (v >= 1000000 ? (v / 1000000).toFixed(1) + 'M' : (v / 1000).toFixed(0) + 'K');
 
-    // ── Line Chart: Aliran Tunai & Perolehan ──
+    // â”€â”€ Line Chart: Aliran Tunai & Perolehan â”€â”€
     const trendLabels = ['JAN', 'FEB', 'MAC', 'APR', 'MEI', 'JUN'];
     const trendData   = [1200000, 1900000, 1500000, 2500000, 2200000, 3100000];
     const targetData  = [2000000, 2000000, 2000000, 2000000, 2000000, 2000000];
@@ -799,7 +717,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 
-    // ── Donut Chart: Kategori Aset ──
+    // â”€â”€ Donut Chart: Kategori Aset â”€â”€
     const catData  = [5581, 3101, 2480, 1240];
     const catTotal = catData.reduce((a, b) => a + b, 0);
 
@@ -833,7 +751,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 
-    // ── Bar Chart: Pematuhan Daerah ──
+    // â”€â”€ Bar Chart: Pematuhan Daerah â”€â”€
     const districtLabels = ['Petaling', 'Gombak', 'Klang', 'Sepang', 'Hulu Langat', 'Kuala Selangor'];
     const districtData   = [85, 72, 65, 90, 55, 68];
     const barColors      = districtData.map(v => v >= 80 ? '#1E3A8A' : v >= 65 ? '#3B82F6' : '#E11D48');
@@ -888,7 +806,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 
-    // ── Horizontal Bar: Agihan Peruntukan ──
+    // â”€â”€ Horizontal Bar: Agihan Peruntukan â”€â”€
     new Chart(document.getElementById('allocationChart').getContext('2d'), {
         type: 'bar',
         data: {
@@ -923,7 +841,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 
-    // ── Donut Chart: Kondisi Aset ──
+    // â”€â”€ Donut Chart: Kondisi Aset â”€â”€
     const condData  = [8433, 2728, 868, 373];
     const condTotal = condData.reduce((a, b) => a + b, 0);
 
@@ -958,14 +876,14 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
-// ── Export Helpers ──
+// â”€â”€ Export Helpers â”€â”€
 function exportChartPDF(canvasId, title) {
     const canvas = document.getElementById(canvasId);
     const url    = canvas.toDataURL('image/png');
     const win    = window.open('', '_blank');
     win.document.write(
         '<html><head><title>' + title + '</title>' +
-        '<style>body{margin:2rem;font-family:system-ui;}h2{color:#1E3A8A;}p{color:#94A3B8;font-size:12px;}img{max-width:100%;border:1px solid #eee;border-radius:12px;margin-top:1rem;}</style>' +
+        '' +
         '</head><body>' +
         '<h2>' + title + '</h2>' +
         '<p>Dijana pada: ' + new Date().toLocaleString('ms-MY') + '</p>' +
@@ -982,7 +900,7 @@ function exportTablePDF(tableId, title) {
     const win = window.open('', '_blank');
     win.document.write(
         '<html><head><title>' + title + '</title>' +
-        '<style>body{margin:2rem;font-family:system-ui;font-size:12px;}h2{color:#1E3A8A;}p{color:#94A3B8;font-size:11px;margin-bottom:1rem;}table{width:100%;border-collapse:collapse;}th{background:#1E3A8A;color:white;padding:8px;font-size:10px;text-transform:uppercase;letter-spacing:0.05em;text-align:left;}td{padding:8px;border-bottom:1px solid #F1F5F9;font-size:11px;}tr:hover td{background:#F8FAFC;}</style>' +
+        '' +
         '</head><body>' +
         '<h2>' + title + '</h2>' +
         '<p>Dijana pada: ' + new Date().toLocaleString('ms-MY') + '</p>' +
@@ -1047,7 +965,7 @@ function exportChartExcel(type) {
             rows: [
                 ['30/04/2026 14:32', 'Ahmad Fadzil',  'Pentadbir',    'Perolehan', 'Kemaskini',       'KTR/2026/001', 'Berjaya'],
                 ['30/04/2026 13:15', 'Siti Hajar',    'Pegawai Aset', 'Aset',      'Daftar Baru',     'PNS/ICT/089',  'Berjaya'],
-                ['30/04/2026 11:40', 'Mohd Razif',    'Eksekutif',    'Dashboard', 'Log Masuk',       '—',            'Info'],
+                ['30/04/2026 11:40', 'Mohd Razif',    'Eksekutif',    'Dashboard', 'Log Masuk',       'â€”',            'Info'],
                 ['30/04/2026 10:22', 'Nurul Ain',     'Pegawai Aset', 'Aset',      'Kemaskini Lokasi','PNS/KDR/041',  'Berjaya'],
                 ['30/04/2026 09:05', 'Zulkifli Omar', 'Pentadbir',    'Perolehan', 'Tambah Kontrak',  'KTR/2026/008', 'Berjaya'],
                 ['29/04/2026 17:45', 'Azlan Shah',    'Pengguna',     'Laporan',   'Jana PDF',        'Laporan Q2',   'Info'],

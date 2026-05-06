@@ -1,63 +1,6 @@
-@extends('layouts.dashboard')
+﻿@extends('layouts.dashboard')
 
 @section('content')
-<style>
-    body { background-color: #F8FAFC; }
-    .rounded-sharp { border-radius: 1rem; }
-    
-    /* Container Chat - Dot Pattern Background untuk vibe SaaS */
-    .chat-container { 
-        height: calc(100vh - 420px); 
-        min-height: 500px;
-        background-color: #f9fafb;
-        background-image: radial-gradient(#e5e7eb 0.7px, transparent 0.7px);
-        background-size: 24px 24px;
-    }
-    
-    /* Bubble Styling - 65% width supaya tak nampak macam box PPT */
-    .bubble {
-        position: relative;
-        max-width: 65%;
-        padding: 1rem 1.25rem;
-        font-size: 11px;
-        line-height: 1.6;
-        font-weight: 600;
-        transition: all 0.2s ease;
-    }
-
-    /* Bot Style: Clean, white, elevated */
-    .bot-style {
-        background: #FFFFFF;
-        color: #334155;
-        border-radius: 4px 16px 16px 16px;
-        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
-        border: 1px solid #f1f5f9;
-    }
-
-    /* User Style: Bold Navy with depth */
-    .user-style {
-        background: #1E3A8A;
-        color: #FFFFFF;
-        border-radius: 16px 16px 4px 16px;
-        box-shadow: 0 10px 15px -3px rgba(30, 58, 138, 0.2);
-    }
-
-    .avatar-frame {
-        width: 40px;
-        height: 40px;
-        border-radius: 12px;
-        overflow: hidden;
-        flex-shrink: 0;
-        border: 2px solid white;
-        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-    }
-
-    /* Typing Animation */
-    .typing-dot { animation: typing 1.4s infinite; opacity: 0.3; }
-    .typing-dot:nth-child(2) { animation-delay: 0.2s; }
-    .typing-dot:nth-child(3) { animation-delay: 0.4s; }
-    @keyframes typing { 0%, 100% { opacity: 0.3; transform: translateY(0); } 50% { opacity: 1; transform: translateY(-4px); } }
-</style>
 
 <div class="max-w-6xl mx-auto space-y-6">
     

@@ -1,18 +1,6 @@
-@extends('layouts.dashboard')
+﻿@extends('layouts.dashboard')
 
 @section('content')
-<style>
-    body { background-color: #F8FAFC; }
-    .rounded-sharp { border-radius: 1.25rem; }
-    .permission-tag { padding: 0.35rem 0.75rem; border-radius: 0.5rem; font-size: 8px; font-weight: 900; text-transform: uppercase; }
-    
-    /* Animasi untuk bagi card "Hidup" */
-    .role-card { transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
-    .role-card:hover { transform: translateY(-5px); }
-    .glow-red { box-shadow: 0 10px 20px -5px rgba(225, 29, 72, 0.15); }
-    .glow-blue { box-shadow: 0 10px 20px -5px rgba(30, 58, 138, 0.15); }
-    .glow-yellow { box-shadow: 0 10px 20px -5px rgba(234, 179, 8, 0.15); }
-</style>
 
 <div class="space-y-8">
     

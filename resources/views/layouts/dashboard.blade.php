@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EIS Selangor — Executive Portal</title>
+    <title>EIS Selangor â€” Executive Portal</title>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     <script defer src="https://unpkg.com/@alpinejs/collapse@3.x.x/dist/cdn.min.js"></script>
     <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
@@ -39,12 +39,22 @@
             // 2. Logic Dark Mode (Manual Persistence)
             const savedDark = localStorage.getItem('pns_dark_mode');
             this.darkMode = savedDark !== null ? JSON.parse(savedDark) : false;
+            
+            if (this.darkMode) {
+                document.documentElement.classList.add('dark');
+            }
+            
             this.$watch('darkMode', value => {
                 localStorage.setItem('pns_dark_mode', JSON.stringify(value));
+                if (value) {
+                    document.documentElement.classList.add('dark');
+                } else {
+                    document.documentElement.classList.remove('dark');
+                }
             });
         }
     }"
-    :class="darkMode ? 'bg-[#0F172A] text-slate-200' : 'bg-[#F8F9FB] text-slate-900'">
+    :class="darkMode ? 'bg-[#090e1a] text-slate-200' : 'bg-[#F8F9FB] text-slate-900'">
 
     <div class="flex h-screen overflow-hidden">
         @include('partials.sidebar')

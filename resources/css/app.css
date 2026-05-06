@@ -1,3 +1,424 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+    body { background-color: #F8FAFC; }
+    .content-fluid { width: 100%; max-width: 100%; padding: 0 1.5rem; }
+
+    /* Sidebar nav items */
+    .nav-item { border-left-width: 3px; }
+    .sub-item { border-radius: 0 8px 8px 0; }
+
+    /* Sidebar scrollbar */
+    .sidebar-scroll::-webkit-scrollbar       { width: 3px; }
+    .sidebar-scroll::-webkit-scrollbar-track { background: transparent; }
+    .sidebar-scroll::-webkit-scrollbar-thumb { background: rgba(148,163,184,0.2); border-radius: 10px; }
+
+    /* Sidebar dark overrides */
+    .dark .sidebar-panel {
+        background-color: rgba(9, 14, 26, 0.95);
+        border-right-color: rgba(255, 255, 255, 0.06);
+    }
+
+    .card-stat-pns {
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        border: 1px solid #F1F5F9;
+        position: relative;
+        overflow: hidden;
+    }
+    .card-stat-pns:hover {
+        transform: translateY(-8px);
+        background: white;
+        box-shadow: -10px 20px 30px -15px rgba(225, 29, 72, 0.2), 10px 20px 30px -15px rgba(250, 204, 21, 0.2);
+        border-color: rgba(225, 29, 72, 0.1);
+    }
+
+    .btn-export-outline { background: white; transition: all 0.4s ease; border: 1.5px solid #F1F5F9; }
+    .icon-box { transition: all 0.3s ease; }
+    .btn-pdf-new:hover { border-color: #E11D48; background: rgba(225, 29, 72, 0.02); }
+    .btn-pdf-new:hover .icon-box { background: #E11D48; color: white; transform: scale(1.1) rotate(-5deg); }
+    .btn-excel-new:hover { border-color: #10B981; background: rgba(16, 185, 129, 0.02); }
+    .btn-excel-new:hover .icon-box { background: #10B981; color: white; transform: scale(1.1) rotate(-5deg); }
+
+    .mini-export-btn {
+        display: inline-flex; align-items: center; gap: 5px;
+        padding: 5px 10px; border-radius: 10px; font-size: 9px;
+        font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em;
+        border: 1.5px solid #F1F5F9; background: white; cursor: pointer;
+        transition: all 0.25s ease; color: #94A3B8;
+    }
+    .mini-export-btn:hover { border-color: #CBD5E1; color: #1E3A8A; }
+    .mini-export-btn svg { width: 12px; height: 12px; }
+    .mini-pdf:hover { border-color: #E11D48; color: #E11D48; }
+    .mini-excel:hover { border-color: #10B981; color: #10B981; }
+
+    .legend-dot { width: 10px; height: 10px; border-radius: 2px; flex-shrink: 0; display: inline-block; }
+
+    .custom-scrollbar::-webkit-scrollbar { width: 4px; }
+    .custom-scrollbar::-webkit-scrollbar-thumb { background: #E2E8F0; border-radius: 10px; }
+
+    /* Table styles */
+    .eis-table { width: 100%; border-collapse: collapse; font-size: 11px; }
+    .eis-table th {
+        font-size: 9px; text-transform: uppercase; letter-spacing: 0.1em;
+        color: #94A3B8; font-weight: 800; padding: 8px 10px;
+        border-bottom: 1.5px solid #F1F5F9; text-align: left; white-space: nowrap;
+    }
+    .eis-table td {
+        padding: 10px; border-bottom: 1px solid #F8FAFC;
+        color: #1E293B; vertical-align: middle;
+    }
+    .eis-table tr:last-child td { border-bottom: none; }
+    .eis-table tbody tr:hover td { background: #F8FAFC; }
+
+    /* Badge styles */
+    .badge {
+        display: inline-block; padding: 3px 9px; border-radius: 6px;
+        font-size: 9px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em;
+    }
+    .badge-green  { background: #F0FDF4; color: #15803D; }
+    .badge-amber  { background: #FFFBEB; color: #B45309; }
+    .badge-red    { background: #FFF1F2; color: #BE123C; }
+    .badge-blue   { background: #EFF6FF; color: #1D4ED8; }
+    .badge-purple { background: #F5F3FF; color: #6D28D9; }
+    .badge-gray   { background: #F8FAFC; color: #64748B; }
+
+    /* Progress bar */
+    .prog-wrap { height: 5px; background: #F1F5F9; border-radius: 3px; overflow: hidden; min-width: 70px; }
+    .prog-fill  { height: 100%; border-radius: 3px; }
+
+    /* Section divider */
+    .section-divider {
+        font-size: 11px; font-weight: 800; color: #1E3A8A;
+        text-transform: uppercase; letter-spacing: 0.3em;
+        border-left: 4px solid #E11D48; padding-left: 14px;
+        margin-top: 3rem; margin-bottom: 1.5rem;
+    }
+
+    /* Trend sparkline inline */
+    .trend-up   { color: #10B981; font-size: 10px; font-weight: 800; }
+    .trend-down { color: #E11D48; font-size: 10px; font-weight: 800; }
+    /* Animasi untuk bagi card "Hidup" */
+    .role-card { transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
+    .role-card:hover { transform: translateY(-5px); }
+    .glow-red { box-shadow: 0 10px 20px -5px rgba(225, 29, 72, 0.15); }
+    .glow-blue { box-shadow: 0 10px 20px -5px rgba(30, 58, 138, 0.15); }
+    .glow-yellow { box-shadow: 0 10px 20px -5px rgba(234, 179, 8, 0.15); }
+
+    .rounded-sharp { border-radius: 1rem; }
+    .profile-container { width: 100%; padding: 0 1rem; }
+    .input-heavy { 
+        background: #F9FAFB; 
+        border: 2px solid #F1F5F9; 
+        border-radius: 1rem; 
+        padding: 1.25rem 1.5rem; 
+        font-size: 13px; 
+        font-weight: 800; 
+        width: 100%; 
+        outline: none; 
+        transition: all 0.3s ease; 
+    }
+    .input-heavy:focus { 
+        background: white; border-color: #1E3A8A; 
+        box-shadow: 0 10px 20px -5px rgba(30, 58, 138, 0.1); 
+    }
+    .asset-card { transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); border: 1px solid #F1F5F9; }
+    .asset-card:hover { border-color: #1E3A8A; transform: translateY(-4px); }
+
+    .table-row-hover:hover { background-color: #FEFCE8; transition: all 0.2s ease; } /* Hint Kuning Selangor */
+
+    /* Container Chat - Dot Pattern Background untuk vibe SaaS */
+    .chat-container { 
+        height: calc(100vh - 420px); 
+        min-height: 500px;
+        background-color: #f9fafb;
+        background-image: radial-gradient(#e5e7eb 0.7px, transparent 0.7px);
+        background-size: 24px 24px;
+    }
+    
+    /* Bubble Styling - 65% width supaya tak nampak macam box PPT */
+    .bubble {
+        position: relative;
+        max-width: 65%;
+        padding: 1rem 1.25rem;
+        font-size: 11px;
+        line-height: 1.6;
+        font-weight: 600;
+        transition: all 0.2s ease;
+    }
+
+    /* Bot Style: Clean, white, elevated */
+    .bot-style {
+        background: #FFFFFF;
+        color: #334155;
+        border-radius: 4px 16px 16px 16px;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+        border: 1px solid #f1f5f9;
+    }
+
+    /* User Style: Bold Navy with depth */
+    .user-style {
+        background: #1E3A8A;
+        color: #FFFFFF;
+        border-radius: 16px 16px 4px 16px;
+        box-shadow: 0 10px 15px -3px rgba(30, 58, 138, 0.2);
+    }
+
+    .avatar-frame {
+        width: 40px;
+        height: 40px;
+        border-radius: 12px;
+        overflow: hidden;
+        flex-shrink: 0;
+        border: 2px solid white;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Typing Animation */
+    .typing-dot { animation: typing 1.4s infinite; opacity: 0.3; }
+    .typing-dot:nth-child(2) { animation-delay: 0.2s; }
+    .typing-dot:nth-child(3) { animation-delay: 0.4s; }
+    @keyframes typing { 0%, 100% { opacity: 0.3; transform: translateY(0); } 50% { opacity: 1; transform: translateY(-4px); } }
+
+    /* Reset background dashboard untuk page ni saja supaya jadi dark mode sepenuhnya */
+    .main-content-wrapper { background-color: #1E293B !important; }
+    
+    .log-sidebar {
+        width: 320px;
+        background: #111827;
+        border-right: 1px solid #1f2937;
+    }
+    
+    .log-content {
+        background: #0b0f19;
+        font-family: 'JetBrains Mono', 'Fira Code', monospace;
+    }
+
+    .file-item {
+        transition: all 0.2s;
+        border-left: 3px solid transparent;
+    }
+
+    .file-item:hover {
+        background: #1f2937;
+    }
+
+    .file-item.active {
+        background: #1e293b;
+        border-left-color: #3b82f6;
+    }
+
+    .custom-scrollbar::-webkit-scrollbar-track { background: #111827; }
+    .custom-scrollbar::-webkit-scrollbar-thumb { background: #334155; border-radius: 10px; }
+
+    .terminal-text { color: #94a3b8; line-height: 1.6; font-size: 11px; }
+    .log-info { color: #3b82f6; }
+    .log-error { color: #ef4444; }
+    .log-warning { color: #f59e0b; }
+
+    .status-pill { padding: 0.35rem 1rem; border-radius: 0.75rem; font-size: 9px; font-weight: 900; text-transform: uppercase; letter-spacing: -0.025em; }
+    .progress-bar-thin { height: 4px; border-radius: 99px; background: #F1F5F9; overflow: hidden; }
+
+    .log-terminal-card { 
+        background: #111827;
+        border-radius: 2rem;
+        position: relative;
+        overflow: hidden;
+    }
+    .glow-pulse {
+        position: absolute;
+        top: 0; right: 0;
+        width: 150px; height: 150px;
+        background: rgba(59, 130, 246, 0.2);
+        filter: blur(50px);
+        animation: pulse-slow 4s infinite;
+    }
+    @keyframes pulse-slow { 0%, 100% { opacity: 0.3; } 50% { opacity: 0.7; } }
+
+    /* Table style profesional & rapat */
+    .table-list { width: 100%; border-collapse: separate; border-spacing: 0; }
+    .table-list th { padding: 1.25rem 1.5rem; background: #F1F5F9; color: #475569; font-size: 10px; font-weight: 900; text-transform: uppercase; letter-spacing: 0.1em; }
+    .table-list td { padding: 1.25rem 1.5rem; border-bottom: 1px solid #F1F5F9; background: white; transition: all 0.2s; }
+    .table-list tr:hover td { background: #F8FAFC; }
+    
+    /* Status Card Style (Flat) */
+    .status-badge { padding: 0.4rem 0.8rem; border-radius: 0.5rem; font-size: 9px; font-weight: 900; text-transform: uppercase; border: 1px solid currentColor; }
+
+    .label-heavy {
+        font-size: 11px;
+        font-weight: 900;
+        text-transform: uppercase;
+        letter-spacing: 0.15em;
+        color: #64748B;
+        margin-left: 0.5rem;
+        margin-bottom: 0.75rem;
+        display: block;
+    }
+    .rounded-header { border-radius: 2rem; }
+    .hero-shadow { box-shadow: 0 20px 25px -5px rgba(30, 58, 138, 0.05); }
+}
+
+/* =====================================================
+   GLOBAL DARK MODE THEME (Matches Login Page Aesthetic)
+   Uses .dark class on <html> via Tailwind darkMode:'class'
+   Placed OUTSIDE @layer so it has higher specificity
+   than Tailwind utility classes.
+   ===================================================== */
+
+/* --- Page Background & Body --- */
+.dark body {
+    background-color: #090e1a;
+    color: #e2e8f0;
+}
+
+/* --- Cards: any white bg becomes glassmorphism --- */
+.dark .bg-white,
+.dark [class*="bg-white"] {
+    background-color: rgba(255, 255, 255, 0.03) !important;
+    border-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+/* --- Slightly elevated surfaces (gray-50, F8FAFC etc.) --- */
+.dark .bg-gray-50,
+.dark .bg-slate-50,
+.dark .bg-\[\#F8FAFC\],
+.dark .bg-\[\#F9FAFB\],
+.dark .bg-\[\#F8F9FB\] {
+    background-color: rgba(255, 255, 255, 0.05) !important;
+}
+
+/* --- Borders --- */
+.dark .border-gray-50,
+.dark .border-gray-100,
+.dark .border-gray-200,
+.dark .border-slate-100,
+.dark .border-slate-200 {
+    border-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+/* --- Typography --- */
+.dark .text-\[\#1E3A8A\] {
+    color: #93c5fd !important;   /* soft blue, easy on eyes */
+}
+.dark .text-slate-900,
+.dark .text-slate-800,
+.dark .text-gray-900,
+.dark .text-gray-800,
+.dark .text-\[\#1E293B\] {
+    color: #f1f5f9 !important;
+}
+.dark .text-slate-700,
+.dark .text-slate-600,
+.dark .text-gray-700,
+.dark .text-gray-600 {
+    color: #cbd5e1 !important;
+}
+.dark .text-slate-500,
+.dark .text-slate-400,
+.dark .text-gray-500,
+.dark .text-gray-400 {
+    color: #94a3b8 !important;
+}
+.dark .text-slate-300,
+.dark .text-gray-300 {
+    color: #64748b !important;
+}
+
+/* --- Headings / Section title accent --- */
+.dark .section-divider {
+    color: #93c5fd !important;
+}
+
+/* --- Shadows --- */
+.dark .shadow-sm,
+.dark .shadow,
+.dark .shadow-md,
+.dark .shadow-lg,
+.dark .shadow-xl {
+    box-shadow: 0 4px 24px -4px rgba(0, 0, 0, 0.6) !important;
+}
+
+/* --- Inputs --- */
+.dark .input-heavy,
+.dark input[type="text"],
+.dark input[type="email"],
+.dark input[type="search"],
+.dark input[type="number"],
+.dark textarea,
+.dark select {
+    background: rgba(255, 255, 255, 0.05) !important;
+    border-color: rgba(255, 255, 255, 0.08) !important;
+    color: #f1f5f9 !important;
+}
+.dark .input-heavy:focus,
+.dark input[type="text"]:focus,
+.dark input[type="search"]:focus,
+.dark select:focus {
+    border-color: #FACC15 !important;
+    background: rgba(255, 255, 255, 0.08) !important;
+    box-shadow: 0 0 0 3px rgba(250, 204, 21, 0.15) !important;
+}
+.dark input::placeholder,
+.dark textarea::placeholder {
+    color: #475569 !important;
+}
+
+/* --- Tables (custom EIS classes) --- */
+.dark .eis-table th,
+.dark .table-list th {
+    background: rgba(255, 255, 255, 0.04) !important;
+    color: #64748b !important;
+    border-bottom-color: rgba(255, 255, 255, 0.06) !important;
+}
+.dark .eis-table td,
+.dark .table-list td {
+    background: transparent !important;
+    border-bottom-color: rgba(255, 255, 255, 0.05) !important;
+    color: #cbd5e1 !important;
+}
+.dark .eis-table tbody tr:hover td,
+.dark .table-list tr:hover td,
+.dark .table-row-hover:hover {
+    background-color: rgba(255, 255, 255, 0.04) !important;
+}
+
+/* --- Badges (keep colors, just adjust bg opacity) --- */
+.dark .badge-green  { background: rgba(21, 128, 61, 0.2) !important; color: #4ade80 !important; }
+.dark .badge-amber  { background: rgba(180, 83, 9, 0.2) !important; color: #fbbf24 !important; }
+.dark .badge-red    { background: rgba(190, 18, 60, 0.2) !important; color: #f87171 !important; }
+.dark .badge-blue   { background: rgba(29, 78, 216, 0.2) !important; color: #60a5fa !important; }
+.dark .badge-purple { background: rgba(109, 40, 217, 0.2) !important; color: #c084fc !important; }
+.dark .badge-gray   { background: rgba(100, 116, 139, 0.15) !important; color: #94a3b8 !important; }
+
+/* --- Stat cards --- */
+.dark .card-stat-pns {
+    border-color: rgba(255, 255, 255, 0.06) !important;
+}
+.dark .card-stat-pns:hover {
+    background: rgba(255, 255, 255, 0.04) !important;
+    box-shadow: -10px 20px 30px -15px rgba(225, 29, 72, 0.15), 10px 20px 30px -15px rgba(250, 204, 21, 0.1) !important;
+}
+
+/* --- Chat UI --- */
+.dark .bot-style {
+    background: rgba(255, 255, 255, 0.05) !important;
+    color: #e2e8f0 !important;
+    border-color: rgba(255, 255, 255, 0.08) !important;
+}
+.dark .chat-container {
+    background-color: #0a0f1e !important;
+    background-image: radial-gradient(rgba(255,255,255,0.04) 0.7px, transparent 0.7px) !important;
+}
+
+/* --- Progress bars --- */
+.dark .prog-wrap { background: rgba(255, 255, 255, 0.08) !important; }
+.dark .progress-bar-thin { background: rgba(255, 255, 255, 0.08) !important; }
+
+/* --- Export buttons --- */
+.dark .btn-export-outline,
+.dark .mini-export-btn {
+    background: rgba(255, 255, 255, 0.04) !important;
+    border-color: rgba(255, 255, 255, 0.08) !important;
+    color: #94a3b8 !important;
+}

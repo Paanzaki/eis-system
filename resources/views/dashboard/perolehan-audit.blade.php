@@ -1,40 +1,20 @@
 @extends('layouts.dashboard')
 
 @section('content')
-<style>
-    body { background-color: #F8FAFC; }
-    .rounded-sharp { border-radius: 1.5rem; }
-    .log-terminal-card { 
-        background: #111827; /* Dark theme macam dalam screenshot */
-        border-radius: 2rem;
-        position: relative;
-        overflow: hidden;
-    }
-    .glow-pulse {
-        position: absolute;
-        top: 0; right: 0;
-        width: 150px; h-150px;
-        background: rgba(59, 130, 246, 0.2);
-        filter: blur(50px);
-        animation: pulse-slow 4s infinite;
-    }
-    @keyframes pulse-slow { 0%, 100% { opacity: 0.3; } 50% { opacity: 0.7; } }
-</style>
 
-<div class="space-y-10">
-    
-    <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-6 border-b border-gray-100 pb-8">
-        <div class="space-y-1">
+<div class="content-fluid space-y-8 pb-12">
+
+    <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-6 border-b border-gray-100 pb-10">
+        <div>
             <div class="flex items-center gap-2 mb-3">
-                <div class="h-1.5 w-12 bg-red-600 rounded-full"></div>
-                <div class="h-1.5 w-6 bg-yellow-400 rounded-full"></div>
+                <div class="h-2 w-16 bg-red-600 rounded-full"></div>
+                <div class="h-2 w-8 bg-yellow-400 rounded-full"></div>
             </div>
-            <h3 class="text-4xl font-black text-[#1E3A8A] tracking-tighter uppercase italic leading-none">
-                Audit <span class="text-red-600">Forensics<span class="text-yellow-400">.</span></span>
+            <h3 class="text-4xl font-black text-[#1E3A8A] tracking-tighter uppercase leading-none">
+                Audit <span class="text-red-600">Forensics.</span>
             </h3>
-            <p class="text-[10px] font-black text-slate-400 uppercase tracking-[0.4em] mt-3 italic">Security Logs & Transaction Trail Monitor</p>
+            <p class="text-[12px] font-black text-slate-400 uppercase tracking-[0.4em] mt-3">FB-EIS-MA-AL &mdash; Security Logs & Transaction Trail Monitor</p>
         </div>
-        
         <div class="flex items-center gap-3 px-5 py-2.5 bg-white border border-gray-100 rounded-2xl shadow-sm">
             <div class="w-2 h-2 bg-red-500 rounded-full animate-pulse"></div>
             <span class="text-[9px] font-black text-slate-600 uppercase tracking-widest">Security System Live</span>
@@ -43,16 +23,14 @@
 
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
         @foreach([
-            ['label' => 'Jumlah Percubaan Login', 'val' => '1,402', 'sub' => '24 Jam Terakhir', 'color' => 'blue'],
-            ['label' => 'Aktiviti Mencurigakan', 'val' => '02', 'sub' => 'Perlu Semakan', 'color' => 'red'],
-            ['label' => 'Saiz Fail Log', 'val' => '239.28', 'sub' => 'GB / Bulan', 'color' => 'yellow'],
+            ['label' => 'Jumlah Percubaan Login', 'val' => '1,402 Kes', 'sub' => '24 Jam Terakhir'],
+            ['label' => 'Aktiviti Mencurigakan',  'val' => '02 Kes',    'sub' => 'Perlu Semakan'],
+            ['label' => 'Saiz Fail Log',          'val' => '239.28 GB', 'sub' => 'Digunakan / Bulan'],
         ] as $stat)
-        <div class="bg-white p-8 rounded-sharp border border-gray-100 shadow-sm group hover:shadow-xl hover:-translate-y-1 transition-all">
-            <p class="text-[9px] font-black text-slate-400 uppercase tracking-widest mb-2 italic">{{ $stat['label'] }}</p>
-            <h4 class="text-3xl font-black text-[#1E3A8A] tracking-tighter italic">
-                {{ $stat['val'] }} <span class="text-[10px] text-slate-300 font-bold uppercase">{{ $stat['color'] == 'yellow' ? 'GB' : 'Kes' }}</span>
-            </h4>
-            <p class="text-[8px] font-bold text-slate-300 uppercase mt-2 italic">{{ $stat['sub'] }}</p>
+        <div class="card-stat-pns bg-white p-6 rounded-2xl border border-gray-100">
+            <p class="text-3xl font-black text-[#1E3A8A] tracking-tighter">{{ $stat['val'] }}</p>
+            <p class="text-[10px] font-black text-slate-500 uppercase tracking-widest mt-2">{{ $stat['label'] }}</p>
+            <p class="text-[9px] text-slate-400 font-bold mt-0.5">{{ $stat['sub'] }}</p>
         </div>
         @endforeach
     </div>
