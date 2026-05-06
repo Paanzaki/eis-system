@@ -1,57 +1,20 @@
 @extends('layouts.dashboard')
 
 @section('content')
-<style>
-    body { background-color: #F8FAFC; }
-    /* Buang max-width limit untuk penuhi ruang skrin */
-    .profile-container { width: 100%; padding: 0 1rem; }
-    .rounded-header { border-radius: 2rem; }
-    
-    /* Besarkan input supaya nampak lebih "commanding" */
-    .input-heavy { 
-        background: #F9FAFB; 
-        border: 2px solid #F1F5F9; 
-        border-radius: 1rem; 
-        padding: 1.25rem 1.5rem; 
-        font-size: 13px; 
-        font-weight: 800; 
-        width: 100%; 
-        outline: none; 
-        transition: all 0.3s ease; 
-    }
-    .input-heavy:focus { 
-        background: white; 
-        border-color: #1E3A8A; 
-        box-shadow: 0 10px 20px -5px rgba(30, 58, 138, 0.1); 
-    }
-    
-    .label-heavy {
-        font-size: 11px;
-        font-weight: 900;
-        text-transform: uppercase;
-        letter-spacing: 0.15em;
-        color: #64748B;
-        margin-left: 0.5rem;
-        margin-bottom: 0.75rem;
-        display: block;
-    }
-</style>
+<div class="content-fluid space-y-8 pb-12">
 
-<div class="profile-container space-y-12">
-    
-    <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-6 border-b-2 border-gray-100 pb-10">
-        <div class="space-y-2">
-            <div class="flex items-center gap-2 mb-4">
+    <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-6 border-b border-gray-100 pb-10">
+        <div>
+            <div class="flex items-center gap-2 mb-3">
                 <div class="h-2 w-16 bg-red-600 rounded-full"></div>
                 <div class="h-2 w-8 bg-yellow-400 rounded-full"></div>
             </div>
-            <h3 class="text-5xl font-black text-[#1E3A8A] tracking-tighter uppercase  leading-none">
-                Profil <span class="text-blue-600">Eksekutif<span class="text-yellow-400">.</span></span>
+            <h3 class="text-4xl font-black text-[#1E3A8A] tracking-tighter uppercase leading-none">
+                Profil <span class="text-red-600">Eksekutif.</span>
             </h3>
-            <p class="text-[12px] font-black text-slate-400 uppercase tracking-[0.4em] mt-4 ">Pengurusan Akaun & Sekuriti Digital MyDigitalID</p>
+            <p class="text-[12px] font-black text-slate-400 uppercase tracking-[0.4em] mt-3">Pengurusan Akaun & Sekuriti Digital MyDigitalID</p>
         </div>
-        
-        <div class="flex items-center gap-4 bg-white p-4 rounded-2xl shadow-sm border border-gray-100">
+        <div class="flex items-center gap-4 bg-white px-6 py-3 rounded-xl shadow-sm border border-gray-100">
             <div class="relative flex h-3 w-3">
                 <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
                 <span class="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span>
@@ -95,9 +58,9 @@
 
         <div class="col-span-12 lg:col-span-8 space-y-10">
             
-            <div class="bg-white p-12 rounded-[3rem] shadow-sm border border-gray-100">
-                <div class="flex items-center gap-4 mb-12 border-l-4 border-yellow-400 pl-6">
-                    <h4 class="text-[14px] font-black text-[#1E3A8A] uppercase tracking-widest ">Konfigurasi Maklumat Peribadi</h4>
+            <div class="bg-white p-10 rounded-[2rem] shadow-sm border border-gray-100">
+                <div class="flex items-center gap-4 mb-8 border-l-4 border-yellow-400 pl-6">
+                    <h4 class="text-[12px] font-black text-[#1E3A8A] uppercase tracking-widest">Konfigurasi Maklumat Peribadi</h4>
                 </div>
                 
                 <form class="grid grid-cols-2 gap-10">
@@ -127,9 +90,9 @@
                 </form>
             </div>
 
-            <div class="bg-white p-12 rounded-[3rem] shadow-sm border border-gray-100">
-                <div class="flex items-center gap-4 mb-10 border-l-4 border-red-600 pl-6">
-                    <h4 class="text-[14px] font-black text-[#1E3A8A] uppercase tracking-widest ">Kawalan Keselamatan & Privasi</h4>
+            <div class="bg-white p-10 rounded-[2rem] shadow-sm border border-gray-100">
+                <div class="flex items-center gap-4 mb-8 border-l-4 border-red-600 pl-6">
+                    <h4 class="text-[12px] font-black text-[#1E3A8A] uppercase tracking-widest">Kawalan Keselamatan & Privasi</h4>
                 </div>
                 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">

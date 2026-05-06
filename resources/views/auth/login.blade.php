@@ -95,14 +95,14 @@
             
             <div class="mb-10 flex justify-between items-start">
                 <div class="text-left">
-                    <h2 class="text-2xl font-extrabold text-[#1E3A8A] dark:text-white tracking-tighter italic uppercase">log masuk</h2>
+                    <h2 class="text-2xl font-extrabold text-[#1E3A8A] dark:text-white tracking-tighter c uppercase">log masuk</h2>
                     <div class="flex mt-3 gap-1">
                         <div class="h-1.5 w-12 bg-red-600"></div>
                         <div class="h-1.5 w-8 bg-yellow-400"></div>
                     </div>
                 </div>
                 <!-- Back to Selection -->
-                <a href="/" class="text-[9px] font-black text-slate-400 dark:text-slate-500 uppercase tracking-widest hover:text-red-600 transition-colors italic">Kembali</a>
+                <a href="/" class="text-[9px] font-black text-slate-400 dark:text-slate-500 uppercase tracking-widest hover:text-red-600 transition-colors c">Kembali</a>
             </div>
 
             <form method="POST" action="{{ route('login') }}" class="space-y-6">
@@ -129,7 +129,7 @@
                 </div>
             </form>
             
-            <div class="mt-12 pt-8 border-t border-slate-100 dark:border-white/5 text-[7px] font-black text-slate-400 dark:text-slate-600 uppercase tracking-widest italic text-center">
+            <div class="mt-12 pt-8 border-t border-slate-100 dark:border-white/5 text-[7px] font-black text-slate-400 dark:text-slate-600 uppercase tracking-widest c text-center">
                 Portal Rasmi Perbendaharaan Negeri Selangor
             </div>
         </div>

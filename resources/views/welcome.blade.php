@@ -79,7 +79,7 @@
         <div class="hidden lg:block space-y-10">
             <div class="space-y-6 text-left">
                 <div class="flex items-center gap-5 mb-10">
-                    <img src="{{ asset('images/jata-selangor.png') }}" alt="Jata Selangor" class="h-24 drop-shadow-2xl">
+                    <img src="{{ asset('images/jata-selangor.png') }}" alt="Jata Selangor" class="h-32 drop-shadow-2xl">
                     <div class="h-16 w-[1px] bg-slate-300 dark:bg-white/10"></div>
                     <div>
                         <p class="text-[10px] font-black uppercase tracking-[0.5em] text-red-600">Portal Rasmi</p>

@@ -9,9 +9,9 @@
 
     {{-- â•â• LOGO â•â• --}}
     <div :class="darkMode ? 'border-white/5' : 'border-gray-100'"
-         class="h-20 flex items-center px-4 border-b flex-shrink-0 transition-colors duration-500">
+         class="h-24 flex items-center px-4 border-b flex-shrink-0 transition-colors duration-500">
         <div class="flex items-center gap-3 min-w-0">
-            <img src="{{ asset('images/jata-selangor.png') }}" alt="Jata" class="h-10 w-10 flex-shrink-0 object-contain">
+            <img src="{{ asset('images/jata-selangor.png') }}" alt="Jata" class="h-14 w-14 flex-shrink-0 object-contain">
             <div x-show="sidebarOpen" x-transition.opacity class="min-w-0">
                 <h1 :class="darkMode ? 'text-blue-400' : 'text-[#1E3A8A]'"
                     class="text-[15px] font-black tracking-tighter uppercase italic leading-none"

@@ -1,23 +1,23 @@
-﻿@extends('layouts.dashboard')
+@extends('layouts.dashboard')
 
 @section('content')
 
-<div class="space-y-8">
-    
-    <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-6 border-b border-gray-100 pb-8">
-        <div class="space-y-1">
-            <div class="flex items-center gap-2 mb-2">
-                <div class="h-1.5 w-10 bg-red-600 rounded-full"></div>
-                <div class="h-1.5 w-5 bg-yellow-400 rounded-full"></div>
+<div class="content-fluid space-y-8 pb-12">
+
+    <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-6 border-b border-gray-100 pb-10">
+        <div>
+            <div class="flex items-center gap-2 mb-3">
+                <div class="h-2 w-16 bg-red-600 rounded-full"></div>
+                <div class="h-2 w-8 bg-yellow-400 rounded-full"></div>
             </div>
-            <h3 class="text-3xl font-black text-[#1E3A8A] tracking-tighter uppercase italic leading-none">
-                Carian <span class="text-blue-600">Rekod.</span>
+            <h3 class="text-4xl font-black text-[#1E3A8A] tracking-tighter uppercase leading-none">
+                Carian <span class="text-red-600">Rekod.</span>
             </h3>
-            <p class="text-[10px] font-black text-slate-400 uppercase tracking-[0.3em] mt-3 italic">Pangkalan Data Berpusat PNS Selangor</p>
+            <p class="text-[12px] font-black text-slate-400 uppercase tracking-[0.4em] mt-3">FB-EIS-AS-CR &mdash; Pangkalan Data Berpusat PNS Selangor</p>
         </div>
     </div>
 
-    <div class="bg-white p-6 rounded-sharp border border-gray-100 shadow-sm">
+    <div class="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm">
         <div class="flex flex-col lg:flex-row gap-4">
             <div class="flex-1 relative">
                 <input type="text" placeholder="Masukkan No. Siri, Tajuk, atau ID..." 
@@ -34,7 +34,7 @@
         </div>
     </div>
 
-    <div class="bg-white rounded-sharp border border-gray-100 shadow-sm overflow-hidden">
+    <div class="bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden">
         <table class="table-list">
             <thead>
                 <tr>
@@ -89,9 +89,9 @@
     </div>
 
     <div class="flex justify-between items-center px-2">
-        <p class="text-[9px] font-black text-slate-400 uppercase tracking-widest italic">Menunjukkan 4 daripada 120 Rekod</p>
+        <p class="text-[9px] font-black text-slate-400 uppercase tracking-widest">Menunjukkan 4 daripada 120 Rekod</p>
         <div class="flex gap-1">
-            <button class="w-8 h-8 flex items-center justify-center bg-[#1E3A8A] text-white rounded text-[10px] font-black italic">1</button>
+            <button class="w-8 h-8 flex items-center justify-center bg-[#1E3A8A] text-white rounded text-[10px] font-black">1</button>
             <button class="w-8 h-8 flex items-center justify-center bg-white border border-gray-100 rounded text-[10px] font-black text-slate-400 hover:bg-gray-50 transition-all">2</button>
             <button class="w-8 h-8 flex items-center justify-center bg-white border border-gray-100 rounded text-[10px] font-black text-slate-400 hover:bg-gray-50 transition-all">></button>
         </div>

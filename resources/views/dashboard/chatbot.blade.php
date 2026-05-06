@@ -1,29 +1,26 @@
-﻿@extends('layouts.dashboard')
+@extends('layouts.dashboard')
 
 @section('content')
 
-<div class="max-w-6xl mx-auto space-y-6">
-    
-    <div class="mb-8 flex flex-col lg:flex-row lg:items-end justify-between gap-6 border-b border-gray-100 pb-8">
-        <div class="space-y-1">
+<div class="content-fluid space-y-8 pb-12">
+
+    <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-6 border-b border-gray-100 pb-10">
+        <div>
             <div class="flex items-center gap-2 mb-3">
-                <div class="h-1.5 w-10 bg-red-600 rounded-full"></div>
-                <div class="h-1.5 w-5 bg-yellow-400 rounded-full"></div>
+                <div class="h-2 w-16 bg-red-600 rounded-full"></div>
+                <div class="h-2 w-8 bg-yellow-400 rounded-full"></div>
             </div>
-            <h3 class="text-4xl font-black text-[#1E3A8A] tracking-tighter uppercase  leading-none">
-                FAI <span class="text-blue-600">Chatbot<span class="text-yellow-400">.</span></span>
+            <h3 class="text-4xl font-black text-[#1E3A8A] tracking-tighter uppercase leading-none">
+                FAI <span class="text-red-600">Chatbot.</span>
             </h3>
-            <p class="text-[10px] font-black text-slate-400 uppercase tracking-[0.4em] mt-3 flex items-center gap-2">
-                Automasi Pintar & Analitik Perbendaharaan
-            </p>
+            <p class="text-[12px] font-black text-slate-400 uppercase tracking-[0.4em] mt-3">Automasi Pintar & Analitik Perbendaharaan</p>
         </div>
-        
-        <div class="flex items-center gap-3 px-5 py-2.5 bg-white border border-gray-100 rounded-2xl shadow-sm">
+        <div class="flex items-center gap-3 px-6 py-3 bg-white border border-gray-100 rounded-xl shadow-sm">
             <div class="relative flex h-2 w-2">
                 <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
                 <span class="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
             </div>
-            <span class="text-[9px] font-black text-slate-600 uppercase tracking-widest ">FAI Engine Active</span>
+            <span class="text-[9px] font-black text-slate-600 uppercase tracking-widest">FAI Engine Active</span>
         </div>
     </div>
 

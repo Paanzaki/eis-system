@@ -1,28 +1,27 @@
-﻿@extends('layouts.dashboard')
+@extends('layouts.dashboard')
 
 @section('content')
 
-<div class="space-y-8">
-    
-    <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-6 border-b border-gray-100 pb-8">
-        <div class="space-y-1">
-            <div class="flex items-center gap-2 mb-2">
-                <div class="h-1.5 w-10 bg-red-600 rounded-full"></div>
-                <div class="h-1.5 w-5 bg-yellow-400 rounded-full"></div>
-            </div>
-            <h3 class="text-3xl font-black text-[#1E3A8A] tracking-tighter uppercase italic leading-none">
-                Kawalan <span class="text-blue-600">Akses (RBAC)<span class="text-yellow-400">.</span></span>
-            </h3>
-            <p class="text-[10px] font-black text-slate-400 uppercase tracking-[0.3em] mt-3 italic">Security Matrix & Role Management</p>
-        </div>
+<div class="content-fluid space-y-8 pb-12">
 
+    <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-6 border-b border-gray-100 pb-10">
+        <div>
+            <div class="flex items-center gap-2 mb-3">
+                <div class="h-2 w-16 bg-red-600 rounded-full"></div>
+                <div class="h-2 w-8 bg-yellow-400 rounded-full"></div>
+            </div>
+            <h3 class="text-4xl font-black text-[#1E3A8A] tracking-tighter uppercase leading-none">
+                Kawalan <span class="text-red-600">Akses (RBAC).</span>
+            </h3>
+            <p class="text-[12px] font-black text-slate-400 uppercase tracking-[0.4em] mt-3">FB-EIS-MA-RB &mdash; Security Matrix & Role Management</p>
+        </div>
         <div class="flex items-center gap-4">
             <div class="relative group">
                 <input type="text" placeholder="CARI PENGGUNA..." 
-                    class="bg-white border-2 border-gray-50 py-3.5 px-6 rounded-xl text-[10px] font-black uppercase tracking-widest focus:ring-4 focus:ring-yellow-400/20 focus:border-yellow-400 outline-none shadow-sm w-64 lg:w-72 transition-all">
+                    class="bg-white border border-gray-200 py-3.5 px-6 rounded-xl text-[10px] font-black uppercase tracking-widest focus:ring-4 focus:ring-yellow-400/20 focus:border-yellow-400 outline-none shadow-sm w-64 lg:w-72 transition-all">
                 <svg class="w-4 h-4 absolute right-5 top-1/2 -translate-y-1/2 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" stroke-width="3"/></svg>
             </div>
-            <button class="bg-[#1E3A8A] hover:bg-red-700 text-white px-6 py-3.5 rounded-xl text-[10px] font-black uppercase tracking-widest shadow-xl shadow-blue-900/20 transition-all">
+            <button class="bg-[#1E3A8A] hover:bg-red-700 text-white px-6 py-3.5 rounded-xl text-[10px] font-black uppercase tracking-widest shadow-lg transition-all">
                 + Peranan Baru
             </button>
         </div>
@@ -60,7 +59,7 @@
         @endforeach
     </div>
 
-    <div class="bg-white rounded-sharp border border-gray-100 shadow-sm overflow-hidden">
+    <div class="bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden">
         <div class="px-8 py-6 border-b border-gray-50 flex justify-between items-center bg-gray-50/30">
             <h4 class="text-[11px] font-black text-[#1E3A8A] uppercase tracking-widest italic">Senarai Kawalan Capaian Pengguna</h4>
             <span class="text-[8px] font-bold text-slate-400 uppercase">Dikemaskini: Hari Ini, 09:15 AM</span>
