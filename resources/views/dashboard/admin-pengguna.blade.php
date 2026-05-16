@@ -11,7 +11,7 @@
                 <div class="h-2 w-8 bg-yellow-400 rounded-full"></div>
             </div>
             <h3 class="text-4xl font-black text-[#1E3A8A] tracking-tighter uppercase leading-none">
-                Pengurusan <span class="text-red-600">Pengguna.</span>
+                Pengurusan Pengguna
             </h3>
             <p class="text-[12px] font-black text-slate-400 uppercase tracking-[0.4em] mt-3">
                 FB-EIS-MA-PP &mdash; Profil & Kawalan Capaian
@@ -19,11 +19,11 @@
         </div>
         <div class="flex items-center gap-3">
             <button @click="openAddModal()"
-                class="flex items-center gap-2 bg-[#1E3A8A] hover:bg-red-700 text-white px-6 py-3 rounded-xl text-[10px] font-black uppercase tracking-widest shadow-lg transition-all duration-200">
+                class="flex items-center gap-2 bg-[#1E3A8A] hover:bg-red-700 text-white px-6 py-3 rounded-[5px] text-[10px] font-black uppercase tracking-widest shadow-lg transition-all duration-200">
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M12 4v16m8-8H4" stroke-width="2.5"/></svg>
                 Tambah Pengguna
             </button>
-            <button class="flex items-center gap-2 btn-export-outline border text-slate-500 hover:text-[#1E3A8A] px-5 py-3 rounded-xl text-[10px] font-black uppercase tracking-widest transition-all">
+            <button class="flex items-center gap-2 btn-export-outline border text-slate-500 hover:text-[#1E3A8A] px-5 py-3 rounded-[5px] text-[10px] font-black uppercase tracking-widest transition-all">
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" stroke-width="2"/></svg>
                 Eksport Excel
             </button>
@@ -38,9 +38,9 @@
             ['label' => 'Peranan Ditetapkan',  'val' => '6',   'sub' => 'Peranan dalam sistem',    'color' => 'yellow', 'icon' => 'M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z'],
             ['label' => 'Log Masuk Hari Ini',  'val' => '19',  'sub' => 'Sesi aktif sekarang',     'color' => 'red',    'icon' => 'M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1'],
         ] as $stat)
-        <div class="card-stat-pns bg-white p-6 rounded-2xl">
+        <div class="card-stat-pns bg-white p-6 rounded-[5px]">
             <div class="flex items-start justify-between mb-4">
-                <div class="w-10 h-10 rounded-xl flex items-center justify-center
+                <div class="w-10 h-10 rounded-[5px] flex items-center justify-center
                     {{ $stat['color'] === 'blue' ? 'bg-blue-50' : ($stat['color'] === 'green' ? 'bg-emerald-50' : ($stat['color'] === 'yellow' ? 'bg-yellow-50' : 'bg-red-50')) }}">
                     <svg class="w-5 h-5 {{ $stat['color'] === 'blue' ? 'text-blue-600' : ($stat['color'] === 'green' ? 'text-emerald-600' : ($stat['color'] === 'yellow' ? 'text-yellow-500' : 'text-red-500')) }}"
                         fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="{{ $stat['icon'] }}" stroke-width="2"/></svg>
@@ -54,16 +54,16 @@
     </div>
 
     {{-- ── Filters & Search ── --}}
-    <div class="bg-white rounded-2xl border border-gray-100 shadow-sm p-6">
+    <div class="bg-white rounded-[5px] border border-gray-100 shadow-sm p-6">
         <div class="flex flex-col md:flex-row gap-4">
             <div class="flex-1 relative">
                 <svg class="w-4 h-4 absolute left-4 top-1/2 -translate-y-1/2 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" stroke-width="2.5"/>
                 </svg>
                 <input type="text" x-model="search" placeholder="Cari nama, emel atau jabatan..."
-                    class="w-full pl-11 pr-4 py-3 bg-gray-50 border border-gray-200 rounded-xl text-[11px] font-bold outline-none focus:border-[#1E3A8A] focus:bg-white transition-all">
+                    class="w-full pl-11 pr-4 py-3 bg-gray-50 border border-gray-200 rounded-[5px] text-[11px] font-bold outline-none focus:border-[#1E3A8A] focus:bg-white transition-all">
             </div>
-            <select x-model="filterRole" class="bg-gray-50 border border-gray-200 py-3 px-4 rounded-xl text-[10px] font-black uppercase outline-none focus:border-[#1E3A8A] cursor-pointer">
+            <select x-model="filterRole" class="bg-gray-50 border border-gray-200 py-3 px-4 rounded-[5px] text-[10px] font-black uppercase outline-none focus:border-[#1E3A8A] cursor-pointer">
                 <option value="">Semua Peranan</option>
                 <option value="Super Admin">Super Admin</option>
                 <option value="Pentadbir Sistem">Pentadbir Sistem</option>
@@ -72,7 +72,7 @@
                 <option value="Eksekutif">Eksekutif</option>
                 <option value="Pengguna Umum">Pengguna Umum</option>
             </select>
-            <select x-model="filterStatus" class="bg-gray-50 border border-gray-200 py-3 px-4 rounded-xl text-[10px] font-black uppercase outline-none focus:border-[#1E3A8A] cursor-pointer">
+            <select x-model="filterStatus" class="bg-gray-50 border border-gray-200 py-3 px-4 rounded-[5px] text-[10px] font-black uppercase outline-none focus:border-[#1E3A8A] cursor-pointer">
                 <option value="">Semua Status</option>
                 <option value="Aktif">Aktif</option>
                 <option value="Tidak Aktif">Tidak Aktif</option>
@@ -81,7 +81,7 @@
     </div>
 
     {{-- ── Users Table ── --}}
-    <div class="bg-white rounded-[2.5rem] border border-gray-100 shadow-sm overflow-hidden">
+    <div class="bg-white rounded-[5px] border border-gray-100 shadow-sm overflow-hidden">
         <div class="flex items-center justify-between px-10 py-6 border-b border-gray-50">
             <div>
                 <h4 class="text-[12px] font-black text-[#1E3A8A] uppercase tracking-widest">Senarai Pengguna Berdaftar</h4>
@@ -138,11 +138,11 @@
                             <td class="pr-10">
                                 <div class="flex items-center gap-2">
                                     <button @click="openEditModal(u)"
-                                        class="p-1.5 rounded-lg bg-blue-50 hover:bg-blue-100 text-blue-600 transition-all" title="Edit">
+                                        class="p-1.5 rounded-[5px] bg-blue-50 hover:bg-blue-100 text-blue-600 transition-all" title="Edit">
                                         <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" stroke-width="2"/></svg>
                                     </button>
                                     <button @click="toggleStatus(u)"
-                                        class="p-1.5 rounded-lg transition-all"
+                                        class="p-1.5 rounded-[5px] transition-all"
                                         :class="u.status === 'Aktif' ? 'bg-red-50 hover:bg-red-100 text-red-500' : 'bg-emerald-50 hover:bg-emerald-100 text-emerald-600'"
                                         :title="u.status === 'Aktif' ? 'Nyahaktif' : 'Aktifkan'">
                                         <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M18.364 18.364A9 9 0 005.636 5.636m12.728 12.728A9 9 0 015.636 5.636m12.728 12.728L5.636 5.636" stroke-width="2"/></svg>
@@ -166,7 +166,7 @@
     {{-- ── Add/Edit Modal ── --}}
     <div x-show="showModal" x-cloak @click.self="showModal = false"
         class="fixed inset-0 bg-slate-900/50 backdrop-blur-sm z-50 flex items-center justify-center p-6">
-        <div class="bg-white rounded-[2rem] shadow-2xl w-full max-w-2xl overflow-hidden"
+        <div class="bg-white rounded-[5px] shadow-2xl w-full max-w-2xl overflow-hidden"
             @click.stop x-transition:enter="transition ease-out duration-200"
             x-transition:enter-start="opacity-0 scale-95" x-transition:enter-end="opacity-100 scale-100">
 
@@ -176,7 +176,7 @@
                         x-text="editMode ? 'Kemaskini Pengguna' : 'Tambah Pengguna Baharu'"></h4>
                     <p class="text-[9px] text-slate-400 font-bold uppercase tracking-widest mt-0.5">FB-EIS-MA-PP</p>
                 </div>
-                <button @click="showModal = false" class="p-2 rounded-xl hover:bg-gray-100 text-slate-400 transition-all">
+                <button @click="showModal = false" class="p-2 rounded-[5px] hover:bg-gray-100 text-slate-400 transition-all">
                     <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M6 18L18 6M6 6l12 12" stroke-width="2.5"/></svg>
                 </button>
             </div>
@@ -186,16 +186,16 @@
                     <div>
                         <label class="label-heavy">Nama Penuh</label>
                         <input type="text" x-model="form.nama" placeholder="cth: Ahmad Fadzil bin Kamaruddin"
-                            class="input-heavy rounded-xl">
+                            class="input-heavy rounded-[5px]">
                     </div>
                     <div>
                         <label class="label-heavy">Emel Rasmi</label>
                         <input type="email" x-model="form.emel" placeholder="cth: ahmad.fadzil@pns.gov.my"
-                            class="input-heavy rounded-xl">
+                            class="input-heavy rounded-[5px]">
                     </div>
                     <div>
                         <label class="label-heavy">Jabatan / Agensi</label>
-                        <select x-model="form.jabatan" class="input-heavy rounded-xl">
+                        <select x-model="form.jabatan" class="input-heavy rounded-[5px]">
                             <option value="">-- Pilih Jabatan --</option>
                             <option>Perbendaharaan Negeri Selangor</option>
                             <option>Jabatan Audit Selangor</option>
@@ -207,7 +207,7 @@
                     </div>
                     <div>
                         <label class="label-heavy">Gred Jawatan</label>
-                        <select x-model="form.gred" class="input-heavy rounded-xl">
+                        <select x-model="form.gred" class="input-heavy rounded-[5px]">
                             <option value="">-- Pilih Gred --</option>
                             @foreach(['W17','W22','W27','W32','W41','W44','W48','W52','W54'] as $g)
                             <option>{{ $g }}</option>
@@ -216,7 +216,7 @@
                     </div>
                     <div>
                         <label class="label-heavy">Peranan (RBAC)</label>
-                        <select x-model="form.peranan" class="input-heavy rounded-xl">
+                        <select x-model="form.peranan" class="input-heavy rounded-[5px]">
                             <option value="">-- Pilih Peranan --</option>
                             <option>Super Admin</option>
                             <option>Pentadbir Sistem</option>
@@ -228,7 +228,7 @@
                     </div>
                     <div>
                         <label class="label-heavy">Status Akaun</label>
-                        <select x-model="form.status" class="input-heavy rounded-xl">
+                        <select x-model="form.status" class="input-heavy rounded-[5px]">
                             <option>Aktif</option>
                             <option>Tidak Aktif</option>
                         </select>
@@ -238,7 +238,7 @@
                     <div>
                         <label class="label-heavy">Kata Laluan Awal</label>
                         <input type="password" x-model="form.password" placeholder="Min. 8 aksara"
-                            class="input-heavy rounded-xl">
+                            class="input-heavy rounded-[5px]">
                         <p class="text-[9px] text-slate-400 font-bold mt-2 ml-2">
                             * Pengguna perlu menukar kata laluan semasa log masuk pertama.
                         </p>
@@ -248,11 +248,11 @@
 
             <div class="flex items-center justify-end gap-3 px-10 py-6 border-t border-gray-100 bg-gray-50/50">
                 <button @click="showModal = false"
-                    class="px-6 py-3 rounded-xl text-[10px] font-black uppercase tracking-widest text-slate-500 hover:bg-gray-100 transition-all">
+                    class="px-6 py-3 rounded-[5px] text-[10px] font-black uppercase tracking-widest text-slate-500 hover:bg-gray-100 transition-all">
                     Batal
                 </button>
                 <button @click="saveUser()"
-                    class="px-8 py-3 rounded-xl text-[10px] font-black uppercase tracking-widest bg-[#1E3A8A] hover:bg-red-700 text-white shadow-lg transition-all">
+                    class="px-8 py-3 rounded-[5px] text-[10px] font-black uppercase tracking-widest bg-[#1E3A8A] hover:bg-red-700 text-white shadow-lg transition-all">
                     <span x-text="editMode ? 'Simpan Perubahan' : 'Daftar Pengguna'"></span>
                 </button>
             </div>
@@ -311,15 +311,18 @@ function penggunaModule() {
 
         toggleStatus(u) {
             u.status = u.status === 'Aktif' ? 'Tidak Aktif' : 'Aktif';
+            window.dispatchActionStatus(u.status === 'Aktif' ? 'aktif' : 'nyahaktif');
         },
 
         saveUser() {
             if (this.editMode) {
                 const idx = this.users.findIndex(u => u.id === this.form.id);
                 if (idx > -1) this.users.splice(idx, 1, { ...this.form });
+                window.dispatchActionStatus('kemaskini');
             } else {
                 this.users.push({ ...this.form, id: Date.now(), logMasuk: '—' });
             }
+            if (!this.editMode) window.dispatchActionStatus('tambah');
             this.showModal = false;
         }
     }

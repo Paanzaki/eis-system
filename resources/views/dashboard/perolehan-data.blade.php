@@ -9,13 +9,13 @@
             <div class="h-1.5 w-6 bg-yellow-400 rounded-full"></div>
         </div>
         <h3 class="text-4xl font-black text-[#1E3A8A] tracking-tighter uppercase italic leading-none">
-            Analytics <span class="text-blue-600">& ETL<span class="text-yellow-400">.</span></span>
-        </h3>
+                Analytics & ETL
+            </h3>
         <p class="text-[10px] font-black text-slate-400 uppercase tracking-[0.3em] mt-2">Kawalan Migrasi Data & Pembersihan Integrasi PNS</p>
     </div>
     <div class="flex gap-3">
         <button onclick="alert('Starting ETL Cleanup Process...')" 
-            class="bg-[#1E3A8A] hover:bg-red-700 text-white px-6 py-3.5 rounded-xl text-[9px] font-black uppercase tracking-widest shadow-xl shadow-blue-900/20 transition-all hover:scale-105 active:scale-95">
+            class="bg-[#1E3A8A] hover:bg-red-700 text-white px-6 py-3.5 rounded-[5px] text-[9px] font-black uppercase tracking-widest shadow-xl shadow-blue-900/20 transition-all hover:scale-105 active:scale-95">
             Run Data Cleansing
         </button>
     </div>
@@ -23,7 +23,7 @@
 
 <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
     <div class="bg-white p-8 rounded-header border border-gray-100 shadow-sm flex items-center gap-6 group hover:border-blue-200 transition-all">
-        <div class="w-14 h-14 bg-green-50 rounded-2xl flex items-center justify-center text-green-600 shadow-inner group-hover:rotate-6 transition-transform">
+        <div class="w-14 h-14 bg-green-50 rounded-[5px] flex items-center justify-center text-green-600 shadow-inner group-hover:rotate-6 transition-transform">
             <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
         </div>
         <div>
@@ -33,7 +33,7 @@
     </div>
 
     <div class="bg-white p-8 rounded-header border border-gray-100 shadow-sm flex items-center gap-6 group hover:border-blue-200 transition-all">
-        <div class="w-14 h-14 bg-blue-50 rounded-2xl flex items-center justify-center text-blue-600 shadow-inner group-hover:rotate-6 transition-transform">
+        <div class="w-14 h-14 bg-blue-50 rounded-[5px] flex items-center justify-center text-blue-600 shadow-inner group-hover:rotate-6 transition-transform">
             <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4"/></svg>
         </div>
         <div>
@@ -43,7 +43,7 @@
     </div>
 
     <div class="bg-orange-50 p-8 rounded-header border border-orange-100 shadow-sm flex items-center gap-6 group hover:bg-white hover:border-orange-200 transition-all">
-        <div class="w-14 h-14 bg-white rounded-2xl flex items-center justify-center text-orange-500 shadow-md group-hover:rotate-6 transition-transform">
+        <div class="w-14 h-14 bg-white rounded-[5px] flex items-center justify-center text-orange-500 shadow-md group-hover:rotate-6 transition-transform">
             <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"/></svg>
         </div>
         <div>
@@ -86,7 +86,7 @@
         
         <div class="relative z-10 h-full flex flex-col justify-between">
             <div>
-                <div class="w-10 h-10 bg-white/10 rounded-xl flex items-center justify-center mb-6 border border-white/10">
+                <div class="w-10 h-10 bg-white/10 rounded-[5px] flex items-center justify-center mb-6 border border-white/10">
                     <svg class="w-5 h-5 text-yellow-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" stroke-width="2"/></svg>
                 </div>
                 <h4 class="text-[11px] font-bold opacity-50 uppercase tracking-[0.2em] mb-4 italic">Laporan Pembersihan Data</h4>
@@ -126,13 +126,13 @@
             ['Menghapuskan 12 rekod duplikasi vendor dari Excel_A.', 'Resolved', '15m ago', 'text-orange-600 bg-orange-50'],
             ['Pemetaan (Mapping) 2,000 baris data perolehan 2025.', 'Processing', 'Just now', 'text-blue-600 bg-blue-50']
         ] as $log)
-        <div class="flex items-center justify-between p-4 bg-slate-50/50 rounded-xl border border-transparent hover:border-slate-100 hover:bg-white transition-all">
+        <div class="flex items-center justify-between p-4 bg-slate-50/50 rounded-[5px] border border-transparent hover:border-slate-100 hover:bg-white transition-all">
             <div class="flex items-center gap-4">
                 <div class="w-2 h-2 rounded-full {{ $log[1] == 'Processing' ? 'bg-blue-400 animate-pulse' : 'bg-slate-200' }}"></div>
                 <p class="text-xs font-bold text-slate-700 italic">"{{ $log[0] }}"</p>
             </div>
             <div class="flex items-center gap-6">
-                <span class="text-[9px] font-black uppercase px-4 py-1.5 rounded-lg border border-current {{ $log[3] }} shadow-sm">
+                <span class="text-[9px] font-black uppercase px-4 py-1.5 rounded-[5px] border border-current {{ $log[3] }} shadow-sm">
                     {{ $log[1] }}
                 </span>
                 <span class="text-[9px] font-bold text-slate-300 uppercase italic w-16 text-right">{{ $log[2] }}</span>

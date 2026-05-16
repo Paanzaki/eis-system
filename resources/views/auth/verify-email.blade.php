@@ -15,7 +15,7 @@
     <div class="mt-4 flex flex-col gap-4">
         <form method="POST" action="{{ route('verification.send') }}">
             @csrf
-            <button type="submit" class="w-full py-4 bg-[#2C2C2C] text-[#FEB05D] rounded-xl font-bold uppercase tracking-widest text-xs hover:bg-[#3d3d3d] transition-all shadow-lg border-none">
+            <button type="submit" class="w-full py-4 bg-[#2C2C2C] text-[#FEB05D] rounded-[5px] font-bold uppercase tracking-widest text-xs hover:bg-[#3d3d3d] transition-all shadow-lg border-none">
                 Hantar Semula Emel
             </button>
         </form>

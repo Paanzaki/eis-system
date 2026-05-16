@@ -11,18 +11,18 @@
                 <div class="h-2 w-8 bg-yellow-400 rounded-full"></div>
             </div>
             <h3 class="text-4xl font-black text-[#1E3A8A] tracking-tighter uppercase leading-none">
-                Kehilangan & Hapus <span class="text-red-600">Kira.</span>
+                Kehilangan & Hapus Kira
             </h3>
             <p class="text-[12px] font-black text-slate-400 uppercase tracking-[0.4em] mt-3">
                 FB-EIS-AS-HK &mdash; Siasatan Kehilangan & Tindakan Hapus Kira Aset
             </p>
         </div>
         <div class="flex items-center gap-3">
-            <button class="flex items-center gap-2 bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded-xl text-[10px] font-black uppercase tracking-widest shadow-lg transition-all">
+            <button class="flex items-center gap-2 bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded-[5px] text-[10px] font-black uppercase tracking-widest shadow-lg transition-all">
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" stroke-width="2"/></svg>
                 Lapor Kehilangan
             </button>
-            <button class="mini-export-btn mini-pdf px-5 py-3 rounded-xl text-[10px]">
+            <button class="mini-export-btn mini-pdf px-5 py-3 rounded-[5px] text-[10px]">
                 <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z" stroke-width="2"/></svg>
                 PDF
             </button>
@@ -30,8 +30,8 @@
     </div>
 
     {{-- ── Alert Banner ── --}}
-    <div class="bg-red-50 border border-red-200 rounded-2xl px-8 py-5 flex items-center gap-4">
-        <div class="w-10 h-10 rounded-xl bg-red-100 flex items-center justify-center flex-shrink-0">
+    <div class="bg-red-50 border border-red-200 rounded-[5px] px-8 py-5 flex items-center gap-4">
+        <div class="w-10 h-10 rounded-[5px] bg-red-100 flex items-center justify-center flex-shrink-0">
             <svg class="w-5 h-5 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" stroke-width="2"/>
             </svg>
@@ -52,7 +52,7 @@
             ['label'=>'Dihapus Kira',           'val'=>'11',       'sub'=>'Diluluskan oleh pihak berkuasa','color'=>'blue'],
             ['label'=>'Nilai Kehilangan',       'val'=>'RM 187K',  'sub'=>'Kumulatif nilai buku aset',     'color'=>'red'],
         ] as $s)
-        <div class="card-stat-pns bg-white p-6 rounded-2xl border border-gray-100">
+        <div class="card-stat-pns bg-white p-6 rounded-[5px] border border-gray-100">
             <p class="text-3xl font-black text-[#1E3A8A] tracking-tighter">{{ $s['val'] }}</p>
             <p class="text-[10px] font-black text-slate-500 uppercase tracking-widest mt-2">{{ $s['label'] }}</p>
             <p class="text-[9px] text-slate-400 font-bold mt-0.5">{{ $s['sub'] }}</p>
@@ -61,13 +61,13 @@
     </div>
 
     {{-- ── Main Table ── --}}
-    <div class="bg-white rounded-[2.5rem] border border-gray-100 shadow-sm overflow-hidden">
+    <div class="bg-white rounded-[5px] border border-gray-100 shadow-sm overflow-hidden">
         <div class="px-10 py-6 border-b border-gray-50 flex items-center justify-between">
             <div>
                 <h4 class="text-[12px] font-black text-[#1E3A8A] uppercase tracking-widest">Rekod Kehilangan & Hapus Kira Aset</h4>
                 <p class="text-[10px] text-slate-400 font-bold uppercase tracking-widest mt-1">23 kes dilaporkan sepanjang tahun 2026</p>
             </div>
-            <select class="bg-gray-50 border border-gray-200 py-2.5 px-4 rounded-xl text-[10px] font-black uppercase outline-none cursor-pointer">
+            <select class="bg-gray-50 border border-gray-200 py-2.5 px-4 rounded-[5px] text-[10px] font-black uppercase outline-none cursor-pointer">
                 <option>Semua Status</option>
                 <option>Dalam Siasatan</option>
                 <option>Siasatan Selesai</option>
@@ -161,7 +161,7 @@
         ];
         @endphp
         @foreach($aktif as $a)
-        <div class="bg-white rounded-[2rem] border border-gray-100 shadow-sm p-8">
+        <div class="bg-white rounded-[5px] border border-gray-100 shadow-sm p-8">
             <div class="flex items-start justify-between mb-5">
                 <div>
                     <p class="text-[11px] font-black text-red-600 uppercase">{{ $a['no'] }}</p>

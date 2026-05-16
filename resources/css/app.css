@@ -123,6 +123,47 @@
         background: white; border-color: #1E3A8A; 
         box-shadow: 0 10px 20px -5px rgba(30, 58, 138, 0.1); 
     }
+    .select-wrap {
+        position: relative;
+    }
+    .select-wrap::after {
+        content: "";
+        position: absolute;
+        right: 1.25rem;
+        top: 50%;
+        width: 0.65rem;
+        height: 0.65rem;
+        border-right: 2px solid #1E3A8A;
+        border-bottom: 2px solid #1E3A8A;
+        transform: translateY(-65%) rotate(45deg);
+        pointer-events: none;
+    }
+    .select-heavy {
+        appearance: none;
+        padding-right: 3rem;
+    }
+    .input-optional {
+        background: #FFFDF5;
+        border-color: #FDE68A;
+        color: #92400E;
+    }
+    .input-optional:focus {
+        background: #FFFFFF;
+        border-color: #F59E0B;
+        box-shadow: 0 10px 20px -5px rgba(245, 158, 11, 0.16);
+    }
+    .input-fixed {
+        background: #F1F5F9;
+        border-color: #CBD5E1;
+        color: #475569;
+        cursor: not-allowed;
+        box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.7);
+    }
+    .input-fixed:focus {
+        background: #F1F5F9;
+        border-color: #CBD5E1;
+        box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.7);
+    }
     .asset-card { transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); border: 1px solid #F1F5F9; }
     .asset-card:hover { border-color: #1E3A8A; transform: translateY(-4px); }
 
@@ -341,6 +382,8 @@
 
 /* --- Inputs --- */
 .dark .input-heavy,
+.dark .input-optional,
+.dark .input-fixed,
 .dark input[type="text"],
 .dark input[type="email"],
 .dark input[type="search"],
@@ -352,6 +395,8 @@
     color: #f1f5f9 !important;
 }
 .dark .input-heavy:focus,
+.dark .input-optional:focus,
+.dark .input-fixed:focus,
 .dark input[type="text"]:focus,
 .dark input[type="search"]:focus,
 .dark select:focus {
@@ -362,6 +407,19 @@
 .dark input::placeholder,
 .dark textarea::placeholder {
     color: #475569 !important;
+}
+.dark .select-wrap::after {
+    border-color: #FACC15 !important;
+}
+.dark .input-heavy.input-optional {
+    background: rgba(245, 158, 11, 0.12) !important;
+    border-color: rgba(245, 158, 11, 0.35) !important;
+    color: #fef3c7 !important;
+}
+.dark .input-heavy.input-fixed {
+    background: rgba(100, 116, 139, 0.16) !important;
+    border-color: rgba(148, 163, 184, 0.32) !important;
+    color: #cbd5e1 !important;
 }
 
 /* --- Tables (custom EIS classes) --- */

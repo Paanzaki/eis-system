@@ -11,7 +11,7 @@
                 <div class="h-2 w-8 bg-yellow-400 rounded-full"></div>
             </div>
             <h3 class="text-4xl font-black text-[#1E3A8A] tracking-tighter uppercase leading-none">
-                Laporan Suku <span class="text-red-600">Tahun.</span>
+                Laporan Suku Tahun
             </h3>
             <p class="text-[12px] font-black text-slate-400 uppercase tracking-[0.4em] mt-3">
                 FB-EIS-AS-LA &mdash; Laporan Suku Tahun JKPAK Perbendaharaan Negeri Selangor
@@ -23,7 +23,7 @@
     <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
 
         {{-- Generator Panel ── --}}
-        <div class="lg:col-span-1 bg-white rounded-[2rem] border border-gray-100 shadow-sm p-8 flex flex-col gap-6">
+        <div class="lg:col-span-1 bg-white rounded-[5px] border border-gray-100 shadow-sm p-8 flex flex-col gap-6">
             <div>
                 <h4 class="text-[12px] font-black text-[#1E3A8A] uppercase tracking-widest">Jana Laporan</h4>
                 <p class="text-[10px] text-slate-400 font-bold uppercase tracking-widest mt-1">Tetapkan Parameter Laporan</p>
@@ -32,7 +32,7 @@
             <div class="space-y-4">
                 <div>
                     <label class="label-heavy">Tahun</label>
-                    <select class="input-heavy rounded-xl">
+                    <select class="input-heavy rounded-[5px]">
                         <option>2026</option>
                         <option>2025</option>
                         <option>2024</option>
@@ -41,7 +41,7 @@
                 </div>
                 <div>
                     <label class="label-heavy">Suku Tahun (Kuarter)</label>
-                    <select class="input-heavy rounded-xl">
+                    <select class="input-heavy rounded-[5px]">
                         <option>Q1 (Jan – Mac)</option>
                         <option>Q2 (Apr – Jun)</option>
                         <option>Q3 (Jul – Sep)</option>
@@ -50,7 +50,7 @@
                 </div>
                 <div>
                     <label class="label-heavy">Skop Laporan</label>
-                    <select class="input-heavy rounded-xl">
+                    <select class="input-heavy rounded-[5px]">
                         <option>Semua Modul (Perolehan & Aset)</option>
                         <option>Perolehan Sahaja</option>
                         <option>Aset Sahaja</option>
@@ -77,13 +77,13 @@
             </div>
 
             <div class="space-y-3 mt-auto">
-                <button class="w-full bg-[#1E3A8A] hover:bg-red-700 text-white py-3.5 rounded-xl text-[10px] font-black uppercase tracking-widest transition-all flex items-center justify-center gap-2">
+                <a href="{{ route('laporan.suku-tahun', ['status' => 'jana']) }}" class="w-full bg-[#1E3A8A] hover:bg-red-700 text-white py-3.5 rounded-[5px] text-[10px] font-black uppercase tracking-widest transition-all flex items-center justify-center gap-2">
                     <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" stroke-width="2"/></svg>
                     Jana & Muat Turun
-                </button>
-                <button class="w-full btn-export-outline border text-slate-500 hover:text-[#1E3A8A] py-3.5 rounded-xl text-[10px] font-black uppercase tracking-widest transition-all">
+                </a>
+                <a href="{{ route('laporan.suku-tahun', ['status' => 'muat-turun']) }}" class="w-full btn-export-outline border text-slate-500 hover:text-[#1E3A8A] py-3.5 rounded-[5px] text-[10px] font-black uppercase tracking-widest transition-all text-center">
                     Pratonton Laporan
-                </button>
+                </a>
             </div>
         </div>
 
@@ -91,7 +91,7 @@
         <div class="lg:col-span-2 space-y-6">
 
             {{-- Q1 2026 Preview ── --}}
-            <div class="bg-white rounded-[2rem] border border-gray-100 shadow-sm overflow-hidden">
+            <div class="bg-white rounded-[5px] border border-gray-100 shadow-sm overflow-hidden">
                 <div class="bg-[#1E3A8A] px-8 py-5 flex items-center justify-between">
                     <div>
                         <p class="text-[11px] font-black text-blue-200 uppercase tracking-widest">Pratonton Laporan</p>
@@ -116,7 +116,7 @@
                                 ['label'=>'Telah Dilaksanakan Q1','val'=>'11 Projek','sub'=>'Nilai RM 12.8M'],
                                 ['label'=>'Penjimatan Dicapai','val'=>'RM 182K','sub'=>'1.4% daripada anggaran'],
                             ] as $item)
-                            <div class="bg-gray-50 rounded-2xl p-4">
+                            <div class="bg-gray-50 rounded-[5px] p-4">
                                 <p class="text-[18px] font-black text-[#1E3A8A]">{{ $item['val'] }}</p>
                                 <p class="text-[9px] font-black text-slate-500 uppercase tracking-wider mt-1">{{ $item['label'] }}</p>
                                 <p class="text-[9px] text-slate-400 font-bold mt-0.5">{{ $item['sub'] }}</p>
@@ -134,7 +134,7 @@
                                 ['label'=>'Verifikasi Selesai Q1','val'=>'4,821','sub'=>'38.9% daripada inventori'],
                                 ['label'=>'Aset Dilupus Q1','val'=>'7 Unit','sub'=>'Nilai RM 41,835'],
                             ] as $item)
-                            <div class="bg-gray-50 rounded-2xl p-4">
+                            <div class="bg-gray-50 rounded-[5px] p-4">
                                 <p class="text-[18px] font-black text-[#1E3A8A]">{{ $item['val'] }}</p>
                                 <p class="text-[9px] font-black text-slate-500 uppercase tracking-wider mt-1">{{ $item['label'] }}</p>
                                 <p class="text-[9px] text-slate-400 font-bold mt-0.5">{{ $item['sub'] }}</p>
@@ -152,7 +152,7 @@
                                 ['label'=>'Naziran Aset','val'=>'5 Kes','sub'=>'5 lulus, 0 teguran'],
                                 ['label'=>'Pematuhan Keseluruhan','val'=>'91.2%','sub'=>'Melebihi sasaran 85%'],
                             ] as $item)
-                            <div class="bg-gray-50 rounded-2xl p-4">
+                            <div class="bg-gray-50 rounded-[5px] p-4">
                                 <p class="text-[18px] font-black text-[#1E3A8A]">{{ $item['val'] }}</p>
                                 <p class="text-[9px] font-black text-slate-500 uppercase tracking-wider mt-1">{{ $item['label'] }}</p>
                                 <p class="text-[9px] text-slate-400 font-bold mt-0.5">{{ $item['sub'] }}</p>
@@ -168,7 +168,7 @@
     {{-- ── Archived Reports ── --}}
     <div class="section-divider">Arkib Laporan Terdahulu</div>
 
-    <div class="bg-white rounded-[2.5rem] border border-gray-100 shadow-sm overflow-hidden">
+    <div class="bg-white rounded-[5px] border border-gray-100 shadow-sm overflow-hidden">
         <div class="overflow-x-auto">
             <table class="eis-table">
                 <thead>
@@ -201,10 +201,10 @@
                         <td class="text-[11px] text-slate-400 font-bold">{{ $a['tarikh'] }}</td>
                         <td class="text-[11px] text-slate-500 font-bold">{{ $a['saiz'] }}</td>
                         <td class="pr-10">
-                            <button class="mini-export-btn {{ $a['format']==='PDF' ? 'mini-pdf' : 'mini-excel' }}">
+                            <a href="{{ route('laporan.suku-tahun', ['status' => 'muat-turun']) }}" class="mini-export-btn {{ $a['format']==='PDF' ? 'mini-pdf' : 'mini-excel' }}">
                                 <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" stroke-width="2"/></svg>
                                 {{ $a['format'] }}
-                            </button>
+                            </a>
                         </td>
                     </tr>
                     @endforeach

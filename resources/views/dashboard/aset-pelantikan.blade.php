@@ -10,13 +10,13 @@
                 <div class="h-2 w-8 bg-yellow-400 rounded-full"></div>
             </div>
             <h3 class="text-4xl font-black text-[#1E3A8A] tracking-tighter uppercase leading-none">
-                Pelantikan <span class="text-red-600">Pegawai.</span>
+                Pelantikan Pegawai
             </h3>
             <p class="text-[12px] font-black text-slate-400 uppercase tracking-[0.4em] mt-3">
                 FB-EIS-AS-PA &mdash; Lantikan Pegawai Pemeriksa & Lembaga Pelupusan (KEW.PA-15)
             </p>
         </div>
-        <button class="flex items-center gap-2 bg-[#1E3A8A] hover:bg-red-700 text-white px-6 py-3 rounded-xl text-[10px] font-black uppercase tracking-widest shadow-lg transition-all">
+        <button class="flex items-center gap-2 bg-[#1E3A8A] hover:bg-red-700 text-white px-6 py-3 rounded-[5px] text-[10px] font-black uppercase tracking-widest shadow-lg transition-all">
             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M12 4v16m8-8H4" stroke-width="2.5"/></svg>
             Lantikan Baharu
         </button>
@@ -29,7 +29,7 @@
             ['label'=>'Sijil Hampir Luput','val'=>'3','sub'=>'Dalam tempoh 30 hari'],
             ['label'=>'Sijil Telah Tamat','val'=>'1','sub'=>'Perlu pembaharuan segera'],
         ] as $s)
-        <div class="card-stat-pns bg-white p-6 rounded-2xl border border-gray-100">
+        <div class="card-stat-pns bg-white p-6 rounded-[5px] border border-gray-100">
             <p class="text-3xl font-black text-[#1E3A8A] tracking-tighter">{{ $s['val'] }}</p>
             <p class="text-[10px] font-black text-slate-500 uppercase tracking-widest mt-2">{{ $s['label'] }}</p>
             <p class="text-[9px] text-slate-400 font-bold mt-0.5">{{ $s['sub'] }}</p>
@@ -37,19 +37,19 @@
         @endforeach
     </div>
 
-    <div class="bg-white rounded-[2rem] border border-gray-100 shadow-sm p-5">
+    <div class="bg-white rounded-[5px] border border-gray-100 shadow-sm p-5">
         <div class="flex flex-col md:flex-row gap-4">
             <div class="flex-1 relative">
                 <svg class="w-4 h-4 absolute left-4 top-1/2 -translate-y-1/2 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" stroke-width="2.5"/></svg>
                 <input type="text" placeholder="Cari nama pegawai atau no. kad pengenalan..."
-                    class="w-full pl-11 pr-4 py-3 bg-gray-50 border border-gray-200 rounded-xl text-[11px] font-bold outline-none focus:border-[#1E3A8A] focus:bg-white transition-all">
+                    class="w-full pl-11 pr-4 py-3 bg-gray-50 border border-gray-200 rounded-[5px] text-[11px] font-bold outline-none focus:border-[#1E3A8A] focus:bg-white transition-all">
             </div>
-            <select class="bg-gray-50 border border-gray-200 py-3 px-4 rounded-xl text-[10px] font-black uppercase outline-none cursor-pointer">
+            <select class="bg-gray-50 border border-gray-200 py-3 px-4 rounded-[5px] text-[10px] font-black uppercase outline-none cursor-pointer">
                 <option>Semua Kategori</option>
                 <option>Pegawai Pemeriksa</option>
                 <option>Lembaga Pelupusan</option>
             </select>
-            <select class="bg-gray-50 border border-gray-200 py-3 px-4 rounded-xl text-[10px] font-black uppercase outline-none cursor-pointer">
+            <select class="bg-gray-50 border border-gray-200 py-3 px-4 rounded-[5px] text-[10px] font-black uppercase outline-none cursor-pointer">
                 <option>Semua Status</option>
                 <option>Aktif</option>
                 <option>Hampir Luput</option>
@@ -58,7 +58,7 @@
         </div>
     </div>
 
-    <div class="bg-white rounded-[2.5rem] border border-gray-100 shadow-sm overflow-hidden">
+    <div class="bg-white rounded-[5px] border border-gray-100 shadow-sm overflow-hidden">
         <div class="overflow-x-auto">
             <table class="eis-table">
                 <thead>

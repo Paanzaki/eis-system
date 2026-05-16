@@ -11,18 +11,18 @@
                 <div class="h-2 w-8 bg-yellow-400 rounded-full"></div>
             </div>
             <h3 class="text-4xl font-black text-[#1E3A8A] tracking-tighter uppercase leading-none">
-                Naziran <span class="text-red-600">Perolehan.</span>
+                Naziran Perolehan
             </h3>
             <p class="text-[12px] font-black text-slate-400 uppercase tracking-[0.4em] mt-3">
                 FB-EIS-NZ-PR &mdash; Audit & Pematuhan Tatacara Perolehan Kerajaan
             </p>
         </div>
         <div class="flex items-center gap-3">
-            <button class="flex items-center gap-2 bg-[#1E3A8A] hover:bg-red-700 text-white px-6 py-3 rounded-xl text-[10px] font-black uppercase tracking-widest shadow-lg transition-all">
+            <button class="flex items-center gap-2 bg-[#1E3A8A] hover:bg-red-700 text-white px-6 py-3 rounded-[5px] text-[10px] font-black uppercase tracking-widest shadow-lg transition-all">
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M12 4v16m8-8H4" stroke-width="2.5"/></svg>
                 Jana Laporan Naziran
             </button>
-            <button class="mini-export-btn mini-pdf px-5 py-3 rounded-xl text-[10px]">
+            <button class="mini-export-btn mini-pdf px-5 py-3 rounded-[5px] text-[10px]">
                 <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z" stroke-width="2"/></svg>
                 PDF
             </button>
@@ -37,7 +37,7 @@
             ['label'=>'Entiti Diaudit 2026',   'val'=>'45',    'sub'=>'Daripada 60 jabatan sasaran',   'color'=>'blue'],
             ['label'=>'Pematuhan Dokumen',     'val'=>'96.8%', 'sub'=>'Rekod lengkap & teratur',       'color'=>'amber'],
         ] as $s)
-        <div class="card-stat-pns bg-white p-6 rounded-2xl border border-gray-100">
+        <div class="card-stat-pns bg-white p-6 rounded-[5px] border border-gray-100">
             <p class="text-3xl font-black text-[#1E3A8A] tracking-tighter">{{ $s['val'] }}</p>
             <p class="text-[10px] font-black text-slate-500 uppercase tracking-widest mt-2">{{ $s['label'] }}</p>
             <p class="text-[9px] text-slate-400 font-bold mt-0.5">{{ $s['sub'] }}</p>
@@ -47,7 +47,7 @@
 
     {{-- ── Pematuhan by Jabatan ── --}}
     <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
-        <div class="lg:col-span-1 bg-white rounded-[2rem] border border-gray-100 shadow-sm p-8">
+        <div class="lg:col-span-1 bg-white rounded-[5px] border border-gray-100 shadow-sm p-8">
             <h4 class="text-[12px] font-black text-[#1E3A8A] uppercase tracking-widest mb-6">Ringkasan Pematuhan</h4>
             <div class="space-y-4">
                 @foreach([
@@ -71,7 +71,7 @@
         </div>
 
         {{-- Teguran Aktif ── --}}
-        <div class="lg:col-span-2 bg-white rounded-[2rem] border border-gray-100 shadow-sm p-8">
+        <div class="lg:col-span-2 bg-white rounded-[5px] border border-gray-100 shadow-sm p-8">
             <h4 class="text-[12px] font-black text-[#1E3A8A] uppercase tracking-widest mb-6">Teguran Audit Aktif (14 Kes)</h4>
             <div class="space-y-3">
                 @foreach([
@@ -81,7 +81,7 @@
                     ['jabatan'=>'Majlis Bandaraya Shah Alam (MBSA)','isu'=>'Kontrak tamat tempoh, tiada pembaharuan didokumenkan','tarikh'=>'02/04/2026','gred'=>'Sederhana'],
                     ['jabatan'=>'Lembaga Tabung Haji Selangor','isu'=>'Ringkasan Kewangan tidak dikemukakan kepada JKPAK','tarikh'=>'10/04/2026','gred'=>'Rendah'],
                 ] as $t)
-                <div class="flex items-start gap-4 p-4 rounded-2xl border {{ $t['gred'] === 'Kritikal' ? 'border-red-100 bg-red-50/50' : ($t['gred'] === 'Sederhana' ? 'border-amber-100 bg-amber-50/30' : 'border-gray-100 bg-gray-50/30') }}">
+                <div class="flex items-start gap-4 p-4 rounded-[5px] border {{ $t['gred'] === 'Kritikal' ? 'border-red-100 bg-red-50/50' : ($t['gred'] === 'Sederhana' ? 'border-amber-100 bg-amber-50/30' : 'border-gray-100 bg-gray-50/30') }}">
                     <span class="badge {{ $t['gred'] === 'Kritikal' ? 'badge-red' : ($t['gred'] === 'Sederhana' ? 'badge-amber' : 'badge-gray') }} flex-shrink-0 mt-0.5">{{ $t['gred'] }}</span>
                     <div class="flex-1 min-w-0">
                         <p class="text-[11px] font-black text-[#1E3A8A]">{{ $t['jabatan'] }}</p>
@@ -95,7 +95,7 @@
     </div>
 
     {{-- ── Main Audit Table ── --}}
-    <div class="bg-white rounded-[2.5rem] border border-gray-100 shadow-sm overflow-hidden">
+    <div class="bg-white rounded-[5px] border border-gray-100 shadow-sm overflow-hidden">
         <div class="px-10 py-6 border-b border-gray-50">
             <h4 class="text-[12px] font-black text-[#1E3A8A] uppercase tracking-widest">Rekod Naziran Perolehan 2026</h4>
             <p class="text-[10px] text-slate-400 font-bold uppercase tracking-widest mt-1">45 daripada 60 jabatan sasaran telah diaudit</p>

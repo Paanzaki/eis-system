@@ -11,18 +11,18 @@
                 <div class="h-2 w-8 bg-yellow-400 rounded-full"></div>
             </div>
             <h3 class="text-4xl font-black text-[#1E3A8A] tracking-tighter uppercase leading-none">
-                Rundingan <span class="text-red-600">Terus / Harga.</span>
+                Rundingan Terus / Harga
             </h3>
             <p class="text-[12px] font-black text-slate-400 uppercase tracking-[0.4em] mt-3">
                 FB-EIS-MP-RT &mdash; Pengurusan Perolehan Rundingan Terus PNS Selangor
             </p>
         </div>
         <div class="flex items-center gap-3">
-            <button class="flex items-center gap-2 bg-[#1E3A8A] hover:bg-red-700 text-white px-6 py-3 rounded-xl text-[10px] font-black uppercase tracking-widest shadow-lg transition-all">
+            <button class="flex items-center gap-2 bg-[#1E3A8A] hover:bg-red-700 text-white px-6 py-3 rounded-[5px] text-[10px] font-black uppercase tracking-widest shadow-lg transition-all">
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M12 4v16m8-8H4" stroke-width="2.5"/></svg>
                 Daftar Rundingan Baharu
             </button>
-            <button class="mini-export-btn mini-excel px-5 py-3 rounded-xl text-[10px]">
+            <button class="mini-export-btn mini-excel px-5 py-3 rounded-[5px] text-[10px]">
                 <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" stroke-width="2"/></svg>
                 Excel
             </button>
@@ -37,7 +37,7 @@
             ['label'=>'Sedang Dalam Proses',      'val'=>'9',        'sub'=>'Menunggu kelulusan JK'],
             ['label'=>'Selesai Dilaksana',        'val'=>'27',       'sub'=>'Pembekal telah dilantik'],
         ] as $s)
-        <div class="card-stat-pns bg-white p-6 rounded-2xl border border-gray-100">
+        <div class="card-stat-pns bg-white p-6 rounded-[5px] border border-gray-100">
             <p class="text-3xl font-black text-[#1E3A8A] tracking-tighter">{{ $s['val'] }}</p>
             <p class="text-[10px] font-black text-slate-500 uppercase tracking-widest mt-2">{{ $s['label'] }}</p>
             <p class="text-[9px] text-slate-400 font-bold mt-0.5">{{ $s['sub'] }}</p>
@@ -46,7 +46,7 @@
     </div>
 
     {{-- ── Table ── --}}
-    <div class="bg-white rounded-[2.5rem] border border-gray-100 shadow-sm overflow-hidden">
+    <div class="bg-white rounded-[5px] border border-gray-100 shadow-sm overflow-hidden">
         <div class="px-10 py-6 border-b border-gray-50">
             <h4 class="text-[12px] font-black text-[#1E3A8A] uppercase tracking-widest">Rekod Rundingan Terus 2026</h4>
             <p class="text-[10px] text-slate-400 font-bold uppercase tracking-widest mt-1">Perolehan ≤ RM 500,000 mengikut SPP 2023</p>

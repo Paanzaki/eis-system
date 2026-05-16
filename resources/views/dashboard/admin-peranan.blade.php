@@ -11,16 +11,16 @@
                 <div class="h-2 w-8 bg-yellow-400 rounded-full"></div>
             </div>
             <h3 class="text-4xl font-black text-[#1E3A8A] tracking-tighter uppercase leading-none">
-                Kawalan Capaian <span class="text-red-600">RBAC.</span>
+                Kawalan Capaian RBAC
             </h3>
             <p class="text-[12px] font-black text-slate-400 uppercase tracking-[0.4em] mt-3">
                 FB-EIS-MA-PP-03 &mdash; Role-Based Access Control
             </p>
         </div>
-        <button class="flex items-center gap-2 bg-[#1E3A8A] hover:bg-red-700 text-white px-6 py-3 rounded-xl text-[10px] font-black uppercase tracking-widest shadow-lg transition-all">
+        <a href="{{ route('admin.peranan', ['status' => 'tambah']) }}" class="flex items-center gap-2 bg-[#1E3A8A] hover:bg-red-700 text-white px-6 py-3 rounded-[5px] text-[10px] font-black uppercase tracking-widest shadow-lg transition-all">
             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M12 4v16m8-8H4" stroke-width="2.5"/></svg>
             Tambah Peranan
-        </button>
+        </a>
     </div>
 
     {{-- ── Role Cards Grid ── --}}
@@ -96,13 +96,13 @@
         ];
         $c = $colorMap[$role['color']];
         @endphp
-        <div class="role-card bg-white rounded-[2rem] border border-gray-100 shadow-sm p-8 flex flex-col gap-5
+        <div class="role-card bg-white rounded-[5px] border border-gray-100 shadow-sm p-8 flex flex-col gap-5
             {{ $role['color'] === 'red' ? 'glow-red' : ($role['color'] === 'blue' ? 'glow-blue' : ($role['color'] === 'yellow' ? 'glow-yellow' : '')) }}">
 
             {{-- Header --}}
             <div class="flex items-start justify-between">
                 <div class="flex items-center gap-3">
-                    <div class="w-12 h-12 rounded-2xl {{ $c['bg'] }} flex items-center justify-center flex-shrink-0">
+                    <div class="w-12 h-12 rounded-[5px] {{ $c['bg'] }} flex items-center justify-center flex-shrink-0">
                         <svg class="w-6 h-6 {{ $c['text'] }}" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" stroke-width="2"/>
                         </svg>
@@ -112,18 +112,18 @@
                         <p class="text-[9px] font-black text-slate-400 uppercase tracking-widest">{{ $role['code'] }}</p>
                     </div>
                 </div>
-                <button class="p-2 rounded-xl hover:bg-gray-50 text-slate-400 transition-all">
+                <button class="p-2 rounded-[5px] hover:bg-gray-50 text-slate-400 transition-all">
                     <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" stroke-width="2"/></svg>
                 </button>
             </div>
 
             {{-- Stats --}}
             <div class="flex items-center gap-4">
-                <div class="flex-1 {{ $c['bg'] }} rounded-xl px-4 py-3 text-center">
+                <div class="flex-1 {{ $c['bg'] }} rounded-[5px] px-4 py-3 text-center">
                     <p class="text-2xl font-black {{ $c['text'] }}">{{ $role['users'] }}</p>
                     <p class="text-[9px] font-black text-slate-500 uppercase tracking-wider mt-0.5">Pengguna</p>
                 </div>
-                <div class="flex-1 bg-gray-50 rounded-xl px-4 py-3 text-center">
+                <div class="flex-1 bg-gray-50 rounded-[5px] px-4 py-3 text-center">
                     <p class="text-2xl font-black text-[#1E3A8A]">{{ $role['perms'] }}</p>
                     <p class="text-[9px] font-black text-slate-500 uppercase tracking-wider mt-0.5">Kebenaran</p>
                 </div>
@@ -158,7 +158,7 @@
     {{-- ── Permission Matrix Table ── --}}
     <div class="section-divider">Matriks Kebenaran CRUD</div>
 
-    <div class="bg-white rounded-[2.5rem] border border-gray-100 shadow-sm overflow-hidden">
+    <div class="bg-white rounded-[5px] border border-gray-100 shadow-sm overflow-hidden">
         <div class="px-10 py-6 border-b border-gray-50">
             <h4 class="text-[12px] font-black text-[#1E3A8A] uppercase tracking-widest">Kebenaran Modul Mengikut Peranan</h4>
             <p class="text-[10px] text-slate-400 font-bold uppercase tracking-widest mt-1">C = Cipta &nbsp;|&nbsp; B = Baca &nbsp;|&nbsp; K = Kemaskini &nbsp;|&nbsp; P = Padam</p>

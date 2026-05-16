@@ -11,7 +11,7 @@
 
     <div class="fixed top-0 left-0 w-full h-1 bg-[#FEB05D]"></div>
 
-    <div class="relative z-10 w-full max-w-3xl bg-white rounded-xl shadow-[0_10px_40px_rgba(0,0,0,0.04)] border border-gray-200 p-12 md:px-20 md:py-16">
+    <div class="relative z-10 w-full max-w-3xl bg-white rounded-[5px] shadow-[0_10px_40px_rgba(0,0,0,0.04)] border border-gray-200 p-12 md:px-20 md:py-16">
 
         <div class="text-center mb-10">
             <h1 class="text-4xl font-black text-[#2C2C2C] tracking-tighter uppercase">

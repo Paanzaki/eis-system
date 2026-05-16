@@ -11,7 +11,7 @@
                 <div class="h-2 w-8 bg-yellow-400 rounded-full"></div>
             </div>
             <h3 class="text-4xl font-black text-[#1E3A8A] tracking-tighter uppercase leading-none">
-                Pemeriksaan & Verifikasi <span class="text-red-600">Fizikal.</span>
+                Pemeriksaan & Verifikasi Fizikal
             </h3>
             <p class="text-[12px] font-black text-slate-400 uppercase tracking-[0.4em] mt-3">
                 FB-EIS-AS-PA &mdash; Rekod Tugasan & Hasil Pemeriksaan Aset Di Lapangan
@@ -19,11 +19,11 @@
         </div>
         <div class="flex items-center gap-3">
             <button @click="showModal = true"
-                class="flex items-center gap-2 bg-[#1E3A8A] hover:bg-red-700 text-white px-6 py-3 rounded-xl text-[10px] font-black uppercase tracking-widest shadow-lg transition-all">
+                class="flex items-center gap-2 bg-[#1E3A8A] hover:bg-red-700 text-white px-6 py-3 rounded-[5px] text-[10px] font-black uppercase tracking-widest shadow-lg transition-all">
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M12 4v16m8-8H4" stroke-width="2.5"/></svg>
                 Daftar Tugasan Baharu
             </button>
-            <button class="mini-export-btn mini-excel px-5 py-3 rounded-xl text-[10px]">
+            <button class="mini-export-btn mini-excel px-5 py-3 rounded-[5px] text-[10px]">
                 <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" stroke-width="2"/></svg>
                 Excel
             </button>
@@ -38,8 +38,8 @@
             ['label'=>'Belum Disemak',            'val'=>'1,421',  'sub'=>'Perlu tindakan pegawai',        'icon'=>'M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z'],
             ['label'=>'Tidak Dapat Disahkan',     'val'=>'231',    'sub'=>'Dilaporkan hilang / rosak',     'icon'=>'M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z'],
         ] as $s)
-        <div class="card-stat-pns bg-white p-6 rounded-2xl border border-gray-100">
-            <div class="w-9 h-9 rounded-xl bg-blue-50 flex items-center justify-center mb-4">
+        <div class="card-stat-pns bg-white p-6 rounded-[5px] border border-gray-100">
+            <div class="w-9 h-9 rounded-[5px] bg-blue-50 flex items-center justify-center mb-4">
                 <svg class="w-4 h-4 text-[#1E3A8A]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="{{ $s['icon'] }}" stroke-width="2"/></svg>
             </div>
             <p class="text-2xl font-black text-[#1E3A8A] tracking-tighter">{{ $s['val'] }}</p>
@@ -51,7 +51,7 @@
 
     {{-- ── Daerah Verifikasi Progress ── --}}
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
-        <div class="bg-white rounded-[2rem] border border-gray-100 shadow-sm p-8">
+        <div class="bg-white rounded-[5px] border border-gray-100 shadow-sm p-8">
             <h4 class="text-[12px] font-black text-[#1E3A8A] uppercase tracking-widest mb-6">Kemajuan Verifikasi Mengikut Daerah</h4>
             <div class="space-y-5">
                 @php
@@ -84,7 +84,7 @@
         </div>
 
         {{-- Upcoming Inspections ── --}}
-        <div class="bg-white rounded-[2rem] border border-gray-100 shadow-sm p-8">
+        <div class="bg-white rounded-[5px] border border-gray-100 shadow-sm p-8">
             <h4 class="text-[12px] font-black text-[#1E3A8A] uppercase tracking-widest mb-6">Jadual Pemeriksaan Akan Datang</h4>
             <div class="space-y-4">
                 @php
@@ -97,8 +97,8 @@
                 ];
                 @endphp
                 @foreach($jadual as $j)
-                <div class="flex items-start gap-4 p-4 rounded-2xl border border-gray-50 hover:border-blue-100 hover:bg-blue-50/20 transition-all">
-                    <div class="w-12 h-12 rounded-xl bg-[#1E3A8A]/5 flex flex-col items-center justify-center flex-shrink-0">
+                <div class="flex items-start gap-4 p-4 rounded-[5px] border border-gray-50 hover:border-blue-100 hover:bg-blue-50/20 transition-all">
+                    <div class="w-12 h-12 rounded-[5px] bg-[#1E3A8A]/5 flex flex-col items-center justify-center flex-shrink-0">
                         <p class="text-[14px] font-black text-[#1E3A8A] leading-none">{{ substr($j['tarikh'],0,2) }}</p>
                         <p class="text-[8px] font-black text-slate-400 uppercase">{{ ['Jan','Feb','Mac','Apr','Mei','Jun','Jul','Ogos','Sep','Okt','Nov','Dis'][intval(substr($j['tarikh'],3,2))-1] }}</p>
                     </div>
@@ -115,20 +115,20 @@
     </div>
 
     {{-- ── Verifikasi Records Table ── --}}
-    <div class="bg-white rounded-[2.5rem] border border-gray-100 shadow-sm overflow-hidden">
+    <div class="bg-white rounded-[5px] border border-gray-100 shadow-sm overflow-hidden">
         <div class="px-10 py-6 border-b border-gray-50 flex items-center justify-between">
             <div>
                 <h4 class="text-[12px] font-black text-[#1E3A8A] uppercase tracking-widest">Log Verifikasi Fizikal 2026</h4>
                 <p class="text-[10px] text-slate-400 font-bold uppercase tracking-widest mt-1">Rekod pemeriksaan yang telah dilaksanakan</p>
             </div>
             <div class="flex gap-3">
-                <select class="bg-gray-50 border border-gray-200 py-2.5 px-4 rounded-xl text-[10px] font-black uppercase outline-none cursor-pointer">
+                <select class="bg-gray-50 border border-gray-200 py-2.5 px-4 rounded-[5px] text-[10px] font-black uppercase outline-none cursor-pointer">
                     <option>Semua Daerah</option>
                     @foreach(['Petaling','Gombak','Klang','Hulu Langat','Sepang','Kuala Selangor'] as $d)
                     <option>{{ $d }}</option>
                     @endforeach
                 </select>
-                <select class="bg-gray-50 border border-gray-200 py-2.5 px-4 rounded-xl text-[10px] font-black uppercase outline-none cursor-pointer">
+                <select class="bg-gray-50 border border-gray-200 py-2.5 px-4 rounded-[5px] text-[10px] font-black uppercase outline-none cursor-pointer">
                     <option>Semua Status</option>
                     <option>Selesai</option>
                     <option>Dalam Proses</option>

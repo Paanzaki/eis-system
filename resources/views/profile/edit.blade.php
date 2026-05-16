@@ -12,7 +12,7 @@
             <h3 class="text-4xl font-black text-[#1E3A8A] tracking-tighter uppercase leading-none">
                 Profil <span class="text-red-600">Eksekutif.</span>
             </h3>
-            <p class="text-[12px] font-black text-slate-400 uppercase tracking-[0.4em] mt-3">Pengurusan Akaun & Sekuriti Digital MyDigitalID</p>
+            <p class="text-[12px] font-black text-slate-400 uppercase tracking-[0.4em] mt-3">Sistem Maklumat Peribadi & Akses</p>
         </div>
         <div class="flex items-center gap-4 bg-white px-6 py-3 rounded-xl shadow-sm border border-gray-100">
             <div class="relative flex h-3 w-3">
@@ -40,13 +40,10 @@
                     </div>
                     
                     <h4 class="text-2xl font-black text-slate-800 uppercase tracking-tighter leading-tight">{{ Auth::user()->name }}</h4>
-                    <p class="text-[11px] font-bold text-slate-400 uppercase tracking-[0.2em] mt-3 ">Software Intern @ kodewave sdn bhd</p>
+                    
                     
                     <div class="mt-10 w-full space-y-4">
-                        <div class="flex items-center justify-between p-5 bg-green-50 rounded-2xl border border-green-100">
-                            <span class="text-[10px] font-black text-green-700 uppercase ">MyDigitalID Status</span>
-                            <span class="px-4 py-1.5 bg-white rounded-lg text-[9px] font-black text-green-600 shadow-sm uppercase">Verified</span>
-                        </div>
+
                         <div class="flex items-center justify-between p-5 bg-blue-50 rounded-2xl border border-blue-100">
                             <span class="text-[10px] font-black text-blue-700 uppercase ">System Privilege</span>
                             <span class="px-4 py-1.5 bg-white rounded-lg text-[9px] font-black text-blue-600 shadow-sm uppercase">Super Admin</span>
@@ -66,20 +63,33 @@
                 <form class="grid grid-cols-2 gap-10">
                     <div class="col-span-2 lg:col-span-1 space-y-2">
                         <label class="label-heavy">Nama Penuh Pegawai</label>
-                        <input type="text" value="{{ Auth::user()->name }}" class="input-heavy">
+                        <input type="text" value="{{ Auth::user()->name }}" class="input-heavy bg-white border-2 border-blue-200 focus:border-[#1E3A8A] focus:ring-4 focus:ring-blue-500/10 transition-all">
                     </div>
                     <div class="col-span-2 lg:col-span-1 space-y-2">
                         <label class="label-heavy">Alamat Emel Rasmi</label>
-                        <input type="email" value="{{ Auth::user()->email }}" class="input-heavy">
+                        <input type="email" value="{{ Auth::user()->email }}" class="input-heavy bg-white border-2 border-blue-200 focus:border-[#1E3A8A] focus:ring-4 focus:ring-blue-500/10 transition-all">
                     </div>
                     <div class="col-span-2 lg:col-span-1 space-y-2">
                         <label class="label-heavy">No. Kad Pengenalan</label>
-                        <input type="text" value="XXXXXX-XX-XXXX" class="input-heavy" readonly>
-                        <p class="text-[8px] font-bold text-slate-300  uppercase mt-2">* Dikunci oleh MyDigitalID Integration</p>
+                        <input type="text" value="XXXXXX-XX-XXXX" class="input-heavy bg-slate-100 border border-slate-200 text-slate-400 cursor-not-allowed select-none shadow-inner" readonly>
+                        <p class="text-[8px] font-bold text-slate-400 uppercase mt-2">* Dikunci oleh MyDigitalID Integration</p>
+                    </div>
+                    <div class="col-span-2 lg:col-span-1 space-y-2">
+                        <label class="label-heavy">Nombor Kakitangan</label>
+                        <input type="text" value="PNS-2023-010" class="input-heavy bg-white border-2 border-blue-200 focus:border-[#1E3A8A] focus:ring-4 focus:ring-blue-500/10 transition-all">
                     </div>
                     <div class="col-span-2 lg:col-span-1 space-y-2">
                         <label class="label-heavy">Jabatan / Agensi</label>
-                        <input type="text" value="Pegawai Teknologi Maklumat" class="input-heavy" readonly>
+                        <select class="input-heavy bg-white border-2 border-blue-200 focus:border-[#1E3A8A] focus:ring-4 focus:ring-blue-500/10 transition-all cursor-pointer">
+                            <option>Unit ICT PNS</option>
+                            <option>Jabatan Kewangan</option>
+                            <option>Jabatan Audit Selangor</option>
+                            <option>Pejabat SUK Selangor</option>
+                        </select>
+                    </div>
+                    <div class="col-span-2 lg:col-span-1 space-y-2">
+                        <label class="label-heavy">Jawatan</label>
+                        <input type="text" value="Pegawai Teknologi Maklumat F41" class="input-heavy bg-white border-2 border-blue-200 focus:border-[#1E3A8A] focus:ring-4 focus:ring-blue-500/10 transition-all">
                     </div>
                     
                     <div class="col-span-2 flex justify-end pt-6">
@@ -104,12 +114,12 @@
                         <button class="px-6 py-3 bg-white border-2 border-gray-100 rounded-xl text-[10px] font-black uppercase text-[#1E3A8A] hover:bg-blue-600 hover:text-white transition-all shadow-sm">Tukar</button>
                     </div>
 
-                    <div class="flex items-center justify-between p-8 bg-red-50 rounded-[2rem] border border-red-100 group">
+                    <div class="flex items-center justify-between p-8 bg-green-50 rounded-[2rem] border border-green-100 group">
                         <div class="space-y-1">
-                            <p class="text-[11px] font-black text-red-600 uppercase tracking-tighter ">Nyahaktif Akaun</p>
-                            <p class="text-[9px] font-bold text-red-400 uppercase">Akses akan dipadam serta-merta</p>
+                            <p class="text-[11px] font-black text-green-700 uppercase tracking-tighter ">MyDigitalID Status</p>
+                            <p class="text-[9px] font-bold text-green-600 uppercase">Akaun telah disahkan & selamat</p>
                         </div>
-                        <button class="px-6 py-3 bg-white border-2 border-red-200 rounded-xl text-[10px] font-black uppercase text-red-600 hover:bg-red-600 hover:text-white transition-all shadow-sm">Padam</button>
+                        <span class="px-6 py-3 bg-white border-2 border-green-200 rounded-xl text-[10px] font-black uppercase text-green-600 shadow-sm">Verified</span>
                     </div>
                 </div>
             </div>

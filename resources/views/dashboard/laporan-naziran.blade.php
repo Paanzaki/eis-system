@@ -11,27 +11,27 @@
                 <div class="h-2 w-8 bg-yellow-400 rounded-full"></div>
             </div>
             <h3 class="text-4xl font-black text-[#1E3A8A] tracking-tighter uppercase leading-none">
-                Laporan <span class="text-red-600">Naziran.</span>
+                Laporan Naziran
             </h3>
             <p class="text-[12px] font-black text-slate-400 uppercase tracking-[0.4em] mt-3">
                 FB-EIS-NZ &mdash; Jana & Arkib Laporan Naziran Perolehan & Aset
             </p>
         </div>
         <div class="flex items-center gap-3">
-            <button class="flex items-center gap-2 bg-[#1E3A8A] hover:bg-red-700 text-white px-6 py-3 rounded-xl text-[10px] font-black uppercase tracking-widest shadow-lg transition-all">
+            <a href="{{ route('laporan.naziran', ['status' => 'jana']) }}" class="flex items-center gap-2 bg-[#1E3A8A] hover:bg-red-700 text-white px-6 py-3 rounded-[5px] text-[10px] font-black uppercase tracking-widest shadow-lg transition-all">
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" stroke-width="2"/></svg>
                 Jana Laporan Baru
-            </button>
-            <button class="mini-export-btn mini-pdf px-5 py-3 rounded-xl text-[10px]">
+            </a>
+            <a href="{{ route('laporan.naziran', ['status' => 'muat-turun']) }}" class="mini-export-btn mini-pdf px-5 py-3 rounded-[5px] text-[10px]">
                 <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z" stroke-width="2"/></svg>
                 PDF
-            </button>
+            </a>
         </div>
     </div>
 
     {{-- ── Generator ── --}}
     <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
-        <div class="bg-white rounded-[2rem] border border-gray-100 shadow-sm p-8 flex flex-col gap-5">
+        <div class="bg-white rounded-[5px] border border-gray-100 shadow-sm p-8 flex flex-col gap-5">
             <div>
                 <h4 class="text-[12px] font-black text-[#1E3A8A] uppercase tracking-widest">Jana Laporan Naziran</h4>
                 <p class="text-[10px] text-slate-400 font-bold mt-1">Tetapkan skop dan tempoh laporan</p>
@@ -39,7 +39,7 @@
             <div class="space-y-4">
                 <div>
                     <label class="label-heavy">Jenis Naziran</label>
-                    <select class="input-heavy rounded-xl">
+                    <select class="input-heavy rounded-[5px]">
                         <option>Naziran Perolehan</option>
                         <option>Naziran Aset</option>
                         <option>Gabungan (Perolehan & Aset)</option>
@@ -47,13 +47,13 @@
                 </div>
                 <div>
                     <label class="label-heavy">Tahun</label>
-                    <select class="input-heavy rounded-xl">
+                    <select class="input-heavy rounded-[5px]">
                         <option>2026</option><option>2025</option><option>2024</option>
                     </select>
                 </div>
                 <div>
                     <label class="label-heavy">Jabatan / Entiti</label>
-                    <select class="input-heavy rounded-xl">
+                    <select class="input-heavy rounded-[5px]">
                         <option>Semua Jabatan</option>
                         <option>Pejabat SUK Selangor</option>
                         <option>Jabatan Audit Selangor</option>
@@ -68,12 +68,12 @@
                     </div>
                 </div>
             </div>
-            <button class="w-full bg-[#1E3A8A] hover:bg-red-700 text-white py-3.5 rounded-xl text-[10px] font-black uppercase tracking-widest transition-all mt-auto">
+            <a href="{{ route('laporan.naziran', ['status' => 'jana']) }}" class="block w-full text-center bg-[#1E3A8A] hover:bg-red-700 text-white py-3.5 rounded-[5px] text-[10px] font-black uppercase tracking-widest transition-all mt-auto">
                 Jana & Muat Turun
-            </button>
+            </a>
         </div>
 
-        <div class="lg:col-span-2 bg-white rounded-[2.5rem] border border-gray-100 shadow-sm overflow-hidden">
+        <div class="lg:col-span-2 bg-white rounded-[5px] border border-gray-100 shadow-sm overflow-hidden">
             <div class="px-10 py-6 border-b border-gray-50">
                 <h4 class="text-[12px] font-black text-[#1E3A8A] uppercase tracking-widest">Arkib Laporan Naziran</h4>
                 <p class="text-[10px] text-slate-400 font-bold uppercase tracking-widest mt-1">Laporan yang telah dijana oleh sistem</p>
@@ -108,10 +108,10 @@
                             <td class="text-[11px] text-slate-600">{{ $l['jana'] }}</td>
                             <td class="text-[11px] text-slate-400 font-bold">{{ $l['tarikh'] }}</td>
                             <td class="pr-10">
-                                <button class="mini-export-btn {{ $l['fmt']==='PDF'?'mini-pdf':'mini-excel' }}">
+                                <a href="{{ route('laporan.naziran', ['status' => 'muat-turun']) }}" class="mini-export-btn {{ $l['fmt']==='PDF'?'mini-pdf':'mini-excel' }}">
                                     <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" stroke-width="2"/></svg>
                                     {{ $l['fmt'] }}
-                                </button>
+                                </a>
                             </td>
                         </tr>
                         @endforeach

@@ -85,7 +85,7 @@
 
     <!-- Theme Toggle Switcher -->
     <button @click="darkMode = !darkMode; localStorage.setItem('theme', darkMode ? 'dark' : 'light')" 
-            class="fixed top-8 right-8 z-50 p-3 rounded-xl glass-card hover:scale-110 transition-all border border-gray-200/50">
+            class="fixed top-8 right-8 z-50 p-3 rounded-[5px] glass-card hover:scale-110 transition-all border border-gray-200/50">
         <svg x-show="!darkMode" class="w-5 h-5 text-[#1E3A8A]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" stroke-width="2.5"/></svg>
         <svg x-show="darkMode" class="w-5 h-5 text-yellow-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m12.728 0l-.707-.707M6.343 6.343l-.707-.707M12 8a4 4 0 100 8 4 4 0 000-8z" stroke-width="2.5"/></svg>
     </button>
@@ -110,22 +110,28 @@
                 <div class="space-y-2">
                     <label class="text-[9px] font-black text-slate-500 uppercase tracking-[0.3em] ml-2 block text-left" style="font-family: Arial !important;">Email Address</label>
                     <input type="email" name="email" value="{{ old('email') }}" required autofocus 
-                        class="w-full input-dark py-4 px-6 rounded-xl text-sm font-bold placeholder:text-slate-400" 
+                        class="w-full input-dark py-4 px-6 rounded-[5px] text-sm font-bold placeholder:text-slate-400" 
                         placeholder="farhan@pns.gov.my">
                 </div>
 
                 <div class="space-y-2">
                     <label class="text-[9px] font-black text-slate-500 uppercase tracking-[0.3em] ml-2 block text-left" style="font-family: Arial !important;">Password</label>
                     <input type="password" name="password" required 
-                        class="w-full input-dark py-4 px-6 rounded-xl text-sm font-bold placeholder:text-slate-400" 
+                        class="w-full input-dark py-4 px-6 rounded-[5px] text-sm font-bold placeholder:text-slate-400" 
                         placeholder="••••••••••••">
                 </div>
 
                 <div class="pt-6">
                     <button type="submit" 
-                        class="w-full bg-[#1E3A8A] hover:bg-red-700 text-white py-5 rounded-xl text-xs font-black uppercase tracking-[0.4em] shadow-xl transition-all duration-300">
+                        class="w-full bg-[#1E3A8A] hover:bg-red-700 text-white py-5 rounded-[5px] text-xs font-black uppercase tracking-[0.4em] shadow-xl transition-all duration-300">
                         akses portal
                     </button>
+                </div>
+                
+                <div class="text-center pt-4">
+                    <a href="{{ route('register') }}" class="text-[10px] font-black text-slate-500 uppercase tracking-widest hover:text-[#1E3A8A] dark:hover:text-white transition-colors">
+                        Tiada Akaun? <span class="text-red-600">Daftar Di Sini</span>
+                    </a>
                 </div>
             </form>
             

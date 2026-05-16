@@ -11,18 +11,18 @@
                 <div class="h-2 w-8 bg-yellow-400 rounded-full"></div>
             </div>
             <h3 class="text-4xl font-black text-[#1E3A8A] tracking-tighter uppercase leading-none">
-                Pindahan & Pelupusan <span class="text-red-600">Aset.</span>
+                Pindahan & Pelupusan Aset
             </h3>
             <p class="text-[12px] font-black text-slate-400 uppercase tracking-[0.4em] mt-3">
                 FB-EIS-AS-PL &mdash; Kelulusan & Tindakan Pindahan / Pelupusan Aset Alih
             </p>
         </div>
         <div class="flex items-center gap-3">
-            <button class="flex items-center gap-2 bg-[#1E3A8A] hover:bg-red-700 text-white px-6 py-3 rounded-xl text-[10px] font-black uppercase tracking-widest shadow-lg transition-all">
+            <button class="flex items-center gap-2 bg-[#1E3A8A] hover:bg-red-700 text-white px-6 py-3 rounded-[5px] text-[10px] font-black uppercase tracking-widest shadow-lg transition-all">
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M12 4v16m8-8H4" stroke-width="2.5"/></svg>
                 Permohonan Baharu
             </button>
-            <button class="mini-export-btn mini-pdf px-5 py-3 rounded-xl text-[10px]">
+            <button class="mini-export-btn mini-pdf px-5 py-3 rounded-[5px] text-[10px]">
                 <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z" stroke-width="2"/></svg>
                 PDF
             </button>
@@ -37,7 +37,7 @@
             ['label'=>'Dilulus & Dilaksana',   'val'=>'31',       'sub'=>'Pelupusan / pindahan selesai',  'color'=>'green'],
             ['label'=>'Nilai Aset Dilupus',    'val'=>'RM 2.84M', 'sub'=>'Kumulatif nilai buku semasa',   'color'=>'red'],
         ] as $s)
-        <div class="card-stat-pns bg-white p-6 rounded-2xl border border-gray-100">
+        <div class="card-stat-pns bg-white p-6 rounded-[5px] border border-gray-100">
             <p class="text-3xl font-black text-[#1E3A8A] tracking-tighter">{{ $s['val'] }}</p>
             <p class="text-[10px] font-black text-slate-500 uppercase tracking-widest mt-2">{{ $s['label'] }}</p>
             <p class="text-[9px] text-slate-400 font-bold mt-0.5">{{ $s['sub'] }}</p>
@@ -47,21 +47,21 @@
 
     {{-- ── Tabs ── --}}
     <div x-data="{ tab: 'pelupusan' }" class="space-y-6">
-        <div class="flex gap-2 bg-gray-50 rounded-2xl p-1.5 w-fit">
+        <div class="flex gap-2 bg-gray-50 rounded-[5px] p-1.5 w-fit">
             <button @click="tab = 'pelupusan'"
                 :class="tab === 'pelupusan' ? 'bg-white shadow-sm text-[#1E3A8A]' : 'text-slate-400 hover:text-slate-600'"
-                class="px-6 py-2.5 rounded-xl text-[10px] font-black uppercase tracking-widest transition-all">
+                class="px-6 py-2.5 rounded-[5px] text-[10px] font-black uppercase tracking-widest transition-all">
                 Pelupusan Aset
             </button>
             <button @click="tab = 'pindahan'"
                 :class="tab === 'pindahan' ? 'bg-white shadow-sm text-[#1E3A8A]' : 'text-slate-400 hover:text-slate-600'"
-                class="px-6 py-2.5 rounded-xl text-[10px] font-black uppercase tracking-widest transition-all">
+                class="px-6 py-2.5 rounded-[5px] text-[10px] font-black uppercase tracking-widest transition-all">
                 Pindahan Aset
             </button>
         </div>
 
         {{-- Pelupusan Tab ── --}}
-        <div x-show="tab === 'pelupusan'" class="bg-white rounded-[2.5rem] border border-gray-100 shadow-sm overflow-hidden">
+        <div x-show="tab === 'pelupusan'" class="bg-white rounded-[5px] border border-gray-100 shadow-sm overflow-hidden">
             <div class="px-10 py-6 border-b border-gray-50">
                 <h4 class="text-[12px] font-black text-[#1E3A8A] uppercase tracking-widest">Senarai Permohonan Pelupusan 2026</h4>
                 <p class="text-[10px] text-slate-400 font-bold uppercase tracking-widest mt-1">Merangkumi semua kaedah: Lelong, Musnah, Jual & Derma</p>
@@ -114,7 +114,7 @@
         </div>
 
         {{-- Pindahan Tab ── --}}
-        <div x-show="tab === 'pindahan'" class="bg-white rounded-[2.5rem] border border-gray-100 shadow-sm overflow-hidden">
+        <div x-show="tab === 'pindahan'" class="bg-white rounded-[5px] border border-gray-100 shadow-sm overflow-hidden">
             <div class="px-10 py-6 border-b border-gray-50">
                 <h4 class="text-[12px] font-black text-[#1E3A8A] uppercase tracking-widest">Senarai Pindahan Aset 2026</h4>
                 <p class="text-[10px] text-slate-400 font-bold uppercase tracking-widest mt-1">Rekod pindahan antara jabatan / lokasi</p>

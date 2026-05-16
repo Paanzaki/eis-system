@@ -11,18 +11,18 @@
                 <div class="h-2 w-8 bg-yellow-400 rounded-full"></div>
             </div>
             <h3 class="text-4xl font-black text-[#1E3A8A] tracking-tighter uppercase leading-none">
-                Laporan Eksekutif <span class="text-red-600">Tahunan.</span>
+                Laporan Eksekutif Tahunan
             </h3>
             <p class="text-[12px] font-black text-slate-400 uppercase tracking-[0.4em] mt-3">
                 FB-EIS-AS-LA &mdash; Laporan Eksekutif Tahunan JKPAK PNS Selangor
             </p>
         </div>
         <div class="flex items-center gap-3">
-            <button class="flex items-center gap-2 bg-[#1E3A8A] hover:bg-red-700 text-white px-6 py-3 rounded-xl text-[10px] font-black uppercase tracking-widest shadow-lg transition-all">
+            <button class="flex items-center gap-2 bg-[#1E3A8A] hover:bg-red-700 text-white px-6 py-3 rounded-[5px] text-[10px] font-black uppercase tracking-widest shadow-lg transition-all">
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" stroke-width="2"/></svg>
                 Muat Turun Laporan PDF
             </button>
-            <button class="mini-export-btn mini-excel px-5 py-3 rounded-xl text-[10px]">
+            <button class="mini-export-btn mini-excel px-5 py-3 rounded-[5px] text-[10px]">
                 <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" stroke-width="2"/></svg>
                 Excel
             </button>
@@ -30,7 +30,7 @@
     </div>
 
     {{-- ── Executive KPI Dashboard ── --}}
-    <div class="bg-gradient-to-br from-[#0f1e45] to-[#1E3A8A] rounded-[2.5rem] p-10 relative overflow-hidden">
+    <div class="bg-gradient-to-br from-[#0f1e45] to-[#1E3A8A] rounded-[5px] p-10 relative overflow-hidden">
         <div class="absolute top-0 right-0 w-96 h-96 bg-yellow-400/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
         <div class="relative">
             <div class="flex items-center gap-3 mb-6">
@@ -49,7 +49,7 @@
                     ['label'=>'Pematuhan Naziran','val'=>'91.2%','trend'=>'+2.4%','sub'=>'vs Sasaran 85%','up'=>true],
                     ['label'=>'Nilai Aset Dilupus','val'=>'RM 1.84M','trend'=>'-12%','sub'=>'vs RM 2.09M (2024)','up'=>false],
                 ] as $kpi)
-                <div class="bg-white/8 backdrop-blur-sm rounded-2xl p-6 border border-white/10">
+                <div class="bg-white/8 backdrop-blur-sm rounded-[5px] p-6 border border-white/10">
                     <p class="text-[28px] font-black text-white leading-none">{{ $kpi['val'] }}</p>
                     <div class="flex items-center gap-2 mt-2">
                         <span class="text-[10px] font-black {{ $kpi['up'] ? 'text-emerald-400' : 'text-red-400' }}">
@@ -68,7 +68,7 @@
     <div class="section-divider">Prestasi Perolehan Tahunan 2025</div>
 
     <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
-        <div class="lg:col-span-2 bg-white rounded-[2rem] border border-gray-100 shadow-sm overflow-hidden">
+        <div class="lg:col-span-2 bg-white rounded-[5px] border border-gray-100 shadow-sm overflow-hidden">
             <div class="px-8 py-6 border-b border-gray-50">
                 <h4 class="text-[12px] font-black text-[#1E3A8A] uppercase tracking-widest">Ringkasan Perolehan Mengikut Kategori</h4>
             </div>
@@ -114,7 +114,7 @@
             </div>
         </div>
 
-        <div class="bg-white rounded-[2rem] border border-gray-100 shadow-sm p-8">
+        <div class="bg-white rounded-[5px] border border-gray-100 shadow-sm p-8">
             <h4 class="text-[12px] font-black text-[#1E3A8A] uppercase tracking-widest mb-6">Statistik Utama 2025</h4>
             <div class="space-y-5">
                 @foreach([
@@ -148,7 +148,7 @@
             ['label'=>'Dilupuskan 2025','val'=>'142 Unit','sub'=>'Nilai: RM 1.84M'],
             ['label'=>'Kadar Verifikasi','val'=>'96.2%','sub'=>'11,940 daripada 12,402'],
         ] as $s)
-        <div class="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm card-stat-pns">
+        <div class="bg-white p-6 rounded-[5px] border border-gray-100 shadow-sm card-stat-pns">
             <p class="text-3xl font-black text-[#1E3A8A] tracking-tighter">{{ $s['val'] }}</p>
             <p class="text-[10px] font-black text-slate-500 uppercase tracking-widest mt-2">{{ $s['label'] }}</p>
             <p class="text-[9px] text-slate-400 font-bold mt-0.5">{{ $s['sub'] }}</p>
@@ -164,8 +164,8 @@
             ['tahun'=>'2024','label'=>'Laporan Eksekutif Tahunan 2024','tarikh'=>'14/01/2025','saiz'=>'10.8 MB','status'=>'Tersedia'],
             ['tahun'=>'2023','label'=>'Laporan Eksekutif Tahunan 2023','tarikh'=>'12/01/2024','saiz'=>'9.6 MB','status'=>'Tersedia'],
         ] as $ar)
-        <div class="bg-white rounded-[2rem] border border-gray-100 shadow-sm p-7 flex items-center gap-5">
-            <div class="w-14 h-14 rounded-2xl bg-[#1E3A8A]/5 flex items-center justify-center flex-shrink-0">
+        <div class="bg-white rounded-[5px] border border-gray-100 shadow-sm p-7 flex items-center gap-5">
+            <div class="w-14 h-14 rounded-[5px] bg-[#1E3A8A]/5 flex items-center justify-center flex-shrink-0">
                 <svg class="w-7 h-7 text-[#1E3A8A]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z" stroke-width="2"/>
                 </svg>

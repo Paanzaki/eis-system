@@ -3,6 +3,20 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
+$asetRecords = function (?string $id = null) {
+    $records = [
+        'PNS-ICT-2026-001' => ['id'=>'PNS-ICT-2026-001','siri'=>'PNS/ICT/2026/001','nama'=>'Laptop Dell Latitude 5520','jenis'=>'Harta Modal','kategori'=>'ICT','sub'=>'Komputer Riba','jabatan'=>'Unit ICT PNS','lokasi'=>'Aras 7, Bilik Server Mini','bangunan'=>'Bangunan PNS','tarikh'=>'03/01/2026','harga'=>6800,'semasa'=>6460,'status'=>'Dalam Penggunaan','pembekal'=>'Syarikat Teknologi Maju Sdn. Bhd.'],
+        'PNS-KND-2026-001' => ['id'=>'PNS-KND-2026-001','siri'=>'PNS/KND/2026/001','nama'=>'Kenderaan Proton X70 (BQC 1234)','jenis'=>'Harta Modal','kategori'=>'Kenderaan','sub'=>'SUV','jabatan'=>'Pejabat SUK Selangor','lokasi'=>'Parkir Kenderaan Rasmi','bangunan'=>'Kompleks SUK','tarikh'=>'05/01/2026','harga'=>145000,'semasa'=>132000,'status'=>'Dalam Penggunaan','pembekal'=>'Proton Edar Sdn. Bhd.'],
+        'PNS-ICT-2026-002' => ['id'=>'PNS-ICT-2026-002','siri'=>'PNS/ICT/2026/002','nama'=>'Monitor 27" LG UltraWide','jenis'=>'Harta Modal','kategori'=>'ICT','sub'=>'Monitor','jabatan'=>'Unit Kewangan','lokasi'=>'Aras 5, Ruang Operasi','bangunan'=>'Bangunan PNS','tarikh'=>'08/01/2026','harga'=>2800,'semasa'=>2660,'status'=>'Dalam Penggunaan','pembekal'=>'Syarikat Teknologi Maju Sdn. Bhd.'],
+    ];
+
+    if ($id && isset($records[$id])) {
+        return $records[$id];
+    }
+
+    return $records['PNS-ICT-2026-001'];
+};
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes - Sistem EIS Perbendaharaan Negeri Selangor (PNS)
@@ -13,7 +27,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::middleware(['auth', 'verified'])->group(function () {
+Route::middleware(['auth', 'verified'])->group(function () use ($asetRecords) {
 
     // 1. CENTRALIZE DASHBOARD (FS-EIS-CD)
     Route::get('/dashboard', function () {
@@ -25,12 +39,6 @@ Route::middleware(['auth', 'verified'])->group(function () {
         Route::get('/data', function () {
             return view('dashboard.perolehan-data');
         })->name('data');
-        Route::get('/carian', function () {
-            return view('dashboard.perolehan-carian');
-        })->name('carian');
-        Route::get('/pendaftaran', function () {
-            return view('dashboard.perolehan-daftar');
-        })->name('index');
         Route::get('/ppt', function () {
             return view('dashboard.perolehan-ppt');
         })->name('ppt');
@@ -54,16 +62,31 @@ Route::middleware(['auth', 'verified'])->group(function () {
     })->name('perolehan');
 
     // 3. MODUL PENGURUSAN ASET (FS-EIS-MS)
-    Route::prefix('aset')->name('aset.')->group(function () {
+    Route::prefix('aset')->name('aset.')->group(function () use ($asetRecords) {
         Route::get('/senarai', function () {
             return view('dashboard.aset-senarai');
         })->name('index');
+        Route::get('/daftar', function () {
+            return view('dashboard.aset-daftar');
+        })->name('daftar');
+        Route::get('/daftar/pengesahan', function () {
+            return view('dashboard.aset-daftar-pengesahan');
+        })->name('daftar.pengesahan');
+        Route::get('/{id}/lihat', function (string $id) use ($asetRecords) {
+            return view('dashboard.aset-tindakan', ['mode' => 'lihat', 'asset' => $asetRecords($id)]);
+        })->name('lihat');
+        Route::get('/{id}/edit', function (string $id) use ($asetRecords) {
+            return view('dashboard.aset-tindakan', ['mode' => 'edit', 'asset' => $asetRecords($id)]);
+        })->name('edit');
+        Route::get('/{id}/cetak', function (string $id) use ($asetRecords) {
+            return view('dashboard.aset-tindakan', ['mode' => 'cetak', 'asset' => $asetRecords($id)]);
+        })->name('cetak');
+        Route::get('/{id}/hapus', function (string $id) use ($asetRecords) {
+            return view('dashboard.aset-tindakan', ['mode' => 'hapus', 'asset' => $asetRecords($id)]);
+        })->name('hapus');
         Route::get('/pemeriksaan', function () {
             return view('dashboard.aset-pemeriksaan');
         })->name('pemeriksaan');
-        Route::get('/pelupusan', function () {
-            return view('dashboard.aset-pelupusan');
-        })->name('pelupusan');
         Route::get('/pelantikan', function () {
             return view('dashboard.aset-pelantikan');
         })->name('pelantikan');
@@ -130,7 +153,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
             return view('dashboard.admin-config');
         })->name('config');
         Route::get('/audit', function () {
-            return view('dashboard.perolehan-audit');
+            return view('dashboard.admin-audit');
         })->name('audit');
 
         // Log Viewer Connection
@@ -171,6 +194,10 @@ Route::middleware(['auth', 'verified'])->group(function () {
             return view('dashboard.sokongan-bantuan');
         })->name('bantuan');
     });
+
+    Route::get('/selenggara/faq', function () {
+        return view('dashboard.selenggara-faq');
+    })->name('selenggara.faq');
 
     // SELENGGARA PEROLEHAN
     Route::prefix('selenggara/perolehan')->name('selenggara.perolehan.')->group(function () {

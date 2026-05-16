@@ -1,6 +1,4 @@
-<aside
-    x-cloak
-    :class="[
+<aside x-cloak :class="[
         sidebarOpen ? 'w-72 translate-x-0' : 'w-20 -translate-x-full lg:translate-x-0',
         darkMode ? 'bg-[#090e1a] border-white/5' : 'bg-white border-gray-100'
     ]"
@@ -9,9 +7,10 @@
 
     {{-- â•â• LOGO â•â• --}}
     <div :class="darkMode ? 'border-white/5' : 'border-gray-100'"
-         class="h-24 flex items-center px-4 border-b flex-shrink-0 transition-colors duration-500">
+        class="h-24 flex items-center px-4 border-b flex-shrink-0 transition-colors duration-500">
         <div class="flex items-center gap-3 min-w-0">
-            <img src="{{ asset('images/jata-selangor.png') }}" alt="Jata" class="h-14 w-14 flex-shrink-0 object-contain">
+            <img src="{{ asset('images/jata-selangor.png') }}" alt="Jata"
+                class="h-14 w-14 flex-shrink-0 object-contain">
             <div x-show="sidebarOpen" x-transition.opacity class="min-w-0">
                 <h1 :class="darkMode ? 'text-blue-400' : 'text-[#1E3A8A]'"
                     class="text-[15px] font-black tracking-tighter uppercase italic leading-none"
@@ -30,10 +29,12 @@
     <nav class="flex-1 px-2.5 py-4 space-y-0.5 overflow-y-auto sidebar-scroll">
 
         {{-- Helper macros via inline ternary:
-             active  dark  â†’ bg-blue-500/10 text-blue-400 border-l-[3px] border-yellow-400
-             active  light â†’ bg-blue-50     text-[#1E3A8A] border-l-[3px] border-yellow-400
-             default dark  â†’ text-slate-400 hover:bg-white/5 hover:text-slate-200 hover:border-l-[3px] hover:border-yellow-400/40
-             default light â†’ text-slate-500 hover:bg-blue-50/60 hover:text-[#1E3A8A] hover:border-l-[3px] hover:border-yellow-400/40
+        active dark â†’ bg-blue-500/10 text-blue-400 border-l-[3px] border-yellow-400
+        active light â†’ bg-blue-50 text-[#1E3A8A] border-l-[3px] border-yellow-400
+        default dark â†’ text-slate-400 hover:bg-white/5 hover:text-slate-200 hover:border-l-[3px]
+        hover:border-yellow-400/40
+        default light â†’ text-slate-500 hover:bg-blue-50/60 hover:text-[#1E3A8A] hover:border-l-[3px]
+        hover:border-yellow-400/40
         --}}
 
         {{-- â”€â”€ Dashboard â”€â”€ --}}
@@ -41,20 +42,23 @@
             $isDash = request()->routeIs('dashboard');
         @endphp
         <a href="{{ route('dashboard') }}"
-           :class="darkMode
+            :class="darkMode
                ? '{{ $isDash ? 'bg-blue-500/10 text-blue-400 border-l-[3px] border-yellow-400' : 'text-slate-400 hover:bg-white/5 hover:text-slate-200 border-l-[3px] border-transparent hover:border-yellow-400/40' }}'
                : '{{ $isDash ? 'bg-blue-50 text-[#1E3A8A] border-l-[3px] border-yellow-400' : 'text-slate-500 hover:bg-blue-50/60 hover:text-[#1E3A8A] border-l-[3px] border-transparent hover:border-yellow-400/40' }}'"
-           class="nav-item flex items-center gap-3.5 px-3 py-2.5 rounded-r-xl transition-all duration-200">
-            <svg class="w-[18px] h-[18px] flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
-                <path d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"/>
+            class="nav-item flex items-center gap-3.5 px-3 py-2.5 rounded-r-xl transition-all duration-200">
+            <svg class="w-[18px] h-[18px] flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                stroke-width="2">
+                <path
+                    d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z" />
             </svg>
-            <span x-show="sidebarOpen" x-transition.opacity class="text-[11px] font-black uppercase tracking-widest whitespace-nowrap">Dashboard</span>
+            <span x-show="sidebarOpen" x-transition.opacity
+                class="text-[11px] font-black uppercase tracking-widest whitespace-nowrap">Dashboard</span>
         </a>
 
         {{-- â”€â”€ SECTION: Operasi â”€â”€ --}}
         <div x-show="sidebarOpen" class="pt-4 pb-1 px-3">
             <p :class="darkMode ? 'text-white/20' : 'text-slate-300'"
-               class="text-[9px] font-black uppercase tracking-[0.25em]">Operasi</p>
+                class="text-[9px] font-black uppercase tracking-[0.25em]">Operasi</p>
         </div>
 
         {{-- â”€â”€ Perolehan â”€â”€ --}}
@@ -65,29 +69,33 @@
                     : 'text-slate-500 hover:bg-blue-50/60 hover:text-[#1E3A8A] border-l-[3px] border-transparent hover:border-yellow-400/40'"
                 class="nav-item w-full flex items-center justify-between gap-3.5 px-3 py-2.5 rounded-r-xl transition-all duration-200">
                 <div class="flex items-center gap-3.5">
-                    <svg class="w-[18px] h-[18px] flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
-                        <path d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/>
+                    <svg class="w-[18px] h-[18px] flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                        stroke-width="2">
+                        <path d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
                     </svg>
-                    <span x-show="sidebarOpen" x-transition.opacity class="text-[11px] font-black uppercase tracking-widest whitespace-nowrap">Pengurusan Perolehan</span>
+                    <span x-show="sidebarOpen" x-transition.opacity
+                        class="text-[11px] font-black uppercase tracking-widest whitespace-nowrap">Pengurusan
+                        Perolehan</span>
                 </div>
-                <svg x-show="sidebarOpen" class="w-3 h-3 flex-shrink-0 transition-transform duration-200" :class="open ? 'rotate-180' : ''" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path d="M19 9l-7 7-7-7" stroke-width="2.5"/>
+                <svg x-show="sidebarOpen" class="w-3 h-3 flex-shrink-0 transition-transform duration-200"
+                    :class="open ? 'rotate-180' : ''" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path d="M19 9l-7 7-7-7" stroke-width="2.5" />
                 </svg>
             </button>
 
             <div x-show="open && sidebarOpen" x-collapse x-cloak class="ml-8 mt-0.5 space-y-0.5 border-l"
-                 :class="darkMode ? 'border-white/5' : 'border-gray-100'">
+                :class="darkMode ? 'border-white/5' : 'border-gray-100'">
                 @foreach([
-                    ['Perancangan Tahunan (PPT)', route('perolehan.ppt')],
-                    ['Pelaksanaan Perolehan', route('perolehan.pelaksanaan')],
-                    ['Tender', route('perolehan.data')],
-                ] as [$label, $href])
-                <a href="{{ $href }}"
-                   :class="darkMode ? 'text-slate-500 hover:text-blue-400 hover:bg-white/5' : 'text-slate-400 hover:text-[#1E3A8A] hover:bg-blue-50/60'"
-                   class="sub-item flex items-center gap-2 px-4 py-2 rounded-r-lg text-[11px] font-bold uppercase tracking-wider transition-all duration-150">
-                    <span class="w-1 h-1 rounded-full flex-shrink-0" :class="darkMode ? 'bg-white/20' : 'bg-slate-300'"></span>
-                    {{ $label }}
-                </a>
+                        ['Perancangan Tahunan (PPT)', route('perolehan.ppt')],
+                        ['Pelaksanaan Perolehan', route('perolehan.pelaksanaan')],
+                        ['Tender', route('perolehan.data')],
+                    ] as [$label, $href])
+                    <a href="{{ $href }}"
+                       :class="darkMode ? 'text-slate-500 hover:text-blue-400 hover:bg-white/5' : 'text-slate-400 hover:text-[#1E3A8A] hover:bg-blue-50/60'"
+                       class="sub-item flex items-center gap-2 px-4 py-2 rounded-r-lg text-[11px] font-bold uppercase tracking-wider transition-all duration-150">
+                        <span class="w-1 h-1 rounded-full flex-shrink-0" :class="darkMode ? 'bg-white/20' : 'bg-slate-300'"></span>
+                        {{ $label }}
+                    </a>
                 @endforeach
 
                 {{-- Rundingan Terus (nested) --}}
@@ -127,21 +135,19 @@
                     </button>
                     <div x-show="openK" x-collapse x-cloak class="ml-4 space-y-0.5 border-l" :class="darkMode ? 'border-white/5' : 'border-gray-100'">
                         @foreach([
-                            ['Pengurusan Kontrak (Perunding)', route('perolehan.kontrak-perunding')], 
-                            ['Pengurusan Kontrak (Kerja)', route('perolehan.kontrak-kerja')]
-                        ] as [$kLabel, $kRoute])
-                        <a href="{{ $kRoute }}" :class="darkMode ? 'text-slate-500 hover:text-blue-400 hover:bg-white/5' : 'text-slate-400 hover:text-[#1E3A8A] hover:bg-blue-50/60'"
-                           class="sub-item flex items-center gap-2 px-4 py-2 rounded-r-lg text-[11px] font-bold uppercase tracking-wider transition-all duration-150">
-                            <span class="w-1 h-1 rounded-full flex-shrink-0" :class="darkMode ? 'bg-white/20' : 'bg-slate-300'"></span>
-                            {{ $kLabel }}
-                        </a>
+                                ['Pengurusan Kontrak (Perunding)', route('perolehan.kontrak-perunding')],
+                                ['Pengurusan Kontrak (Kerja)', route('perolehan.kontrak-kerja')]
+                            ] as [$kLabel, $kRoute])
+                            <a href="{{ $kRoute }}" :class="darkMode ? 'text-slate-500 hover:text-blue-400 hover:bg-white/5' : 'text-slate-400 hover:text-[#1E3A8A] hover:bg-blue-50/60'"
+                               class="sub-item flex items-center gap-2 px-4 py-2 rounded-r-lg text-[11px] font-bold uppercase tracking-wider transition-all duration-150">
+                                <span class="w-1 h-1 rounded-full flex-shrink-0" :class="darkMode ? 'bg-white/20' : 'bg-slate-300'"></span>
+                                {{ $kLabel }}
+                            </a>
                         @endforeach
                     </div>
                 </div>
             </div>
-        </div>
-
-        {{-- â”€â”€ Pengurusan Aset â”€â”€ --}}
+              {{-- ── Pengurusan Aset ── --}}
         <div x-data="{ open: openMenu === 'aset' }">
             <button @click="open = !open; sidebarOpen || (sidebarOpen = true)"
                 :class="darkMode
@@ -160,22 +166,55 @@
             </button>
             <div x-show="open && sidebarOpen" x-collapse x-cloak class="ml-8 mt-0.5 space-y-0.5 border-l" :class="darkMode ? 'border-white/5' : 'border-gray-100'">
                 @foreach([
-                    ['Daftar Aset', route('aset')],
-                    ['Verifikasi Fizikal', route('aset.verifikasi')],
-                    ['Pindahan & Pelupusan', route('aset.pindahan-pelupusan')],
-                    ['Kehilangan & Hapus Kira', route('aset.kehilangan-hapuskira')],
-                ] as [$label, $href])
-                <a href="{{ $href }}"
-                   :class="darkMode ? 'text-slate-500 hover:text-blue-400 hover:bg-white/5' : 'text-slate-400 hover:text-[#1E3A8A] hover:bg-blue-50/60'"
-                   class="sub-item flex items-center gap-2 px-4 py-2 rounded-r-lg text-[11px] font-bold uppercase tracking-wider transition-all duration-150">
-                    <span class="w-1 h-1 rounded-full flex-shrink-0" :class="darkMode ? 'bg-white/20' : 'bg-slate-300'"></span>
-                    {{ $label }}
-                </a>
+                        ['Senarai Aset', route('aset')],
+                        ['Pendaftaran Aset Baru', route('aset.daftar')],
+                    ] as [$label, $href])
+                    <a href="{{ $href }}"
+                       :class="darkMode ? 'text-slate-500 hover:text-blue-400 hover:bg-white/5' : 'text-slate-400 hover:text-[#1E3A8A] hover:bg-blue-50/60'"
+                       class="sub-item flex items-center gap-2 px-4 py-2 rounded-r-lg text-[11px] font-bold uppercase tracking-wider transition-all duration-150">
+                        <span class="w-1 h-1 rounded-full flex-shrink-0" :class="darkMode ? 'bg-white/20' : 'bg-slate-300'"></span>
+                        {{ $label }}
+                    </a>
+                @endforeach
+                
+                <div x-data="{ openP: false }">
+                    <button @click="openP = !openP" :class="darkMode ? 'text-slate-500 hover:text-blue-400 hover:bg-white/5' : 'text-slate-400 hover:text-[#1E3A8A] hover:bg-blue-50/60'" class="sub-item w-full flex items-center justify-between gap-2 px-4 py-2 rounded-r-lg text-[11px] font-bold uppercase tracking-wider transition-all duration-150">
+                        <span class="flex items-center gap-2">
+                            <span class="w-1 h-1 rounded-full flex-shrink-0" :class="darkMode ? 'bg-white/20' : 'bg-slate-300'"></span>
+                            Pemeriksaan Aset
+                        </span>
+                        <svg class="w-2.5 h-2.5 transition-transform duration-200" :class="openP ? 'rotate-180' : ''" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path d="M19 9l-7 7-7-7" stroke-width="2.5"/>
+                        </svg>
+                    </button>
+                    <div x-show="openP" x-collapse x-cloak class="ml-4 space-y-0.5 border-l" :class="darkMode ? 'border-white/5' : 'border-gray-100'">
+                        @foreach([
+                                ['Senarai Pemeriksaan', route('aset.pemeriksaan')],
+                                ['Pengurusan Lantikan', route('aset.pelantikan')]
+                            ] as [$label, $href])
+                            <a href="{{ $href }}" :class="darkMode ? 'text-slate-500 hover:text-blue-400 hover:bg-white/5' : 'text-slate-400 hover:text-[#1E3A8A] hover:bg-blue-50/60'" class="sub-item flex items-center gap-2 px-4 py-2 rounded-r-lg text-[11px] font-bold uppercase tracking-wider transition-all duration-150">
+                                <span class="w-1 h-1 rounded-full flex-shrink-0" :class="darkMode ? 'bg-white/20' : 'bg-slate-300'"></span>
+                                {{ $label }}
+                            </a>
+                        @endforeach
+                    </div>
+                </div>
+
+                @foreach([
+                        ['Pindahan & Pelupusan', route('aset.pindahan-pelupusan')],
+                        ['Kehilangan & Hapus Kira', route('aset.kehilangan-hapuskira')],
+                    ] as [$label, $href])
+                    <a href="{{ $href }}"
+                       :class="darkMode ? 'text-slate-500 hover:text-blue-400 hover:bg-white/5' : 'text-slate-400 hover:text-[#1E3A8A] hover:bg-blue-50/60'"
+                       class="sub-item flex items-center gap-2 px-4 py-2 rounded-r-lg text-[11px] font-bold uppercase tracking-wider transition-all duration-150">
+                        <span class="w-1 h-1 rounded-full flex-shrink-0" :class="darkMode ? 'bg-white/20' : 'bg-slate-300'"></span>
+                        {{ $label }}
+                    </a>
                 @endforeach
             </div>
         </div>
 
-        {{-- â”€â”€ Laporan â”€â”€ --}}
+        {{-- ── Laporan ── --}}
         <div x-data="{ open: openMenu === 'laporan' }">
             <button @click="open = !open; sidebarOpen || (sidebarOpen = true)"
                 :class="darkMode
@@ -194,21 +233,21 @@
             </button>
             <div x-show="open && sidebarOpen" x-collapse x-cloak class="ml-8 mt-0.5 space-y-0.5 border-l" :class="darkMode ? 'border-white/5' : 'border-gray-100'">
                 @foreach([
-                    ['Laporan Suku Tahun JKPAK', route('laporan.suku-tahun')],
-                    ['Laporan Eksekutif Tahunan JKPAK', route('laporan.eksekutif')],
-                    ['Laporan Naziran', route('laporan.naziran')],
-                ] as [$label, $route])
-                <a href="{{ $route }}"
-                   :class="darkMode ? 'text-slate-500 hover:text-blue-400 hover:bg-white/5' : 'text-slate-400 hover:text-[#1E3A8A] hover:bg-blue-50/60'"
-                   class="sub-item flex items-center gap-2 px-4 py-2 rounded-r-lg text-[11px] font-bold uppercase tracking-wider transition-all duration-150">
-                    <span class="w-1 h-1 rounded-full flex-shrink-0" :class="darkMode ? 'bg-white/20' : 'bg-slate-300'"></span>
-                    {{ $label }}
-                </a>
+                        ['Laporan Suku Tahun JKPAK', route('laporan.suku-tahun')],
+                        ['Laporan Eksekutif Tahunan JKPAK', route('laporan.eksekutif')],
+                        ['Laporan Naziran', route('laporan.naziran')],
+                    ] as [$label, $route])
+                    <a href="{{ $route }}"
+                       :class="darkMode ? 'text-slate-500 hover:text-blue-400 hover:bg-white/5' : 'text-slate-400 hover:text-[#1E3A8A] hover:bg-blue-50/60'"
+                       class="sub-item flex items-center gap-2 px-4 py-2 rounded-r-lg text-[11px] font-bold uppercase tracking-wider transition-all duration-150">
+                        <span class="w-1 h-1 rounded-full flex-shrink-0" :class="darkMode ? 'bg-white/20' : 'bg-slate-300'"></span>
+                        {{ $label }}
+                    </a>
                 @endforeach
             </div>
         </div>
 
-        {{-- â”€â”€ Naziran â”€â”€ --}}
+        {{-- ── Naziran ── --}}
         <div x-data="{ open: openMenu === 'naziran' }">
             <button @click="open = !open; sidebarOpen || (sidebarOpen = true)"
                 :class="darkMode
@@ -221,45 +260,44 @@
                     </svg>
                     <span x-show="sidebarOpen" x-transition.opacity class="text-[11px] font-black uppercase tracking-widest whitespace-nowrap">Naziran</span>
                 </div>
-                <svg x-show="sidebarOpen" class="w-3 h-3 flex-shrink-0 transition-transform duration-200" :class="open ? 'rotate-180' : ''" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                 <svg x-show="sidebarOpen" class="w-3 h-3 flex-shrink-0 transition-transform duration-200" :class="open ? 'rotate-180' : ''" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path d="M19 9l-7 7-7-7" stroke-width="2.5"/>
                 </svg>
             </button>
             <div x-show="open && sidebarOpen" x-collapse x-cloak class="ml-8 mt-0.5 space-y-0.5 border-l" :class="darkMode ? 'border-white/5' : 'border-gray-100'">
                 @foreach([
-                    ['Naziran Perolehan', route('naziran.perolehan')],
-                    ['Naziran Aset', route('naziran.aset')],
-                ] as [$label, $href])
-                <a href="{{ $href }}"
-                   :class="darkMode ? 'text-slate-500 hover:text-blue-400 hover:bg-white/5' : 'text-slate-400 hover:text-[#1E3A8A] hover:bg-blue-50/60'"
-                   class="sub-item flex items-center gap-2 px-4 py-2 rounded-r-lg text-[11px] font-bold uppercase tracking-wider transition-all duration-150">
-                    <span class="w-1 h-1 rounded-full flex-shrink-0" :class="darkMode ? 'bg-white/20' : 'bg-slate-300'"></span>
-                    {{ $label }}
-                </a>
+                        ['Naziran Perolehan', route('naziran.perolehan')],
+                        ['Naziran Aset', route('naziran.aset')],
+                    ] as [$label, $href])
+                    <a href="{{ $href }}"
+                       :class="darkMode ? 'text-slate-500 hover:text-blue-400 hover:bg-white/5' : 'text-slate-400 hover:text-[#1E3A8A] hover:bg-blue-50/60'"
+                       class="sub-item flex items-center gap-2 px-4 py-2 rounded-r-lg text-[11px] font-bold uppercase tracking-wider transition-all duration-150">
+                        <span class="w-1 h-1 rounded-full flex-shrink-0" :class="darkMode ? 'bg-white/20' : 'bg-slate-300'"></span>
+                        {{ $label }}
+                    </a>
                 @endforeach
             </div>
         </div>
 
-        {{-- â”€â”€ SECTION: Sokongan â”€â”€ --}}
+        {{-- ── SECTION: Sokongan ── --}}
         <div x-show="sidebarOpen" class="pt-5 pb-1 px-3">
-            <p :class="darkMode ? 'text-white/20' : 'text-slate-300'"
+             <p :class="darkMode ? 'text-white/20' : 'text-slate-300'"
                class="text-[9px] font-black uppercase tracking-[0.25em]">Sokongan</p>
-        </div>
-
         {{-- â”€â”€ FAQ / Chatbot â”€â”€ --}}
-        @php $isChatbot = request()->routeIs('chatbot'); @endphp
+       
+                @php $isChatbot = request()->routeIs('chatbot'); @endphp
         <a href="{{ route('chatbot') }}"
            :class="darkMode
                ? '{{ $isChatbot ? 'bg-blue-500/10 text-blue-400 border-l-[3px] border-yellow-400' : 'text-slate-400 hover:bg-white/5 hover:text-slate-200 border-l-[3px] border-transparent hover:border-yellow-400/40' }}'
                : '{{ $isChatbot ? 'bg-blue-50 text-[#1E3A8A] border-l-[3px] border-yellow-400' : 'text-slate-500 hover:bg-blue-50/60 hover:text-[#1E3A8A] border-l-[3px] border-transparent hover:border-yellow-400/40' }}'"
            class="nav-item flex items-center gap-3.5 px-3 py-2.5 rounded-r-xl transition-all duration-200">
-            <svg class="w-[18px] h-[18px] flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+           <svg class="w-[18px] h-[18px] flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
                 <path d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"/>
             </svg>
             <span x-show="sidebarOpen" x-transition.opacity class="text-[11px] font-black uppercase tracking-widest whitespace-nowrap">FAI Chatbot</span>
         </a>
 
-        {{-- â”€â”€ Pengurusan Data â”€â”€ --}}
+         {{-- â”€â”€ Pengurusan Data â”€â”€ --}}
         <a href="{{ route('sokongan.migrasi') }}"
            :class="darkMode
                ? 'text-slate-400 hover:bg-white/5 hover:text-slate-200 border-l-[3px] border-transparent hover:border-yellow-400/40'
@@ -270,21 +308,27 @@
             </svg>
             <span x-show="sidebarOpen" x-transition.opacity class="text-[11px] font-black uppercase tracking-widest whitespace-nowrap">migrasi Data</span>
         </a>
+     
+                  
 
-    </nav>
+                                </nav>
 
-    {{-- â•â• BOTTOM CONTROLS â•â• --}}
+
+                           {{-- â•â• BOTTOM CONTROLS â•â• --}}
     <div :class="darkMode ? 'border-white/5' : 'border-gray-100'"
-         class="px-2.5 pb-4 pt-3 space-y-0.5 border-t transition-colors duration-500">
+          
+                  class="px-2.5 pb-4 pt-3 space-y-0.5 border-t transitio n-colors duration-500">
 
         {{-- â”€â”€ SECTION: Sistem â”€â”€ --}}
         <div x-show="sidebarOpen" class="pb-2 px-1">
-            <p :class="darkMode ? 'text-white/20' : 'text-slate-300'"
+              
+             <p :class="darkMode ? 'text-white/20' : 'text-slate-300'"
                class="text-[9px] font-black uppercase tracking-[0.25em]">Sistem</p>
         </div>
-
-        {{-- â”€â”€ Tetapan â”€â”€ --}}
-        <div x-data="{ open: openMenu === 'admin' }">
+ 
+         {{-- â”€â”€ Tetapan â”€â”€ --}}
+            
+                   <div x-data="{ open: openMenu === 'admin' }">
             <button @click="open = !open; sidebarOpen || (sidebarOpen = true)"
                 :class="darkMode
                     ? 'text-slate-400 hover:bg-white/5 hover:text-slate-200 border-l-[3px] border-transparent hover:border-yellow-400/40'
@@ -299,30 +343,35 @@
                 <svg x-show="sidebarOpen" class="w-3 h-3 flex-shrink-0 transition-transform duration-200" :class="open ? 'rotate-180' : ''" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path d="M19 9l-7 7-7-7" stroke-width="2.5"/>
                 </svg>
-            </button>
-            <div x-show="open && sidebarOpen" x-collapse x-cloak class="ml-8 mt-0.5 space-y-0.5 border-l" :class="darkMode ? 'border-white/5' : 'border-gray-100'">
+         
+                          </button>
+           
+                             <div x-show="open && sidebarOpen" x-collapse x-cloak class ="ml-8 mt-0.5 space-y-0.5 border-l" :class="darkMode ? 'border-white/5' : 'border-gray-100'">
                 @foreach([
-                    ['Pengguna', route('admin.pengguna')],
-                    ['Peranan', route('admin.peranan')],
-                    ['Jabatan', route('admin.jabatan')]
-                ] as [$label, $route])
-                <a href="{{ $route }}"
-                   :class="darkMode ? 'text-slate-500 hover:text-blue-400 hover:bg-white/5' : 'text-slate-400 hover:text-[#1E3A8A] hover:bg-blue-50/60'"
-                   class="sub-item flex items-center gap-2 px-4 py-2 rounded-r-lg text-[11px] font-bold uppercase tracking-wider transition-all duration-150">
-                    <span class="w-1 h-1 rounded-full flex-shrink-0" :class="darkMode ? 'bg-white/20' : 'bg-slate-300'"></span>
-                    {{ $label }}
-                </a>
+                        ['Peranan', route('admin.peranan')],
+                        ['Konfigurasi Sistem', route('admin.config')],
+                        ['Jejak Audit (Forensics)', route('admin.audit')],
+                        ['Log Viewer', route('admin.log_viewer')]
+                    ] as [$label, $route])
+                        <a href="{{ $route }}"
+                           :class="darkMode ? 'text-slate-500 hover:text-blue-400 hover:bg-white/5' : 'text-slate-400 hover:text-[#1E3A8A] hover:bg-blue-50/60'"
+                           class="sub-item flex items-center gap-2 px-4 py-2 rounded-r-lg text-[11px] font-bold uppercase tracking-wider transition-all duration-150">
+                            <span class="w-1 h-1 rounded-full flex-shrink-0" :class="darkMode ? 'bg-white/20' : 'bg-slate-300'"></span>
+                            {{ $label }}
+                        </a>
                 @endforeach
-            </div>
+
+                                           </div>
         </div>
 
-        {{-- â”€â”€ Penyelenggaraan â”€â”€ --}}
-        <div x-data="{ open: openMenu === 'maint' }">
+                        
+           {{-- ── Penyelenggaraan ── --}}
+         <div x-data="{ open: openMenu === 'maint' }">
             <button @click="open = !open; sidebarOpen || (sidebarOpen = true)"
                 :class="darkMode
                     ? 'text-slate-400 hover:bg-white/5 hover:text-slate-200 border-l-[3px] border-transparent hover:border-yellow-400/40'
                     : 'text-slate-500 hover:bg-blue-50/60 hover:text-[#1E3A8A] border-l-[3px] border-transparent hover:border-yellow-400/40'"
-                class="nav-item w-full flex items-center justify-between gap-3.5 px-3 py-2.5 rounded-r-xl transition-all duration-200">
+                 class="nav-item w-full flex items-center justify-between gap-3.5 px-3 py-2.5 rounded-r-xl transition-all duration-200">
                 <div class="flex items-center gap-3.5">
                     <svg class="w-[18px] h-[18px] flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
                         <path d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37a1.724 1.724 0 002.572-1.065z"/>
@@ -346,27 +395,30 @@
                             Selenggara Perolehan
                         </span>
                         <svg class="w-2.5 h-2.5 transition-transform duration-200" :class="openSP ? 'rotate-180' : ''" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path d="M19 9l-7 7-7-7" stroke-width="2.5"/>
+                             <path d="M19 9l-7 7-7-7" stroke-width="2.5"/>
                         </svg>
                     </button>
                     <div x-show="openSP" x-collapse x-cloak class="ml-4 space-y-0.5 border-l" :class="darkMode ? 'border-white/5' : 'border-gray-100'">
                         @foreach([
-                            ['Kategori Perolehan', route('selenggara.perolehan.kategori')],
-                            ['Kaedah Perolehan', route('selenggara.perolehan.kaedah')],
-                            ['Sumber Peruntukan', route('selenggara.perolehan.sumber')],
-                            ['Kategori Jabatan/Agensi', route('selenggara.perolehan.jabatan')],
-                            ['Jabatan/Agensi Memohon', route('selenggara.perolehan.memohon')],
-                            ['Kategori Naziran', route('selenggara.perolehan.kat-naziran')],
-                            ['Borang Naziran', route('selenggara.perolehan.bor-naziran')]
-                        ] as [$label, $route])
-                        <a href="{{ $route }}" :class="darkMode ? 'text-slate-500 hover:text-blue-400 hover:bg-white/5' : 'text-slate-400 hover:text-[#1E3A8A] hover:bg-blue-50/60'"
-                           class="sub-item flex items-center gap-2 px-4 py-2 rounded-r-lg text-[11px] font-bold uppercase tracking-wider transition-all duration-150">
-                            <span class="w-1 h-1 rounded-full flex-shrink-0" :class="darkMode ? 'bg-white/20' : 'bg-slate-300'"></span>
-                            {{ $label }}
-                        </a>
-                        @endforeach
+                                ['Kategori Perolehan', route('selenggara.perolehan.kategori')],
+                                ['Kaedah Perolehan', route('selenggara.perolehan.kaedah')],
+                                ['Sumber Peruntukan', route('selenggara.perolehan.sumber')],
+                                ['Kategori Jabatan/Agensi', route('selenggara.perolehan.jabatan')],
+                                ['Jabatan/Agensi Memohon', route('selenggara.perolehan.memohon')],
+                                ['Kategori Naziran', route('selenggara.perolehan.kat-naziran')],
+                                ['Borang Naziran', route('selenggara.perolehan.bor-naziran')]
+                            ] as [$label, $route])
+                                    <a href="{{ $route }}" :class="darkMode ? 'text-slate-500 hover:text-blue-400 hover:bg-white/5' : 'text-slate-400 hover:text-[#1E3A8A] hover:bg-blue-50/60'"
+                                       class="sub-item flex items-center gap-2 px-4 py-2 rounded-r-lg text-[11px] font-bold uppercase tracking-wider transition-all duration-150">
+                                         <span class="w-1 h-1 rounded-full flex-shrink-0" :class="darkMode ? 'bg-white/20' : 'bg-slate-300'"></span>
+                                        {{ $label }}
+
+
+                                  </a>
+                         @endforeach
                     </div>
-                </div>
+           
+                    </div>
 
                 {{-- Selenggara Aset --}}
                 <div x-data="{ openSA: false }">
@@ -380,24 +432,51 @@
                         <svg class="w-2.5 h-2.5 transition-transform duration-200" :class="openSA ? 'rotate-180' : ''" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path d="M19 9l-7 7-7-7" stroke-width="2.5"/>
                         </svg>
-                    </button>
-                    <div x-show="openSA" x-collapse x-cloak class="ml-4 space-y-0.5 border-l" :class="darkMode ? 'border-white/5' : 'border-gray-100'">
+    
+                                   </button>
+                     <div x-show="openSA" x-collapse x-cloak class="ml-4 space-y-0.5 border-l" :class="darkMode ? 'border-white/5' : 'border-gray-100'">
                         @foreach([
-                            ['Kategori Aset', route('selenggara.aset.kategori')],
-                            ['Sub-Kategori Aset', route('selenggara.aset.sub-kategori')],
-                            ['Status Aset', route('selenggara.aset.status')],
-                            ['Kuasa Melulus Pelupusan', route('selenggara.aset.kuasa-melulus')],
-                            ['Kaedah Pelupusan', route('selenggara.aset.kaedah-pelupusan')],
-                            ['Kategori Naziran', route('selenggara.aset.kat-naziran')],
-                            ['Borang Naziran', route('selenggara.aset.bor-naziran')],
-                            ['Had Nilai Aset', route('selenggara.aset.had-nilai')],
-                            ['Templat Dokumen Aset', route('selenggara.aset.templat')]
-                        ] as [$label, $route])
-                        <a href="{{ $route }}" :class="darkMode ? 'text-slate-500 hover:text-blue-400 hover:bg-white/5' : 'text-slate-400 hover:text-[#1E3A8A] hover:bg-blue-50/60'"
-                           class="sub-item flex items-center gap-2 px-4 py-2 rounded-r-lg text-[11px] font-bold uppercase tracking-wider transition-all duration-150">
+                                ['Kategori Aset', route('selenggara.aset.kategori')],
+                                ['Sub-Kategori Aset', route('selenggara.aset.sub-kategori')],
+                                ['Status Aset', route('selenggara.aset.status')],
+                                ['Kuasa Melulus Pelupusan', route('selenggara.aset.kuasa-melulus')],
+                                ['Kaedah Pelupusan', route('selenggara.aset.kaedah-pelupusan')],
+                                ['Kategori Naziran', route('selenggara.aset.kat-naziran')],
+                                ['Borang Naziran', route('selenggara.aset.bor-naziran')],
+                                ['Had Nilai Aset', route('selenggara.aset.had-nilai')],
+                                ['Templat Dokumen Aset', route('selenggara.aset.templat')]
+                            ] as [$label, $route])
+                                <a href="{{ $route }}" :class="darkMode ? 'text-slate-500 hover:text-blue-400 hover:bg-white/5' : 'text-slate-400 hover:text-[#1E3A8A] hover:bg-blue-50/60'"
+                                   class="sub-item flex items-center gap-2 px-4 py-2 rounded-r-lg text-[11px] font-bold uppercase tracking-wider transition-all duration-150">
+                                    <span class="w-1 h-1 rounded-full flex-shrink-0" :class="darkMode ? 'bg-white/20' : 'bg-slate-300'"></span>
+                                    {{ $label }}
+                                </a>
+                        @endforeach
+                    </div>
+                </div>
+                {{-- Selenggara Sistem --}}
+                <div x-data="{ openSS: false }">
+                    <button @click="openSS = !openSS"
+                        :class="darkMode ? 'text-slate-500 hover:text-blue-400 hover:bg-white/5' : 'text-slate-400 hover:text-[#1E3A8A] hover:bg-blue-50/60'"
+                        class="sub-item w-full flex items-center justify-between gap-2 px-4 py-2 rounded-r-lg text-[11px] font-bold uppercase tracking-wider transition-all duration-150">
+                        <span class="flex items-center gap-2">
                             <span class="w-1 h-1 rounded-full flex-shrink-0" :class="darkMode ? 'bg-white/20' : 'bg-slate-300'"></span>
-                            {{ $label }}
-                        </a>
+                            Selenggara Sistem / Kakitangan
+                        </span>
+                        <svg class="w-2.5 h-2.5 transition-transform duration-200" :class="openSS ? 'rotate-180' : ''" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path d="M19 9l-7 7-7-7" stroke-width="2.5"/>
+                        </svg>
+                    </button>
+                    <div x-show="openSS" x-collapse x-cloak class="ml-4 space-y-0.5 border-l" :class="darkMode ? 'border-white/5' : 'border-gray-100'">
+                        @foreach([
+                                ['Pengguna / Kakitangan', route('admin.pengguna')],
+                                ['Jabatan', route('admin.jabatan')]
+                            ] as [$label, $route])
+                                <a href="{{ $route }}" :class="darkMode ? 'text-slate-500 hover:text-blue-400 hover:bg-white/5' : 'text-slate-400 hover:text-[#1E3A8A] hover:bg-blue-50/60'"
+                                   class="sub-item flex items-center gap-2 px-4 py-2 rounded-r-lg text-[11px] font-bold uppercase tracking-wider transition-all duration-150">
+                                    <span class="w-1 h-1 rounded-full flex-shrink-0" :class="darkMode ? 'bg-white/20' : 'bg-slate-300'"></span>
+                                    {{ $label }}
+                                </a>
                         @endforeach
                     </div>
                 </div>
